@@ -1,0 +1,67 @@
+
+.active{
+  text-decoration: line-through;
+  opacity: 0.4;
+}
+.todo_list li{
+   list-style: none;
+   margin-top: 5px;
+}
+.todo_list li i{
+  font-size: 18px;
+  color:red;
+}
+.todo_list li i:hover{
+  font-size: 20px;
+  cursor: pointer;
+}
+.todo_list li label{
+    font-size: 22px;
+    margin-left: 20px;
+}
+.todo_list li label span{
+  margin-left: 5px;
+}
+.todo_list li input{
+  cursor: pointer;
+  
+}
+form {
+    margin-left: 40px;
+}
+form .text{
+    width: 250px;
+    height: 25px;
+    padding-left: 7px;
+    font-size: 16px;
+}
+form .sub{
+    background-color: transparent;
+    width: 90px;
+    height: 40px;
+    margin-left: 10px;
+    cursor: pointer;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.4);
+    border-top-color: rgba(0,0,0,.3);
+    border-radius: 10px;
+    background: linear-gradient(rgb(255,255,255), rgb(240,240,240));
+    box-shadow:
+    0 0 3px rgba(0,0,0,0) inset,
+    0 1px 1px 1px rgba(255,255,255,.2),
+    0 -1px 1px 1px rgba(0,0,0,0);
+    transition: .2s ease-in-out;
+}
+form .sub:hover:not(:active) {
+  box-shadow:
+   0 0 3px rgba(0,0,0,0) inset,
+   0 1px 1px 1px rgba(0,255,255,.5),
+   0 -1px 1px 1px rgba(0,255,255,.5);
+}
+form .sub:active {
+  background: linear-gradient(rgb(250,250,250), rgb(235,235,235));
+  box-shadow:
+   0 0 3px rgba(0,0,0,.5) inset,
+   0 1px 1px 1px rgba(255,255,255,.4),
+   0 -1px 1px 1px rgba(0,0,0,.1);
+}

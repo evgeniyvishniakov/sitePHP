@@ -1,0 +1,21 @@
+@import 'header.css';
+@import 'register.css';
+@import 'auth.css';
+@import 'view_prod.css';
+@import 'header_footer.css';
+@import 'catalog.css';
+
+
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+.active_reg{
+    display: none;
+}
+.active_auth{
+    display: block;
+}
+

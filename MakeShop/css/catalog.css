@@ -1,0 +1,57 @@
+@import 'left_sidebar.css';
+
+.catalog{
+    width: 1170px;
+    margin: 30px auto 0 auto;
+    display: flex;
+}
+
+.products{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products .item{
+    border: 1px solid black;
+    width: 280px;
+    margin: 0 15px;
+    text-align: center;
+}
+.products .item .item_logo{
+    margin: 30px 0;
+}
+.products .item .item_logo a img{
+    width: 200px;
+    transition: 0.6s;
+    height: 250px;
+}
+.products .item .item_logo a img:hover{
+    transform: scale(1.1);
+    transition: 0.6s;
+}
+.products .item .item_price {
+    border: 1px solid #343436;
+    padding: 15px 0;
+    background-color: #343436;
+}
+.products .item .item_price .price{
+    color: white;
+    font-size: 35px;
+    font: 700 22px/26px "Noto Sans",sans-serif;
+}
+.products .item .name{
+    font-size: 18px;
+    font: 700 "Noto Sans",sans-serif;
+    color: #343436;
+    margin: 15px 0;
+}
+.products .item .item_info{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.products .item .item_info a:hover{
+    color: blue;
+    transition: 0.4s;
+}

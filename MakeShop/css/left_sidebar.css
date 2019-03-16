@@ -1,0 +1,23 @@
+.left_sidebar{
+    width: 20%;
+}
+.left_sidebar li{
+    margin-top: 10px;
+}
+.left_sidebar li a{
+    color: darkblue;
+    font-size: 18px;
+}
+
+.left_sidebar li ul li{
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+.left_sidebar li ul li a{
+    color: black;
+    font-size: 17px;
+}
+.left_sidebar li ul li a:hover{
+    color: blue;
+}

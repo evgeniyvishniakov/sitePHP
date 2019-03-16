@@ -1,0 +1,24 @@
+.authentication{
+    width: 1170px;
+    margin: 0 auto;
+}
+.line{
+    border: 1px solid silver;
+}
+.authentication .form{
+    border: 1px solid black;
+    width: 400px;
+    margin: 50px auto;
+}
+.authentication p{
+    margin: 15px auto auto 20px ; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid silver;
+    width: 87%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.authentication .form_auth form{
+    margin: 20px auto 50px 20px;
+}

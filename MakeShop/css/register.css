@@ -1,0 +1,28 @@
+.registration{
+    width: 1170px;
+    margin: 0 auto;
+}
+.authentication{
+    width: 1170px;
+    margin: 0 auto;
+}
+.line{
+    border: 1px solid silver;
+}
+.registration .form{
+    border: 1px solid black;
+    width: 400px;
+    margin: 50px auto;
+}
+.registration p{
+    margin: 15px auto auto 20px ; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid silver;
+    width: 87%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.registration .form_reg form{
+    margin: 20px auto 50px 20px;
+}

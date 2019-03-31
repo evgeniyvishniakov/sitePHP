@@ -1,6 +1,5 @@
 .header_top_background {
   background-color: #333;
-  color: white;
 }
 
 .header_top {
@@ -192,6 +191,7 @@
   text-align: left;
   -webkit-box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.1);
           box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.1);
+  background-color: #fff;        
 }
 
 .header_bottom_menu ul li .drop ul {

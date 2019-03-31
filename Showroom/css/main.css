@@ -1,0 +1,38 @@
+.main {
+  max-width: 1770px;
+  margin: 0 auto;
+}
+
+.main_top {
+  margin-top: 40px;
+  position: relative;
+}
+
+.main_top a {
+  position: absolute;
+  bottom: 120px;
+  right: 322px;
+  border: 2px solid #737373;
+  padding: 21px 31px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  font-size: 16px;
+  color: #454647;
+  font-weight: bold;
+}
+
+.main_top a:hover {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.main_top a:active {
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.main_top img {
+  max-width: 1770px;
+  margin: 0 auto;
+}
+/*# sourceMappingURL=main.css.map */

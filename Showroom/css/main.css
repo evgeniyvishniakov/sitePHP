@@ -5,15 +5,15 @@
 
 .main_top {
   margin-top: 40px;
-  position: relative;
   z-index: -1;
 }
 
 .main_top a {
-  position: absolute;
-  bottom: 120px;
-  right: 322px;
   border: 2px solid #737373;
+  cursor: pointer;
+  position: absolute;
+  bottom: 190px;
+  right: 322px;
   padding: 21px 31px;
   text-transform: uppercase;
   font-family: Montserrat-Regular;
@@ -25,6 +25,7 @@
 .main_top a:hover {
   -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
           box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
 
 .main_top a:active {
@@ -37,47 +38,250 @@
   margin: 0 auto;
 }
 
-.main_catalog_products #grid {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 0,5fr 1fr 1fr;
-      grid-template-rows: 0,5fr 1fr 1fr;
-  -ms-grid-columns: 1fr 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: 30px;
+.main_catalog {
+  margin-top: 65px;
+  border-top: 1px solid #eeeeee;
 }
 
-.main_catalog_products #grid img {
-  width: 420px;
-  height: 500px;
+.main_catalog_menu {
+  margin-top: 54px;
 }
 
-.main_catalog_products #grid .item:nth-child(1) {
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 2;
-  grid-column: 1 / span 2;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  grid-row: 1 / span 2;
-  height: 700px;
+.main_catalog_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.main_catalog_products #grid .item:nth-child(1) img {
-  width: 870px;
-  height: 700px;
+.main_catalog_menu ul li {
+  margin-right: 55px;
 }
 
-.main_catalog_products #grid .item:nth-child(4) {
-  -ms-grid-column: 3;
-  -ms-grid-column-span: 2;
-  grid-column: 3 / span 2;
-  -ms-grid-row: 2;
-  -ms-grid-row-span: 2;
-  grid-row: 2 / span 2;
+.main_catalog_menu ul li a {
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  color: #9a9a9a;
+  font-size: 13px;
+  font-weight: bold;
 }
 
-.main_catalog_products #grid .item:nth-child(4) img {
-  width: 870px;
-  height: 700px;
+.main_catalog_menu ul li a:hover {
+  color: #00c8c8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main_catalog_products {
+  margin-top: 62px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main_catalog_products .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main_catalog_products .row .item {
+  cursor: pointer;
+  margin: 15px;
+  width: calc(100% / 12 * 3 - 30px);
+  background-color: #fff;
+  position: relative;
+}
+
+.main_catalog_products .row .item:hover {
+  -webkit-box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.main_catalog_products .row .item:hover .view {
+  opacity: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.main_catalog_products .row .item:hover .description {
+  opacity: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  -webkit-box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.2);
+}
+
+.main_catalog_products .row .item .price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: Montserrat-Regular;
+  color: #9a9a9a;
+  font-size: 21px;
+}
+
+.main_catalog_products .row .item .view {
+  position: absolute;
+  color: red;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  font-size: 48px;
+  opacity: 0;
+}
+
+.main_catalog_products .row .item .view i {
+  border: 1px solid red;
+  padding: 8px 23px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.main_catalog_products .row .item .view i:hover {
+  background-color: red;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main_catalog_products .row .item .description {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  padding: 25px 0;
+  bottom: -170px;
+  z-index: 1;
+  background-color: #fff;
+  opacity: 0;
+  cursor: default;
+}
+
+.main_catalog_products .row .item .description .name {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  color: #727272;
+  font-weight: bold;
+}
+
+.main_catalog_products .row .item .description .desc {
+  font-family: Roboto-Regular;
+  font-size: 15px;
+  color: #8e8c8c;
+  margin-top: 20px;
+}
+
+.main_catalog_products .row .item .description .comp {
+  font-family: Roboto-Regular;
+  font-size: 15px;
+  color: #8e8c8c;
+  margin-top: 10px;
+}
+
+.main_catalog_products .row .item .description .icon {
+  margin-top: 18px;
+}
+
+.main_catalog_products .row .item .description .icon form button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.main_catalog_products .row .item .description .icon form button i {
+  padding: 8px;
+  border: 1px solid #727272;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #727272;
+  color: #fff;
+  font-size: 17px;
+}
+
+.main_catalog_products .row .item .description .icon form button i:hover {
+  border: 1px solid #00c8c8;
+  background-color: #00c8c8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.main_lookbook {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60px;
+  border-top: 1px solid #eeeeee;
+  padding-top: 60px;
+}
+
+.main_lookbook img {
+  margin-left: 30px;
+}
+
+.main_lookbook_man {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: right;
+  width: 655px;
+  background-color: #f8f8f8;
+  margin: 0 15px;
+}
+
+.main_lookbook_man .info {
+  margin: 0 50px;
+}
+
+.main_lookbook_man .info h3 {
+  margin-top: 100px;
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: Montserrat-Bold;
+  color: #575153;
+}
+
+.main_lookbook_man .info h3 span {
+  font-family: Montserrat-Light;
+  color: #575153;
+  font-weight: normal;
+}
+
+.main_lookbook_man .info p {
+  font-family: Roboto-Regular;
+  color: #727272;
+  font-size: 15px;
+  text-transform: none;
+  line-height: 1.7;
+  font-weight: normal;
+  display: block;
+  margin: 30px 0 60px 0;
+}
+
+.main_lookbook_man .info .lookbook_btn {
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 23px 33px;
+  border: 1px solid #727272;
+  letter-spacing: 6px;
+  color: #727272;
+}
+
+.main_lookbook_man .info .lookbook_btn:hover {
+  background-color: #00c8c8;
+  color: #fff;
+  border: 1px solid #00c8c8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 /*# sourceMappingURL=main.css.map */

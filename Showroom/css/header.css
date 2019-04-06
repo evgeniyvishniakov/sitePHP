@@ -148,7 +148,12 @@
   position: relative;
 }
 
-.header_bottom_menu ul li a {
+.drop_active{
+  color: #00c8c8;
+}
+
+
+.header_bottom_menu ul li a   {
   font-family: Montserrat-Regular;
   font-weight: bold;
   font-size: 13px;
@@ -157,11 +162,17 @@
   text-align: left;
 }
 
+.drop_active{
+  color: #00c8c8;
+}
+
+
 .header_bottom_menu ul li a:hover {
   color: #00c8c8;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
+
 
 .header_bottom_menu ul li a:hover i {
   margin-left: 10px;
@@ -169,6 +180,8 @@
   transition: 0.5s;
   color: #00c8c8;
 }
+
+
 
 .header_bottom_menu ul li i {
   display: block;
@@ -255,3 +268,4 @@
   outline: none;
 }
 /*# sourceMappingURL=header.css.map */
+

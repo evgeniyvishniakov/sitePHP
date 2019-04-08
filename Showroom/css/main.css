@@ -1,6 +1,7 @@
 .main {
-  max-width: 1770px;
+  max-width: 100%;
   margin: 0 auto;
+  overflow:  hidden;
 }
 
 .main_top {
@@ -34,7 +35,7 @@
 }
 
 .main_top img {
-  max-width: 1770px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
@@ -285,3 +286,72 @@
   transition: 0.5s;
 }
 /*# sourceMappingURL=main.css.map */
+
+/* МЕДИА ЗАПРОСЫ */
+@media screen and (min-width: 1770px) {
+  .main_catalog_products .row .item {
+    cursor: pointer;
+    margin: 15px;
+    width: calc(100% / 12 * 3 - 30px);
+    background-color: #fff;
+    position: relative;
+  }
+
+}
+@media screen and (min-width: 1000px) and (max-width: 1400px){
+  .main{
+    overflow:  hidden;
+  }
+  .main_top a {
+    bottom: -70px;
+    right: 100px;
+    font-size: 13px;
+  }
+  .main_catalog_menu{
+    margin-left: 30px;
+  }
+  .main_catalog_products .row{
+    margin: -15px;
+  }
+  .main_catalog_products .row .item {
+    cursor: pointer;
+    margin: 15px;
+    width: calc(100% / 12 * 4 - 30px);
+    background-color: #fff;
+    position: relative;
+  }
+  .main_catalog_products .row .item img{
+    width: 100%;
+  }
+  .main_catalog_products .row .item:nth-child(5){
+    display: none;
+  }
+  .main_catalog_products .row .item:nth-child(6){
+    display: none;
+  }
+  .main_lookbook_man .main_lookbook_woman{
+    margin: 0 5px;
+  }
+  .main_lookbook_woman{
+    margin: 0 10px;
+  }
+}
+
+/* Large desktops and laptops */
+@media screen and (max-width: 1200px) {
+  .main_top a {
+    bottom: -290px;
+    right: 100px;
+    font-size: 13px;
+  }
+}
+
+/* Portrait tablets and small desktops */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+  
+}

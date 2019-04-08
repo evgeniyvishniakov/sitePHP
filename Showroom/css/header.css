@@ -230,6 +230,7 @@
 .header_bottom_menu ul li .drop ul li a {
   text-transform: capitalize;
   color: #9c9c9c;
+  font-size: 13px;
 }
 
 .header_bottom_menu ul li .drop ul li a:hover {
@@ -267,5 +268,61 @@
   cursor: pointer;
   outline: none;
 }
-/*# sourceMappingURL=header.css.map */
+
+
+/* МЕДИА ЗАПРОСЫ */
+
+
+@media screen and (max-width: 1300px) {
+  .header_bottom_menu ul li a{
+      font-size: 11px;
+  }
+}
+
+/* Large desktops and laptops */
+@media screen and (min-width: 1200px) {
+  .header_bottom{
+    display: flex;
+    justify-content: space-around;
+  }
+  .header_bottom_menu ul li a{
+    font-size: 11px;
+    white-space: nowrap;
+}
+  }
+
+/* Portrait tablets and small desktops */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .header_bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header_bottom_menu{
+    text-align: center;
+    display: block;
+    margin: 20px 0 10px 0; 
+  }
+  .header_bottom_search{
+    text-align: center;
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+  .header_bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header_bottom_menu{
+    text-align: center;
+    display: block;
+    margin: 20px 0 10px 0; 
+  }
+  .header_bottom_search{
+    text-align: center;
+  }
+}
+
 

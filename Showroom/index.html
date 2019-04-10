@@ -11,35 +11,53 @@
     <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <script src="main.js"></script>
 </head>
+<html>
 <body>
-    
 <section class="header">
     <div class="header_top_background">
         <div class="header_top">
+		
+			<!-- СМЕНА ВАЛЮТЫ   -->
+		
             <div class="header_top_curr">
                 <form action="" method="post">
+				
                     <p>Сurrency : <select name="currency">
                         <option selected value="UAH">UAH</option>
                         <option value="USD">USD</option>
                         <option value="EUR">EUR</option>
                     </select></p>
+					
                 </form>
             </div>
+			
+			<!-- РЕГИСТРАЦИЯ АВТОРИЗАЦИЯ ВЫХОД АДМИНКА   -->
+			
             <div class="header_top_reg">
                 <ul>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">Sing in</a></li>
                 </ul>
             </div>
+			
+			<!-- КОРЗИНА   -->
+			
             <div class="header_top_cart">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span>empty</span><i class="fa fa-angle-down"></i></a>
             </div>
+			
         </div>
     </div>    
     <div class="header_bottom">
+	
+		<!-- ЛОГОТИП   -->
+	
         <div class="header_bottom_logo">
             <a href="#"><img src="img/logo.png" alt="logo"></a>
         </div>
+		
+		<!-- ВЕРХНЕЕ МЕНЮ НАВИГАЦИЯ   -->
+		
         <div class="header_bottom_menu">
             <ul>
                 <li>
@@ -116,6 +134,9 @@
                 </li>
             </ul>
         </div>
+		
+		<!-- ПОИСК  -->
+		
         <div class="header_bottom_search">
             <form action="#" method="POST">
                 <input class="search" type="text" name="search" placeholder="Search..">
@@ -124,23 +145,79 @@
         </div>
     </div>
     
-</section>
-<section class="main">
-    <div class="main_top">
-        <a href="#">Shop men`s collection</a>
-        <img src="img/ave_man.png" alt="slide">
-    </div>
-    <div class="main_catalog">
-        <div class="main_catalog_menu">
-            <ul>
-                <li><a href="#">Popular</a></li>
-                <li><a href="#">New arrivals</a></li>
-                <li><a href="#">Best sellers</a></li>
-                <li><a href="#">Special offers</a></li>
-                <li><a href="#">Coming soon</a></li>
+</section> 
+
+<section class="catalog">
+  <div class="catalog_top_logo">
+    <p>Catalog <span>view</span></p>
+    <img src="img/catalog_top_logo.jpg" alt="">   
+  </div>
+  <div class="catalog_sidebar">
+    <div class="left_sidebar">
+
+                <!-- АККАРДЕОН  -->
+
+        <div class="accordeon">
+            <div class="acc-head">
+                <p>Mens<i class="fa fa-angle-down"></i></p>
+            </div>
+            <ul class="ac-body">
+            <li><a href="#">Штаны</a></li> 
+            <li><a href="#">Футболки</a></li>
+            <li><a href="#">Майки</a></li>
+            <li><a href="#">Шорты</a></li>
+            </ul>
+            <div class="acc-head">
+                <p>Womens<i class="fa fa-angle-down"></i></p>
+            </div>
+            <ul class="ac-body">
+            <li><a href="#">Штаны</a></li>
+            <li><a href="#">Футболки</a></li>
+            <li><a href="#">Майки</a></li>
+            <li><a href="#">Шорты</a></li>
             </ul>
         </div>
-        <div class="main_catalog_products">
+        <div class="brand">
+        <p>Бренд:</p>
+        <form action="#" method="post">
+            <select name="Brand">
+                <option selected>Все</option>
+                <option value="Puma">Puma</option>
+                <option value="Adidas">Adidas</option>
+                <option value="Nike">Nike</option>
+                <option value="Reebok">Reebok</option>
+            </select>
+        </form>
+        
+        </div>
+
+        <div class="left_sidebar_price">
+        <p>Цена</p>
+        <form action="#" method="POST">
+            <p><input type="checkbox">от 300 грн до 500 грн</p>
+            <p><input type="checkbox">от 501 грн до 1000 грн</p>
+            <p><input type="checkbox">от 1001 грн до 1500 грн</p>
+        </form>
+        </div>
+        <div class="left_sidebar_size">
+        <p>Размер</p>
+        <ol>
+            <form action="#" method="POST">
+            <p><input type="checkbox">xxs</p>
+            <p><input type="checkbox">xs</p>
+            <p><input type="checkbox">s</p>
+            <p><input type="checkbox">m</p>
+            <p><input type="checkbox">l</p>
+            <p><input type="checkbox">xl</p>
+            <p><input type="checkbox">xxl</p>
+            <p><input type="checkbox">xxxl</p>
+            </form>
+        </ol>
+    </div>
+        
+    </div>
+    <div class="right_sidebar">
+        <div class="catalog_products">
             <div class="row">
                 <div class="item">
                     <p class="price"><sup>£</sup>29.95</p>
@@ -154,7 +231,7 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
@@ -171,7 +248,7 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
@@ -188,7 +265,7 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
@@ -205,7 +282,7 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
@@ -222,7 +299,7 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
@@ -239,133 +316,28 @@
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
+                            <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
-    
-    <div class="main_lookbook">
-        <div class="main_lookbook_man">
-            <img src="img/loolbookman.png" alt="">
-            <div class="info">
-                <h3>Man`s<br><span> Lookbook</span></h3>
-                <p>Lorem ipsum dolor sit amet eras facilisis
-                consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
-                Elementum metus facilisis ut phasellu.</p>
-                <a class="lookbook_btn" href="#">View now</a>
-            </div>
+            </div>    
         </div>
-        <div class="main_lookbook_woman main_lookbook_man">
-            <img src="img/loolbookwoman.png" alt="">
-            <div class="info">
-                <h3>Women`s<br><span> Lookbook</span></h3>
-                <p>Lorem ipsum dolor sit amet eras facilisis
-                consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
-               Elementum metus facilisis ut phasellu.</p>
-                <a class="lookbook_btn" href="#">View now</a>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="footer">
-    <div class="footer_menu">
-        <ul>
-            <a href="#" class="name">Information</a>
-            <li><a href="#">The brand</a></li>
-            <li><a href="#">Local stores</a></li>
-            <li><a href="#">Customer service</a></li>
-           <li><a href="#">Privacy & cookies</a></li>
-           <li><a href="#">Site map</a></li>
-        </ul>
-        <ul>
-           <a href="#" class="name">Why buy from us</a>
-           <li><a href="#">Shipping & returns</a></li>
-           <li><a href="#">Secure shopping</a></li>
-           <li><a href="#">Testimonials</a></li>
-           <li><a href="#">Award winning</a></li>
-           <li><a href="#">Ethical trading</a></li>
-        </ul>
-        <ul>
-            <a href="#" class="name">Your account</a>
-            <li><a href="#">Sign in</a></li>
-            <li><a href="#">Register</a></li>
-            <li><a href="#">View cart</a></li>
-           <li><a href="#">View your lookbook</a></li>
-           <li><a href="#">Track an order</a></li>
-           <li><a href="#">Update information</a></li>
-        </ul>
-        <ul>
-           <a href="#" class="name">Lookbook</a>
-           <li><a href="#">Latest posts</a></li>
-           <li><a href="#">Men’s lookbook</a></li>
-           <li><a href="#">Women’s lookbook</a></li>
-           <li><a href="#">Lookbooks RSS feed</a></li>
-           <li><a href="#">View your lookbook</a></li>
-           <li><a href="#">Delete your lookbook</a></li>
-        </ul>
-        <ul>
-            <a href="#" class="name">Delete your lookbook</a>
-            <li><a href="#">Head Office: Avenue Fashion,<br> 
-                180-182 Regent Street, London.</a></li>
-            <li><a href="#">Telephone: 0123-456-789</a></li>
-            <li><a href="#">Email: support@yourwebsite.com</a></li>
-         </ul>
-    </div>
-    <div class="footer_bottom">
-        <div class="footer_bottom_awards">
-            <p>Award winter<br><span>Fashion awards 2019</span></p>
-        </div>
-        <div class="footer_bottom_soc">
+        <div class="pagination">
             <ul>
-                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
             </ul>
         </div>
     </div>
+</div> 
 </section>
+
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/main.js"></script>
-
 </body>
 </html>

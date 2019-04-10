@@ -1,14 +1,13 @@
-$(document).ready(function(){
-    $('.header_bottom_menu ul li a').hover(
-        function(){ 
-            $(this).find('.header_bottom_menu ul li a').toggleClass('drop_active');
-        }
-    );
-});
 
-$('.item_menu').mouseover(function(){
-    $(this).addClass('drop_active');
-    });
-    $('.item_menu').mouseleave(function(){
-    $(this).removeClass('drop_active');
-    });
+$(document).ready(function() {
+  //прикрепляем клик по заголовкам acc-head
+	$('.accordeon .acc-head').on('click', f_acc);
+});
+ 
+function f_acc(){
+//скрываем все кроме того, что должны открыть
+
+  $('.accordeon .acc-body').not($(this).next()).slideUp(500);
+// открываем или скрываем блок под заголовком, по которому кликнули
+ $(this).next().slideToggle(500);
+}	

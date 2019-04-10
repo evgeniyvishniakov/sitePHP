@@ -3,6 +3,8 @@
   background-color: #f8f8f8;
 }
 
+							/* ВЕРХНИЙ ПОДВАЛ-НАВИГАЦИЯ  */
+
 .footer_menu {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -51,6 +53,7 @@
   transition: 0.4s;
 }
 
+
 .footer_bottom {
   padding: 65px 0;
   display: -webkit-box;
@@ -83,6 +86,8 @@
   font-family: Montserrat-Regular;
   font-weight: light;
 }
+
+						/* НИЖНИЙ ПОДВАЛ-НАВИГАЦИЯ  */
 
 .footer_bottom_soc {
   margin-left: 15px;

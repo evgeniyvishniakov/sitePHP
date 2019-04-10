@@ -1,0 +1,332 @@
+.catalog{
+  overflow: hidden;
+  margin: 37px 0;
+}
+
+.catalog .catalog_top_logo{
+  position: relative;
+  z-index: -1;
+}
+.catalog .catalog_top_logo p{
+  position: absolute;
+  font-family: Montserrat-Bold;
+  color: #fff;
+  font-weight: bold;
+  font-size: 48px;
+  top: 50%;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+  
+}
+.catalog .catalog_top_logo p span{
+  font-family: Montserrat-Light;
+  font-weight: lighter;
+}
+
+.catalog .catalog_sidebar{
+  display: flex;
+}
+.catalog .left_sidebar{
+  border: 1px solid black;
+  width: 20%;
+}
+.catalog .right_sidebar{
+  border: 1px solid black;
+  width: 80%;
+}
+
+/*  Аккордеон */
+
+.accordeon {
+	width: 100%;
+}
+ 
+.accordeon .acc-head {
+	padding: 5px 10px;
+	background: #c0c0c0;
+  cursor: pointer;
+  display: flex;
+}
+.accordeon .acc-head{
+  padding-left: 10%;
+  margin: 5px 0;
+}
+.accordeon .acc-head p{
+  font-family: Montserrat-Regular;
+  color: #575153;
+
+}
+.accordeon .acc-head p i{
+ margin-left: 10px;
+ font-size: 18px;
+}
+ 
+.accordeon .ac-body {
+	padding: 5px;
+  display: none;
+  
+}
+.accordeon ul li{
+  margin: 5px 0 0 20%;
+}
+.accordeon ul li a{
+  font-family: Montserrat-Regular;
+  color: #575153;
+  font-size: 14px;
+}
+.accordeon ul li a:hover{
+  color: #00c8c8;
+  transition: 0.3s;
+  
+}
+
+/*  Бренд  */
+.brand{
+  margin: 20px 0 0 10%;
+  display: flex;
+  align-items: center;
+  
+}
+.brand p{
+  font-family: Montserrat-Regular;
+  color: #575153;
+  margin-right: 10px;
+}
+.brand form {
+  position: relative;
+}
+.brand form select{
+  border-radius: 15px;
+  padding: 7px ;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  -webkit-appearance: button;
+     -moz-appearance: button;
+          appearance: button;
+}
+.brand form select:after {
+  content: "\203A";
+  color: #686868;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  font-size: 25px;
+}
+/*  Цена  */
+
+.left_sidebar_price form p{
+  margin: 6px 0;
+  font-size: 16px;
+}
+.left_sidebar_price form p input{
+  margin-right: 10px;
+  vertical-align: middle;   
+}
+
+/*  Размер  */
+
+.left_sidebar_size ol {
+  list-style-position: inside;
+  -moz-column-count: 2; /* Firefox */
+  -webkit-column-count: 2; /* Safari and Chrome */
+  column-count: 2;
+  padding-left: 15px;
+  width: 150px
+}
+
+.left_sidebar_size ol form p {
+  margin: 15px 0;
+  
+}
+.left_sidebar_size ol form p input{
+  vertical-align: middle; 
+}
+
+.left_sidebar_size ol form p:first-child{
+  margin: 0;
+}
+
+
+/* ПРАВЫЙ САЙДБАР КАТАЛОГ*/
+
+.catalog_products .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: -15px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.catalog_products .row .item img{
+  width: 100%;
+}
+.catalog_products .row .item {
+  cursor: pointer;
+  margin: 15px;
+  width: calc(100% / 12 * 3 - 30px);
+  background-color: #fff;
+  position: relative;
+}
+.catalog_products .row .item:hover {
+  -webkit-box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.3);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.catalog_products .row .item:hover .view {
+  opacity: 1;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.catalog_products .row .item:hover .description {
+  display: block;
+  -webkit-box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 19px 19px rgba(0, 0, 0, 0.2);
+}
+
+.catalog_products .row .item .price {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  font-family: Montserrat-Regular;
+  color: #9a9a9a;
+  font-size: 21px;
+}
+
+.catalog_products .row .item .view {
+  position: absolute;
+  color: red;
+  width: 100%;
+  text-align: center;
+  top: 50%;
+  font-size: 48px;
+  opacity: 0;
+}
+
+.catalog_products .row .item .view i {
+  border: 1px solid red;
+  padding: 8px 23px;
+  border-radius: 50px;
+  background-color: #fff;
+}
+
+.catalog_products .row .item .view i:hover {
+  background-color: red;
+  color: #ffffff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.catalog_products .row .item .description {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  padding: 25px 0;
+  top: 100%;
+  z-index: 1;
+  background-color: #fff;
+  display: none;
+  cursor: default;
+}
+
+.catalog_products .row .item .description .name {
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  color: #727272;
+  font-weight: bold;
+}
+
+.catalog_products .row .item .description .desc {
+  font-family: Roboto-Regular;
+  font-size: 15px;
+  color: #8e8c8c;
+  margin-top: 20px;
+}
+
+.catalog_products .row .item .description .comp {
+  font-family: Roboto-Regular;
+  font-size: 15px;
+  color: #8e8c8c;
+  margin-top: 10px;
+}
+
+.catalog_products .row .item .description .icon {
+  margin-top: 18px;
+}
+
+.catalog_products .row .item .description .icon form button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.catalog_products .row .item .description .icon form button i {
+  padding: 8px;
+  border: 1px solid #727272;
+  border-radius: 50px;
+  cursor: pointer;
+  background-color: #727272;
+  color: #fff;
+  font-size: 17px;
+}
+
+.catalog_products .row .item .description .icon form button i:hover {
+  border: 1px solid #00c8c8;
+  background-color: #00c8c8;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+      /*  ПАГИНАЦИЯ */
+
+.right_sidebar .pagination{
+  margin-top: 50px;
+}
+.right_sidebar .pagination ul{
+  display: flex;
+  justify-content: center;
+}
+.right_sidebar .pagination ul li{
+  margin: 0 10px;
+}
+.right_sidebar .pagination ul li a{
+  font-family: Montserrat-Regular;
+  color: #727272;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.right_sidebar .pagination ul li a:hover{
+  color: #00c8c8;
+  font-size: 16px;
+  transition: 0.2s;
+}
+.right_sidebar .pagination ul li .fa{
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

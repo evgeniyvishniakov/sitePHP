@@ -1,4 +1,7 @@
+@import "normalize.css";
+@import "fonts.css";
 @import "header.css";
 @import "home.css";
 @import "footer.css";
 @import "catalog.css";
+@import "sing.css";

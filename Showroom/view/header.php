@@ -1,3 +1,11 @@
+<?php
+
+include_once './class/class_categories.php';
+
+$cat = new Categories;
+
+
+?>
 <section class="header">
     <div class="header_top_background">
         <div class="header_top">
@@ -19,10 +27,14 @@
 			<!-- ???????????, ???????????, ????? ? ???????   -->
 			
             <div class="header_top_reg">
-                <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Sing in</a></li>
-                </ul>
+                <ul <?php if ($_SESSION['auth'] != 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
+                    <li><a href="sing">Register</a></li>
+                    <li><a href="sing">Sing in</a></li>
+                </ul>  
+                <ul <?php if ($_SESSION['auth'] == 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
+                    <li><a href="http://showroom/view/logout.php">Logout</a></li>
+                    <li><a href="sing">Admin</a></li>
+                </ul>                  
             </div>
 			
 			<!-- ???????   -->
@@ -38,7 +50,7 @@
 		<!-- ???????   -->
 	
         <div class="header_bottom_logo">
-            <a href="#"><img src="img/logo.png" alt="logo"></a>
+            <a href="/"><img src="img/logo.png" alt="logo"></a>
         </div>
 		
 		<!-- ?????? ???? ?????????   -->
@@ -46,76 +58,36 @@
         <div class="header_bottom_menu">
             <ul>
                 <li>
-                    <a href="#">Catalog</a>
+                    <a href="catalog">Catalog</a>
                 </li>
                 <li>
-                    <a class="item_menu drop_active" href="#">Mens<i class="fa fa-angle-down"></i></a>
+                    <a href="?category=2">Mens<i class="fa fa-angle-down"></i></a>
                     <div class="drop">
                         <ul>
-                            <a href="#" class="name">Cesual</a>
-                            <li><a href="#">Jacets</a></li>
-                            <li><a href="#">Hoodies & Sweatshirts</a></li>
-                            <li><a href="#">Polo Shirts</a></li>
-                            <li><a href="#">Sportswear</a></li>
-                            <li><a href="#">Trousers & Chinos</a></li>
-                            <li><a href="#">T-Shirts</a></li>
-                        </ul>
-                        <ul>
-                            <a href="#" class="name">Formal</a>
-                            <li><a href="#">Jacets</a></li>
-                            <li><a href="#">Shirt</a></li>
-                            <li><a href="#">Suits</a></li>
-                            <li><a href="#">Trousers</a></li>
+                        <?php foreach ($cat->CategoriesParents($id = 2) as $key => $value) {?>
+                            <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
+                        <?php } ?>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">Womens<i class="fa fa-angle-down"></i></a>
+                    <a href="?category=2">Womens<i class="fa fa-angle-down"></i></a>
                     <div class="drop">
                         <ul>
-                            <a href="#" class="name">Cesual</a>
-                            <li><a href="#">Jacets</a></li>
-                            <li><a href="#">Hoodies & Sweatshirts</a></li>
-                            <li><a href="#">Polo Shirts</a></li>
-                           <li><a href="#">Sportswear</a></li>
-                           <li><a href="#">Trousers & Chinos</a></li>
-                           <li><a href="#">T-Shirts</a></li>
-                        </ul>
-                        <ul>
-                           <a href="#" class="name">Formal</a>
-                           <li><a href="#">Jacets</a></li>
-                           <li><a href="#">Shirt</a></li>
-                           <li><a href="#">Suits</a></li>
-                           <li><a href="#">Trousers</a></li>
+                        <?php foreach ($cat->CategoriesParents($id = 3) as $key => $value) {?>
+                            <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
+                        <?php } ?>
                         </ul>
                     </div>
                 </li>
                 <li>
-                    <a href="#">The brand</a>
+                    <a href="?category=10">The brand</a>
                 </li>
                 <li>
-                    <a href="#">Local Stores</a>        
+                    <a href="?category=11">Local Stores</a>        
                 </li>
                 <li>
-                    <a href="#">Look Book<i class="fa fa-angle-down"></i></a>
-                    <div class="drop">
-                        <ul>
-                            <a href="#" class="name">Cesual</a>
-                            <li><a href="#">Jacets</a></li>
-                            <li><a href="#">Hoodies & Sweatshirts</a></li>
-                            <li><a href="#">Polo Shirts</a></li>
-                           <li><a href="#">Sportswear</a></li>
-                           <li><a href="#">Trousers & Chinos</a></li>
-                           <li><a href="#">T-Shirts</a></li>
-                        </ul>
-                        <ul>
-                           <a href="#" class="name">Formal</a>
-                           <li><a href="#">Jacets</a></li>
-                           <li><a href="#">Shirt</a></li>
-                           <li><a href="#">Suits</a></li>
-                           <li><a href="#">Trousers</a></li>
-                        </ul>
-                    </div>    
+                    <a href="?category=14">Look Book</a>   
                 </li>
             </ul>
         </div>

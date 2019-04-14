@@ -1,7 +1,7 @@
 .main {
   max-width: 100%;
   margin: 0 auto;
-  overflow:  hidden;
+  overflow: hidden;
 }
 
 .main_top {
@@ -11,7 +11,7 @@
 
 					/* СЛАЙДЕР С КНОПКОЙ И КАРТИНКОЙ*/
 .main_top img {
-  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .main_catalog_menu {
-  margin-top: 54px;
+  margin: 54px 0 0 20px;
 }
 
 .main_catalog_menu ul {
@@ -162,7 +162,7 @@
   width: 100%;
   position: absolute;
   padding: 25px 0;
-  bottom: -170px;
+  top: 100%;
   z-index: 1;
   background-color: #fff;
   opacity: 0;
@@ -308,7 +308,7 @@
   }
 
 }
-@media screen and (min-width: 1000px) and (max-width: 1400px){
+@media screen and (max-width: 1200px){
   .main{
     overflow:  hidden;
   }

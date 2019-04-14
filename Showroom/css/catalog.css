@@ -1,11 +1,13 @@
 .catalog{
   overflow: hidden;
-  margin: 37px 0;
+  margin-top: 37px;
+  padding-bottom: 125px;
 }
+
+      /* БАННЕР  */
 
 .catalog .catalog_top_logo{
   position: relative;
-  z-index: -1;
 }
 .catalog .catalog_top_logo p{
   position: absolute;
@@ -26,38 +28,42 @@
 
 .catalog .catalog_sidebar{
   display: flex;
+  margin-top: 50px;
 }
 .catalog .left_sidebar{
-  border: 1px solid black;
   width: 20%;
+  margin-right: 30px;
 }
 .catalog .right_sidebar{
-  border: 1px solid black;
   width: 80%;
 }
 
 /*  Аккордеон */
 
 .accordeon {
-	width: 100%;
+  width: 100%;
+  border-bottom: 1px solid #575153;
+  border-top: 1px solid #575153;
+  padding: 20px 0 30px 0;
 }
  
 .accordeon .acc-head {
 	padding: 5px 10px;
-	background: #c0c0c0;
+  border-bottom: 1px solid #c0c0c0;
   cursor: pointer;
   display: flex;
 }
+
 .accordeon .acc-head{
   padding-left: 10%;
-  margin: 5px 0;
 }
-.accordeon .acc-head p{
+
+.accordeon .acc-head a{
   font-family: Montserrat-Regular;
   color: #575153;
 
 }
-.accordeon .acc-head p i{
+.accordeon .acc-head a i{
  margin-left: 10px;
  font-size: 18px;
 }
@@ -82,52 +88,79 @@
 }
 
 /*  Бренд  */
+
+
 .brand{
-  margin: 20px 0 0 10%;
+  border-bottom: 1px solid #575153;
+  padding: 20px 0 20px 10%;
   display: flex;
   align-items: center;
-  
 }
 .brand p{
   font-family: Montserrat-Regular;
   color: #575153;
   margin-right: 10px;
-}
-.brand form {
-  position: relative;
+  font-size: 15px;
 }
 .brand form select{
-  border-radius: 15px;
-  padding: 7px ;
+  padding: 6px 10%;
+  font-family: Montserrat-Regular;
   outline: none;
   cursor: pointer;
   position: relative;
-  -webkit-appearance: button;
-     -moz-appearance: button;
-          appearance: button;
+  justify-content: center;
+  font-size: 14px;
+  
 }
-.brand form select:after {
-  content: "\203A";
-  color: #686868;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
-  font-size: 25px;
+
+.brand form select option{
+  height: 50px;
+  font-size: 14px;
+  color: red;
+  font-family: Montserrat-Regular;
+  color: #575153;
+  padding: 15px;
+  outline: none;
 }
+
 /*  Цена  */
 
+
+.left_sidebar_price{
+  padding: 10px 0 20px 10%;
+  border-bottom: 1px solid #575153;
+}
+.left_sidebar_price p{
+  font-family: Montserrat-Regular;
+  color: #575153;
+  margin: 20px 0;
+  font-size: 15px;
+}
 .left_sidebar_price form p{
-  margin: 6px 0;
-  font-size: 16px;
+  margin: 15px 0;
+  font-size: 14px;
+  font-family: Montserrat-Regular;
 }
 .left_sidebar_price form p input{
   margin-right: 10px;
-  vertical-align: middle;   
+  vertical-align: middle; 
+  padding: 5p;
+  cursor: pointer;
 }
 
 /*  Размер  */
+
+.left_sidebar_size{
+  padding: 10px 0 0 10%;
+  border-bottom: 1px solid #575153;
+  
+}
+.left_sidebar_size p{
+  font-family: Montserrat-Regular;
+  color: #575153;
+  margin: 20px 0;
+  font-size: 15px;
+}
 
 .left_sidebar_size ol {
   list-style-position: inside;
@@ -140,15 +173,39 @@
 
 .left_sidebar_size ol form p {
   margin: 15px 0;
-  
+  font-family: Montserrat-Regular;
+  text-transform: uppercase;
+  font-size: 12px;
 }
 .left_sidebar_size ol form p input{
-  vertical-align: middle; 
+  vertical-align: middle;
+  margin-right: 7px;
+  cursor: pointer;
 }
 
 .left_sidebar_size ol form p:first-child{
   margin: 0;
 }
+
+/*  Цвет  */
+.left_sidebar_color{
+border-bottom: 1px solid #575153;
+}
+.left_sidebar_color p{
+  font-family: Montserrat-Regular;
+  margin: 20px 0 20px 10%;
+  color: #575153;
+}
+.left_sidebar_color form{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 10%;
+  padding-bottom: 30px;
+}
+.left_sidebar_color form .checkbox-transform{
+  margin: 0 5px;
+}
+
 
 
 /* ПРАВЫЙ САЙДБАР КАТАЛОГ*/
@@ -314,19 +371,219 @@
 }
 
 
+/*  Красный цвет */
+.checkbox__label:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: #FF0000;
+}
+.checkbox__label:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label:after{
+  border-color:#050505;
+}
+.checkbox__label:after:hover,.checkbox__label:after:active{
+  border-color:green;
+}
+.checkbox__label{
+  margin-left:15px;
+}
 
 
+/*  Зеленый цвет */
+.checkbox__label_green:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: green;
+}
+.checkbox__label_green:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label_green:after{
+  border-color:#050505;
+}
+.checkbox__label_green:after:hover,.checkbox__label_green:after:active{
+  border-color:green;
+}
+.checkbox__label_green{
+  margin-left:15px;
+}
 
+/*  Желтый цвет */
 
+.checkbox__label_yellow:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: yellow;
+}
+.checkbox__label_yellow:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label_yellow:after{
+  border-color:#050505;
+}
+.checkbox__label_yellow:after:hover,.checkbox__label_yellow:after:active{
+  border-color:green;
+}
+.checkbox__label_yellow{
+  margin-left:15px;
+}
 
+/*  Синий цвет */
 
+.checkbox__label_blue:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: blue;
+}
+.checkbox__label_blue:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label_blue:after{
+  border-color:#050505;
+}
+.checkbox__label_blue:after:hover,.checkbox__label_blue:after:active{
+  border-color:green;
+}
+.checkbox__label_blue{
+  margin-left:15px;
+}
 
+/*  Коричневый цвет */
 
+.checkbox__label_brown:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: brown;
+}
+.checkbox__label_brown:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0px;
+  left:0px;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label_brown:after{
+  border-color:#050505;
+}
+.checkbox__label_brown:after:hover,.checkbox__label_brown:after:active{
+  border-color:green;
+}
+.checkbox__label_brown{
+  margin-left:15px;
+}
 
+/*  Фиолетовый цвет */
 
-
-
-
-
-
-
+.checkbox__label_violet:before{
+  content:'';
+  display:block;
+  height:25px;
+  width:25px;
+  position:absolute;
+  top:2px;
+  left:2px;
+  background: violet;
+}
+.checkbox__label_violet:after{
+  content:' ';
+  display:block;
+  height:25px;
+  width:25px;
+  border: 2px solid #fff ;
+  transition:200ms;
+  position:absolute;
+  top:0;
+  left:0;
+  /* background: #fff200; */
+  transition:100ms ease-in-out;
+}
+.checkbox__input:checked ~ .checkbox__label_violet:after{
+  border-color:#050505;
+}
+.checkbox-transform{
+  position:relative;
+  font-size: 10px;
+  color: #666;
+  cursor:pointer;
+  -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+.checkbox__label_violet:after:hover,.checkbox__label_violet:after:active{
+  border-color:green;
+}
+.checkbox__label_violet{
+  margin-left:2rem;
+  line-height:.5;
+}

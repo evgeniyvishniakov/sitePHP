@@ -32,11 +32,13 @@ class Routing {
             if ($routs == $this->page ){
 
                 $this->check = true;
-                
-                return require_once "view/" . $file['name'] . ".php";
 
+            
+                    return require_once "view/" . $file['name'] . ".php";
+                }
+                
             }
-        }
+        
 
         if($this->check == false)  {
 

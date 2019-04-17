@@ -1,0 +1,50 @@
+.admin{
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .admin .top_admin{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 15px 0;
+  }
+  .admin .top_admin .logo p{
+    margin: 0 50px;
+  }
+  .admin .top_admin .logout{
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+  .admin .top_admin .logout a{
+      margin: 0 5px;
+  }
+  .admin .top_admin .logout p{
+    margin: 0 30px;
+  }
+  .admin .main_admin{
+    display: flex;
+  }
+  .admin .main_admin .left_admin{
+    width: 12%;
+  }
+  .admin .main_admin .left_admin ul{
+    margin: 0;
+    padding: 0;
+  }
+  .admin .main_admin .left_admin ul a{
+    display: block;
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 15px;
+  }
+  .admin .main_admin .left_admin ul a:hover{
+    background-color: #ccc;
+  }
+  
+  .admin .main_admin .right_admin{
+    border: 1px solid black;
+    width: 88%;
+    display: flex;
+  }

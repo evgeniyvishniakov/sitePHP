@@ -1,17 +1,32 @@
-<?php
-include_once 'class/class_routing.php';
+<?php 
+require_once 'class/routing.php';
 
-$get = $_GET['page'];
-$routing = new Routing($get);
+foreach ($rout as $routs => $file) {
 
-include_once 'views/head_view.php';
+    if ($routs == $page ) {
+        $check = true;
+        include_once $file . ".php";
+    }
+}
+
+if ($check == false) {
+    include_once 'views/404.php';
+}
+
+include_once 'views/head.php';
 include_once 'views/header.php';
-include_once 'views/header_footer.php';
-$routing->checkPageBD();
-require_once 'views/footer.php';
+
+
+
 
 
 
 
 
 ?>
+
+
+
+     
+        
+

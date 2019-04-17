@@ -1,0 +1,132 @@
+/* Styles go here */
+
+.admin{
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.admin .top_admin{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 15px 0;
+}
+.admin .top_admin .logo p{
+  margin: 0 50px;
+  
+}
+.admin .top_admin .logout{
+  display: flex;
+  align-items: center;
+  margin-right: 30px;
+}
+.admin .top_admin .logout p{
+  margin: 0 30px;
+}
+.admin .main_admin{
+  display: flex;
+}
+.admin .main_admin .left_admin{
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+  width: 12%;
+}
+.admin .main_admin .left_admin ul{
+  margin: 0;
+  padding: 0;
+
+}
+.admin .main_admin .left_admin ul a{
+  display: block;
+  border-bottom: 1px solid black;
+  padding: 15px;
+}
+.admin .main_admin .left_admin ul a:hover{
+  background-color: #ccc;
+}
+
+.admin .main_admin .right_admin{
+  border: 1px solid black;
+  width: 88%;
+  display: flex;
+}
+
+/*  Поля добавлений товаров  */
+
+
+.admin .main_admin .right_admin .table_input h3{
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+.admin .main_admin .right_admin .table_input form{
+  text-align: center;
+  padding: 20px;
+}
+.admin .main_admin .right_admin .table_input form p{
+  margin: 10px 0;
+}
+
+.admin .main_admin .right_admin .table_input{
+  border-right: 1px solid black
+}
+
+.admin .main_admin .right_admin .table_input form input[type="text"]{
+  width: 240px;
+  height: 25px;
+  padding-left: 5px;
+}
+.admin .main_admin .right_admin .table_input form input[type="number"]{
+  width: 100px;
+  height: 25px;
+  text-align: center;
+}
+.admin .main_admin .right_admin .table_input form input[type="submit"]{
+  padding: 10px 50px;
+  margin-top: 10px;
+}
+
+.admin .main_admin .right_admin .table_prod h3{
+  margin: 0;
+  text-align: center;
+  margin-top: 10px;
+}
+.admin .main_admin .right_admin .table_prod .search{
+  text-align: center;
+  margin: 20px 0;
+
+}
+.admin .main_admin .right_admin .table_prod .search input[type="text"]{
+  width: 200px;
+  height: 25px;
+}
+.admin .main_admin .right_admin .table_prod .search input[type="submit"]{
+  padding: 6px 15px;
+}
+/*   Таблица   */
+
+table {
+border-spacing: 0 1px;
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+}
+th {
+background: #56433D;
+color: #F9C941;
+border-right: 1px solid; 
+font-size: 13px;
+padding: 5px;  
+}
+td {
+vertical-align: middle;
+font-size: 13px;
+text-align: center;
+border-top: 1px solid #56433D;
+border-bottom: 1px solid #56433D;
+border-right: 1px solid #56433D;
+padding: 0 15px;
+}
+td:first-child {
+border-left: 1px solid #56433D;
+width: 100px;
+height: 120px;  
+}

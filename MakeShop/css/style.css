@@ -1,21 +1,38 @@
 @import 'header.css';
-@import 'register.css';
-@import 'auth.css';
-@import 'view_prod.css';
-@import 'header_footer.css';
-@import 'catalog.css';
-
-
 
 ul{
     margin: 0;
     padding: 0;
 }
 
-.active_reg{
-    display: none;
+
+
+.registration{
+    width: 1170px;
+    margin: 0 auto;
 }
-.active_auth{
-    display: block;
+.authentication{
+    width: 1170px;
+    margin: 0 auto;
+}
+.line{
+    border: 1px solid silver;
+}
+.registration.authentication  .form{
+    border: 1px solid black;
+    width: 400px;
+    margin: 50px auto;
+}
+.registration .authentication p{
+    margin: 15px auto auto 20px ; 
+    padding-bottom: 10px;
+    border-bottom: 1px solid silver;
+    width: 87%;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.registration .form_reg form{
+    margin: 20px auto 50px 20px;
 }
 

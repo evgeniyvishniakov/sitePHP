@@ -8,9 +8,7 @@ header{
 .header_top .header_top_menu ul{
     display: flex;
     margin-top: 27px;
-}
-.header_top .header_top_menu ul li{
-    margin: 0 10px;
+    
 }
 .header_top .registr{
     display: flex;
@@ -35,23 +33,9 @@ header{
     color: white;
 }
 
-.header_footer{
-    width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid black;
-    padding-bottom: 30px;
+.active_reg{
+    display: none;
 }
-.header_footer .header_footer_menu ul{
-    display: flex;
-}
-.header_footer .header_footer_menu ul li{
-    margin: 0 12px;
-}
-.header_footer .header_footer_menu ul li a:hover{
-    padding-bottom: 2px;
-    border-bottom: 2px solid blue;
-    transition: 0.2s;
+.active_auth{
+    display: block;
 }

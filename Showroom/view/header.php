@@ -33,7 +33,7 @@ $cat = new Categories;
                 </ul>  
                 <ul <?php if ($_SESSION['auth'] == 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
                     <li><a href="http://showroom/view/logout.php">Logout</a></li>
-                    <li><a href="sing">Admin</a></li>
+                    <li><a href="admin-panel">Admin</a></li>
                 </ul>                  
             </div>
 			

@@ -100,12 +100,3 @@ include_once './class/class_auth.php';
     </div>
 </section>
 
-
-<?php
-
-$cat = new Categories;
-
-echo '<pre>';
-print_r($cat->CategoriesBD());
-
-?>

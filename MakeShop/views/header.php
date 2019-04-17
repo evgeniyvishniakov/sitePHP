@@ -1,10 +1,11 @@
+
 <header>
     <div class="header_top">
             <div class="row">
                 <div class="col-md-7 header_top_menu">
                     <ul>
-                        <li><a href="contacts">Контакты</a></li>
-                        <li><a href="catalog">Каталог</a></li>
+                        <li>Контакты</li>
+                        <li>Каталог</li>
                     </ul>
                 </div>
                 <div class="col-md-3 registr"> 
@@ -13,7 +14,6 @@
                         <a href="register">Регистрация</a>
                     </div> 
                     <div <?php if ($_SESSION['user'] == 1){echo 'class="active_auth logout"';}else{echo 'class="active_reg loguot"';}?>>
-                        <a href="views/admin.php">Админ панель</a> 
                         <a href="views/logout.php">Выход</a> 
                     </div>
                 </div>
@@ -21,6 +21,16 @@
                     <a href="#">Карзина</a>
                 </div>
             </div>  
+    </div> 
+    <div class="header_footer">
+        <div class="logo">
+
+        </div>
+        <div class="header_footer_menu">
+        
+        </div>
+        <div class="search">
+        
+        </div>
     </div>
 </header>
-  

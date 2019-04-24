@@ -17,8 +17,9 @@
 
 .admin .main_admin .right_admin .table_input{
   border-right: 1px solid black;
-  width: 40%
+  width: 30%
 }
+
 
 .admin .main_admin .right_admin .table_input form input[type="text"]{
   width: 240px;
@@ -31,27 +32,18 @@
 
 }
 
-/*   Поиск   */
-.admin .main_admin .right_admin .table_brand{
-  text-align: -webkit-center;
-  width: 60%;
+.admin .main_admin .right_admin .table_list{
+  width: 70%;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
 }
-.admin .main_admin .right_admin .table_brand h3{
+
+
+.admin .main_admin .right_admin .table_atribute h3{
   margin: 0;
   text-align: center;
   margin-top: 10px;
-}
-.admin .main_admin .right_admin .table_brand .search{
-  
-  margin: 20px 0;
-}
-.admin .main_admin .right_admin .table_brand .search input[type="text"]{
-  width: 200px;
-  height: 25px;
-}
-.admin .main_admin .right_admin .table_brand .search input[type="submit"]{
-  padding: 6px 14px;
 }
 
 /*   Таблица   */

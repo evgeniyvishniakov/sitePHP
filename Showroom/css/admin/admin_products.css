@@ -1,54 +1,3 @@
-/* Styles go here */
-
-.admin{
-  max-width: 1300px;
-  margin: 0 auto;
-}
-.admin .top_admin{
-  display: flex;
-  justify-content: space-between;
-  border: 1px solid black;
-  padding: 15px 0;
-}
-.admin .top_admin .logo p{
-  margin: 0 50px;
-  
-}
-.admin .top_admin .logout{
-  display: flex;
-  align-items: center;
-  margin-right: 30px;
-}
-.admin .top_admin .logout p{
-  margin: 0 30px;
-}
-.admin .main_admin{
-  display: flex;
-}
-.admin .main_admin .left_admin{
-  border-right: 1px solid black;
-  border-left: 1px solid black;
-  width: 12%;
-}
-.admin .main_admin .left_admin ul{
-  margin: 0;
-  padding: 0;
-
-}
-.admin .main_admin .left_admin ul a{
-  display: block;
-  border-bottom: 1px solid black;
-  padding: 15px;
-}
-.admin .main_admin .left_admin ul a:hover{
-  background-color: #ccc;
-}
-
-.admin .main_admin .right_admin{
-  border: 1px solid black;
-  width: 88%;
-  display: flex;
-}
 
 /*  Поля добавлений товаров  */
 
@@ -69,6 +18,13 @@
 .admin .main_admin .right_admin .table_input{
   border-right: 1px solid black
 }
+.admin .main_admin .right_admin .table_input .pointer-events_none{
+  pointer-events: none;
+  opacity: 0.5;
+}
+.admin .main_admin .right_admin .table_input .pointer-events_auto{
+  pointer-events: auto;
+}
 
 .admin .main_admin .right_admin .table_input form input[type="text"]{
   width: 240px;
@@ -81,8 +37,10 @@
   text-align: center;
 }
 .admin .main_admin .right_admin .table_input form input[type="submit"]{
-  padding: 10px 50px;
+  padding: 10px 40px;
   margin-top: 10px;
+  display: block;
+  margin: 20px auto 0 auto;
 }
 
 .admin .main_admin .right_admin .table_prod h3{

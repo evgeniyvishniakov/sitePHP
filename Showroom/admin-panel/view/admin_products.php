@@ -1,48 +1,105 @@
+<?php 
+include_once './class/class_admin_categories.php';
+include_once './class/class_admin_brands.php';
+include_once './class/class_admin_colors.php';
+include_once './class/class_admin_sizes.php';
+
+
+$admim_brands = new Admin_Brands;
+$admim_colors = new Admin_Colors;
+$admim_sizes = new Admin_Sizes;
+
+$admim_cat = new Admin_Categories;
+
+
+//print_r($admim_cat->CategoriesParents());
+
+//foreach ($admim_cat->CategoriesParents() as $key => $value) {
+//  echo $value['name'];
+//}
+
+print_r($_FILES['image']);
+
+$cat_id = $_POST['categories'];
+
+if ($cat_id == 2) {
+  $cat_name = 'Мужское';
+}else {
+  $cat_name = 'Женское';
+}
+
+$name = htmlspecialchars($_POST['name']);
+$foto = $_FILES['image'];
+echo $foto;
+$price = $_POST['price'];
+$sale = $_POST['sale'];
+$size = $_POST['size'];
+$color = $_POST['color'];
+$child_cat = $_POST['child-cat'];
+$brand = $_POST['brand'];
+$qunt = $_POST['qunt'];
+
+
+?>
+
+
+
 <div class="table_input">
   <h3>Добавить Товар</h3>
+
   <form action="#" method="POST">
-  <p>Название:</p><input type="text">
-  <p>Фото:</p><input type="file">
-  <p>Цена:</p><input type="number">
-  <p>Скидка:</p><input type="number">
-  <p>Размер:</p><select name="Size[]">
-  <option selected disabled value="all">Выбрать</option>
-              <option value="xxs">XXS</option>
-              <option value="xs">XS</option>
-              <option value="s">S</option>
-              <option value="m">M</option>
-              <option value="l">L</option>
-              <option value="xl">XL</option>
-              <option value="xxl">XXL</option>
+
+  <p>Выберите категорию:</p><select  name="categories">
+      <option selected disabled>Выбрать</option>
+      <?php foreach ($admim_cat->CategoriesParents() as $key => $value) {?>
+      <option <?php if ($cat_id == $value['id']){echo 'selected';} ?>  value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
+      <?php  } ?>
+      </select>
+    <input type="submit" value="Выбрать" name="cat_ok"> 
+
+  <div class="pointer_events <?php if (!empty($cat_id)){echo 'pointer-events_auto';}else{echo 'pointer-events_none';} ?>">
+  
+    <p>Название:</p><input type="text" name="name" value="<?php echo $name; ?>">
+    <p>Фото:</p><input type="file" name="image" multiple accept="image/*,image/jpeg"/>
+    <p>Цена:</p><input type="number" name="price" value="<?php echo $price; ?>">
+    <p>Скидка:</p><input type="number"  name="sale" value="<?php echo $sale; ?>">
+
+          <p>Размер:</p><select name="size">
+              <option selected disabled>Выбрать</option>
+          <?php foreach ($admim_sizes->sizes_list() as $key => $value) {?>
+              <option <?php if ($size == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
+          <?php  } ?>
+              </select>
+
+          <p>Цвет:</p><select name="color">
+          <option selected disabled>Выбрать</option>
+          <?php foreach ($admim_colors->colors_list() as $key => $value) {?>
+              <option <?php if ($color == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
+          <?php  } ?>
+              </select>
+
+          <p>Подкатегория:</p><select name="child-cat">
+              <option selected disabled>Выбрать</option>
+          <?php foreach ($admim_cat->CategoriesChilds($cat_id) as $key => $value) {?>
+            <option <?php if ($child_cat == $value['name']){echo 'selected';} ?> value="<?php echo $value['name']; ?>"><?php echo $value['name'];?></option>
+            
+          <?php  } ?>
              </select>
-          <p>Цвет:</p><select name="Color[]">
-              <option selected disabled value="all">Выбрать</option>
-              <option value="red">Красный</option>
-              <option value="yellow">Желтый</option>
-              <option value="green">Зеленый</option>
-              <option value="blue">Синий</option>
-              <option value="orange">Оранжевый</option>
-              <option value="black">Черный</option>
+
+          <p>Бренд:</p><select name="brand">
+              <option selected disabled>Выбрать</option>
+          <?php foreach ($admim_brands->brands_list() as $key => $value) {?>
+              <option <?php if ($brand == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
+          <?php  } ?>     
              </select>
-          <p>Категория:</p><select name="categories[]">
-              <option selected disabled value="all">Выбрать</option>
-              <option value="red">Мужское</option>
-              <option value="yellow">Женской</option>
-             </select>
-          <p>Подкатегория:</p><select name="child-cat[]">
-              <option selected disabled value="all">Выбрать</option>
-              <option value="red">Штаны</option>
-              <option value="yellow">Футболки</option>
-             </select>
-          <p>Бренд:</p><select name="Color[]">
-              <option selected disabled value="all">Выбрать</option>
-              <option value="red">Puma</option>
-              <option value="yellow">Adidas</option>      
-             </select>
-          <p>Количество:</p><input type="number"></p>
-          <input type="submit" value="Сохранить">
-        </form>
-      </div>
+
+          <p>Количество:</p><input type="number" name="qunt" value="<?php echo $qunt;?>"></p>
+
+          <input type="submit" value="Сохранить" name="save_prod">
+        
+    </div>
+  </form>        
+</div>
       <div class="table_prod">
         <h3>Список товаров</h3>
         <div class="search">

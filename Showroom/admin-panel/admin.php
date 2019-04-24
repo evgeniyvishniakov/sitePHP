@@ -31,13 +31,14 @@ session_start();
             <a href="?get=products">Товары</a>
             <a href="#">Категории</a>
             <a href="#">Пользователи</a>
-            <a href="?get=brands">Бренды</a>
+            <a href="?get=atribute">Атрибуты</a>
+            
             </ul>
         </div>
         <div class="right_admin">
             <?php 
                 $admin_page = [
-                    "brands" ,
+                    "atribute" ,
                     "products" ,
                 ];
 

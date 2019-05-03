@@ -1,16 +1,14 @@
 <?php 
-
 include_once 'class_connect.php';
 
-class Admin_Sizes{
+Class Products{
     
-    
-    function sizes_list(){
+    function products_list(){
 
         $connect = new connectBD();
         $connect->connect();
 
-        $query_1 = $connect->pdo->query("SELECT * FROM sizes");
+        $query_1 = $connect->pdo->query("SELECT * FROM products ORDER BY id DESC");
         $row = $query_1->fetchAll();
 
         return $row;
@@ -18,3 +16,4 @@ class Admin_Sizes{
         $connect->closeConnect();
     }
 }
+?>

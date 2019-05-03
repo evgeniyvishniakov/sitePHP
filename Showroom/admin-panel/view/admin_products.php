@@ -3,99 +3,163 @@ include_once './class/class_admin_categories.php';
 include_once './class/class_admin_brands.php';
 include_once './class/class_admin_colors.php';
 include_once './class/class_admin_sizes.php';
+include_once './class/class_admin_products.php';
 
+$admim_brands_prod = new Admin_Brands;
+$admim_colors_prod = new Admin_Colors;
+$admim_sizes_prod = new Admin_Sizes;
+$admim_cat_prod = new Admin_Categories;
 
-$admim_brands = new Admin_Brands;
-$admim_colors = new Admin_Colors;
-$admim_sizes = new Admin_Sizes;
+// Добавление товаров
 
-$admim_cat = new Admin_Categories;
+$categories_id = $_POST['categories'];
 
-
-//print_r($admim_cat->CategoriesParents());
-
-//foreach ($admim_cat->CategoriesParents() as $key => $value) {
-//  echo $value['name'];
-//}
-
-print_r($_FILES['image']);
-
-$cat_id = $_POST['categories'];
-
-if ($cat_id == 2) {
-  $cat_name = 'Мужское';
+if ($categories_id == 2) {
+  $categories_name = 'Мужское';
 }else {
-  $cat_name = 'Женское';
+  $categories_name = 'Женское';
 }
 
-$name = htmlspecialchars($_POST['name']);
-$foto = $_FILES['image'];
-echo $foto;
+//print_r($_POST);
+
+$name = $_POST['name'];
+$foto = $_POST['image'];;
 $price = $_POST['price'];
 $sale = $_POST['sale'];
 $size = $_POST['size'];
 $color = $_POST['color'];
-$child_cat = $_POST['child-cat'];
+$child_cat_name = $_POST['child-cat'];
 $brand = $_POST['brand'];
-$qunt = $_POST['qunt'];
+$quantity = $_POST['qunt'];
+
+$admim_products = new Admin_Products($name, $foto, $price, $sale, $size, $color, $categories_name, $child_cat_name, $categories_id, $brand, $quantity);
 
 
+// Удаление товара
+
+if (!empty($_GET['del'])) {
+  $id_del = $_GET['del'];
+
+  $admim_products->products_del($id_del);
+}
+
+// Редактирование товара
+
+if (!empty($_GET['edit'])) {
+  $id_edit = $_GET['edit'];
+
+  foreach ($admim_products->products($id_edit) as $key => $value) {
+    $name = $value['name'];
+    $price = $value['price'];
+    $sale = $value['sale'];
+    $size = $value['size'];
+    $color = $value['color'];
+    $child_cat_name = $value['child_cat_name'];
+    $brand = $value['brand'];
+    $quantity = $value['quantity'];
+    $categories_id = $value['categories_id'];
+
+    if ($categories_id == 2) {
+      $categories_name = 'Мужское';
+    }else {
+      $categories_name = 'Женское';
+    }
+  }
+
+  if (!empty($_POST['save_edit'])) {
+    $admim_products->products_edit($id_edit);
+    header('Location: http://showroom/admin-panel/?get=products');
+    ob_end_flush();
+    exit;
+  }
+}
+
+// если нажата кнопка сохранить, добавляеv товар
+
+if (!empty($_POST['save_prod'])) {
+
+  if ($admim_products->products_add()) {
+    //header('Location: http://showroom/admin-panel/?get=products');
+    //ob_end_flush();
+    //exit;
+  }
+}  
 ?>
 
 
-
 <div class="table_input">
-  <h3>Добавить Товар</h3>
 
+<?php if (!empty($_GET['edit'])) { // если нажата кнопка редактировать то меняется заголовок ?>
+  <h3>Редактировать Товар</h3>
+<?php } else { ?>
+  <h3>Добавить Товар</h3>
+<?php } ?>
   <form action="#" method="POST">
 
   <p>Выберите категорию:</p><select  name="categories">
       <option selected disabled>Выбрать</option>
-      <?php foreach ($admim_cat->CategoriesParents() as $key => $value) {?>
-      <option <?php if ($cat_id == $value['id']){echo 'selected';} ?>  value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
+      <?php foreach ($admim_cat_prod->CategoriesParents() as $key => $value) {?>
+      <option <?php if ($categories_id == $value['id']){echo 'selected';} ?>  value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
       <?php  } ?>
       </select>
-    <input type="submit" value="Выбрать" name="cat_ok"> 
+      <?php if (!empty($_GET['edit'])) { // Если нажато редактировать, то убирается кнопка Выбрать категорию
+        echo '';
+       } else {?>
+        <input type="submit" value="Выбрать" name="cat_ok"> 
+      <?php } ?>
+    
 
-  <div class="pointer_events <?php if (!empty($cat_id)){echo 'pointer-events_auto';}else{echo 'pointer-events_none';} ?>">
+  <div class="pointer_events <?php if (!empty($categories_id)){echo 'pointer-events_auto';}else{echo 'pointer-events_none';} ?>">
   
     <p>Название:</p><input type="text" name="name" value="<?php echo $name; ?>">
-    <p>Фото:</p><input type="file" name="image" multiple accept="image/*,image/jpeg"/>
+    <form id="form" action="">
+    <input type="file" id="files" multiple name="image" value="<?php echo $foto; ?>">
+    <output id="list"></output>
+    </form>
     <p>Цена:</p><input type="number" name="price" value="<?php echo $price; ?>">
     <p>Скидка:</p><input type="number"  name="sale" value="<?php echo $sale; ?>">
 
           <p>Размер:</p><select name="size">
-              <option selected disabled>Выбрать</option>
-          <?php foreach ($admim_sizes->sizes_list() as $key => $value) {?>
+              <option value="Не выбрано" selected>Выбрать</option>
+          <?php foreach ($admim_sizes_prod->sizes_list() as $key => $value) {?>
               <option <?php if ($size == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
           <?php  } ?>
               </select>
 
           <p>Цвет:</p><select name="color">
-          <option selected disabled>Выбрать</option>
-          <?php foreach ($admim_colors->colors_list() as $key => $value) {?>
+          <option value="Не выбрано" selected>Выбрать</option>
+          <?php foreach ($admim_colors_prod->colors_list() as $key => $value) {?>
               <option <?php if ($color == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
           <?php  } ?>
               </select>
 
           <p>Подкатегория:</p><select name="child-cat">
-              <option selected disabled>Выбрать</option>
-          <?php foreach ($admim_cat->CategoriesChilds($cat_id) as $key => $value) {?>
-            <option <?php if ($child_cat == $value['name']){echo 'selected';} ?> value="<?php echo $value['name']; ?>"><?php echo $value['name'];?></option>
+              <option value="Не выбрано" selected>Выбрать</option>
+          <?php foreach ($admim_cat_prod->CategoriesChilds($categories_id) as $key => $value) {?>
+            <option <?php if ($child_cat_name === $value['name']){echo 'selected';} ?> value="<?php echo $value['name']; ?>"><?php echo $value['name'];?></option>
             
           <?php  } ?>
              </select>
 
           <p>Бренд:</p><select name="brand">
-              <option selected disabled>Выбрать</option>
-          <?php foreach ($admim_brands->brands_list() as $key => $value) {?>
+              <option value="Не выбрано" selected>Выбрать</option>
+          <?php foreach ($admim_brands_prod->brands_list() as $key => $value) {?>
               <option <?php if ($brand == $value['name']){echo 'selected';} ?> value="<?php echo $value['name'];?>"><?php echo $value['name'];?></option>
           <?php  } ?>     
              </select>
 
-          <p>Количество:</p><input type="number" name="qunt" value="<?php echo $qunt;?>"></p>
+          <p>Количество:</p><input type="number" name="qunt" value="<?php echo $quantity;?>"></p>
 
-          <input type="submit" value="Сохранить" name="save_prod">
+          <?php if (!empty($_GET['edit'])) {  // Если нажато редактировать, то меняется кнопка?>
+
+              <input type="submit" value="Редактировать" name="save_edit">
+          
+            <?php } else {?>
+
+              <input type="submit" value="Сохранить" name="save_prod">
+            <?php } ?>
+          
+          
         
     </div>
   </form>        
@@ -119,22 +183,24 @@ $qunt = $_POST['qunt'];
               <th>Бренд</th>
               <th>Количество</th>
             </tr>
+            <?php foreach ($admim_products->products_list() as $key => $value) {?>
             <tr>
-              <td>Фото</td>
-              <td>Платье</td>
-              <td>2500 грн</td>
-              <td>200 грн</td>
-              <td>m</td>
-              <td>Синий</td>
+              <td><img class="image_admin" src="/img/<?php echo $value['foto']; ?>" alt="<?php echo $value['foto']; ?>"></td>
+              <td><?php echo $value['name']; ?></td>
+              <td><?php echo $value['price'] . ' грн'; ?></td>
+              <td><?php echo $value['sale'] . ' грн'; ?></td>
+              <td><?php echo $value['size']; ?></td>
+              <td><?php echo $value['color']; ?></td>
               <td>
-                <p>Мужское</p>
-                <p>Штаны</p>
+                <p><?php echo $value['categories_name']; ?></p>
+                <p><?php echo $value['child_cat_name']; ?></p>
               </td>
-              <td>Levis</td>
-              <td>2 шт</td>
-              <td><a class="edit" href="?get=products&edit=2"><i class="fa fa-pencil-square-o"></i></a></td>
-              <td><a class="del" href=""><i class="fa fa-trash"></i></a></td>
+              <td><?php echo $value['brand']; ?></td>
+              <td><?php echo $value['quantity'] . ' шт'; ?></td>
+              <td><a class="edit" href="?get=products&edit=<?php echo $value['id']; ?>"><i class="fa fa-pencil-square-o"></i></a></td>
+              <td><a class="del" href="?get=products&del=<?php echo $value['id']; ?>"><i class="fa fa-trash"></i></a></td>
             </tr>
+            <?php  } ?> 
           </table>
         </div>
       </div>

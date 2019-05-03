@@ -83,6 +83,11 @@ border-bottom: 1px solid #56433D;
 border-right: 1px solid #56433D;
 padding: 0 15px;
 }
+td .image_admin{
+  height: 100px;
+  border: 1px solid #000;
+  width: 80px;
+}
 td:first-child {
 border-left: 1px solid #56433D;
 width: 100px;

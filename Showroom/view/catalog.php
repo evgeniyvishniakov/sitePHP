@@ -1,8 +1,10 @@
 <?php
 
 include_once './class/class_categories.php';
+include_once './class/class_products.php';
 
 $cat = new Categories;
+$produsts = new Products;
 
 ?>
 <section class="catalog">
@@ -117,108 +119,27 @@ $cat = new Categories;
     <div class="right_sidebar">
         <div class="catalog_products">
             <div class="row">
+
+            <?php foreach ($produsts->products_list() as $key => $value) {?> 
                 <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
+                    <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
                     <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
+                    <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
                     <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
+                        <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?></span></p>
                         <p class="desc">Classic casual t-shirt for women on the move.</p>
                         <p class="comp">100% cotton.</p>
                         <div class="icon">
                             <form action="#" mathod="post">
                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                 <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
+                                <button type="submit"><i class="fa fa-compress"></i></button>
                             </form>
                         </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <p class="price"><sup>£</sup>29.95</p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/photo2.png" alt=""></a>
-                    <div class="description">
-                        <p class="name">Womens burnt orange casual tee  £29.95</p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                            <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                    </div>    
+                </div> 
+            <?php } ?>    
+            
             </div>    
         </div>
 		

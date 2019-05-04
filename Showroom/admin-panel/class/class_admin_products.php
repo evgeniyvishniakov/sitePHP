@@ -5,7 +5,7 @@ include_once 'class_connect.php';
 class Admin_Products{
 
 
-    function __construct($name, $foto, $price, $sale, $size, $color, $categories_name, $child_cat_name, $categories_id, $brand, $quantity){
+    function __construct($name, $foto, $price, $sale, $size, $color, $categories_name, $child_cat_name, $child_cat_id, $categories_id, $brand, $quantity){
         $this->name = htmlspecialchars($name);
         $this->foto = htmlspecialchars($foto);
         $this->price = $price;
@@ -15,6 +15,7 @@ class Admin_Products{
         $this->categories_id = $categories_id;
         $this->categories_name = $categories_name;
         $this->child_cat_name = $child_cat_name;
+        $this->child_cat_id = $child_cat_id;
         $this->brand = $brand;
         $this->quantity = $quantity;
         $this->id_del = $id_del;
@@ -54,8 +55,8 @@ class Admin_Products{
         $connect = new connectBD();
         $connect->connect();
 
-        $add = $connect->pdo->prepare("INSERT INTO products (name, foto, price, sale, size, color, categories_name, child_cat_name, categories_id,brand,quantity) VALUES (?,?,?,?,?,?,?,?,?,?)");
-        $add->execute(array($this->name,$this->foto,$this->price,$this->sale,$this->size,$this->color,$this->categories_name,$this->child_cat_name,$this->categories_id,$this->brand,$this->quantity));
+        $add = $connect->pdo->prepare("INSERT INTO products (foto, name, price, sale, size, color, categories_name, categories_id, child_cat_name, child_cat_id, brand, quantity) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+        $add->execute(array($this->foto,$this->name,$this->price,$this->sale,$this->size,$this->color,$this->categories_name,$this->categories_id,$this->child_cat_name,$this->child_cat_id,$this->brand,$this->quantity));
 
         if ($add)
             return true;
@@ -81,7 +82,7 @@ class Admin_Products{
         $connect = new connectBD();
         $connect->connect();
 
-        $edit = $connect->pdo->query("UPDATE products SET name = '$this->name', foto = '$this->foto', price = '$this->price', sale = '$this->sale', size = '$this->size', color = '$this->color', categories_name = '$this->categories_name', child_cat_name = '$this->child_cat_name', categories_id = '$this->categories_id',  brand = '$this->brand', quantity = '$this->quantity'  WHERE id = '$id_edit'");
+        $edit = $connect->pdo->query("UPDATE products SET name = '$this->name', foto = '$this->foto', price = '$this->price', sale = '$this->sale', size = '$this->size', color = '$this->color', categories_name = '$this->categories_name', child_cat_name = '$this->child_cat_name', child_cat_id = '$this->child_cat_id', categories_id = '$this->categories_id',  brand = '$this->brand', quantity = '$this->quantity'  WHERE id = '$id_edit'");
 
         $connect->closeConnect();
     }

@@ -10,7 +10,7 @@ $cat = new Categories;
     <div class="header_top_background">
         <div class="header_top">
 		
-			<!-- ????? ??????   -->
+			<!-- Выбрать валюту   -->
 		
             <div class="header_top_curr">
                 <form action="" method="post">
@@ -24,7 +24,7 @@ $cat = new Categories;
                 </form>
             </div>
 			
-			<!-- ???????????, ???????????, ????? ? ???????   -->
+			<!-- РЕГИСТРАЦИЯ АВТОРИРАЗИЯ АДМИНКА   -->
 			
             <div class="header_top_reg">
                 <ul <?php if ($_SESSION['auth'] != 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
@@ -37,7 +37,7 @@ $cat = new Categories;
                 </ul>                  
             </div>
 			
-			<!-- ???????   -->
+			<!-- КОРЗИНА   -->
 			
             <div class="header_top_cart">
                 <a href="#"><i class="fa fa-shopping-cart"></i><span>empty</span><i class="fa fa-angle-down"></i></a>
@@ -47,13 +47,13 @@ $cat = new Categories;
     </div>    
     <div class="header_bottom">
 	
-		<!-- ???????   -->
+		<!-- ЛОГОТИП   -->
 	
         <div class="header_bottom_logo">
             <a href="/"><img src="img/logo.png" alt="logo"></a>
         </div>
 		
-		<!-- ?????? ???? ?????????   -->
+		<!-- ВЕРХНЕЕ МЕНЮ   -->
 		
         <div class="header_bottom_menu">
             <ul>
@@ -64,7 +64,7 @@ $cat = new Categories;
                     <a href="?category=2">Mens<i class="fa fa-angle-down"></i></a>
                     <div class="drop">
                         <ul>
-                        <?php foreach ($cat->CategoriesParents($id = 2) as $key => $value) {?>
+                        <?php foreach ($cat->CategoriesChilds() as $key => $value) {?>
                             <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
                         <?php } ?>
                         </ul>
@@ -74,7 +74,7 @@ $cat = new Categories;
                     <a href="?category=2">Womens<i class="fa fa-angle-down"></i></a>
                     <div class="drop">
                         <ul>
-                        <?php foreach ($cat->CategoriesParents($id = 3) as $key => $value) {?>
+                        <?php foreach ($cat->CategoriesChilds() as $key => $value) {?>
                             <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
                         <?php } ?>
                         </ul>
@@ -92,7 +92,7 @@ $cat = new Categories;
             </ul>
         </div>
 		
-		<!-- ?????   -->
+		<!-- ПОИСК   -->
 		
         <div class="header_bottom_search">
             <form action="#" method="POST">

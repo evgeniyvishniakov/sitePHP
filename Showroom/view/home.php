@@ -12,7 +12,7 @@
 	
     <div class="main_catalog">
 	
-		<!-- НАВИГАЦИЯ НА ГЛАВНОЙ  -->
+		<!-- НАВИГАЦИЯ НА ГЛАВНОЙ Странице -->
 	
         <div class="main_catalog_menu">
             <ul>

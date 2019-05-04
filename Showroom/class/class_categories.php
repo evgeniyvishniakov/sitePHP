@@ -1,6 +1,6 @@
 <?php 
-
 include_once 'class_connect.php';
+
 
 class Categories{
     
@@ -11,6 +11,19 @@ class Categories{
         $connect->connect();
 
         $query_1 = $connect->pdo->query("SELECT * FROM categories WHERE parent_id = $id");
+        $row = $query_1->fetchAll();
+
+        return $row;
+
+        $connect->closeConnect();
+    }
+    
+    function CategoriesChilds(){
+
+        $connect = new connectBD();
+        $connect->connect();
+
+        $query_1 = $connect->pdo->query("SELECT * FROM child_catategories");
         $row = $query_1->fetchAll();
 
         return $row;

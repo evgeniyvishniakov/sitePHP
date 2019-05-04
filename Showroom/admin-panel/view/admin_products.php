@@ -20,7 +20,7 @@ if ($categories_id == 2) {
   $categories_name = 'Женское';
 }
 
-//print_r($_POST);
+// Получаем данные с валуе и записываем в переменные
 
 $name = $_POST['name'];
 $foto = $_POST['image'];;
@@ -28,11 +28,27 @@ $price = $_POST['price'];
 $sale = $_POST['sale'];
 $size = $_POST['size'];
 $color = $_POST['color'];
-$child_cat_name = $_POST['child-cat'];
+
+$datas = explode('|',$_POST['child-cat']); // получаем id и имя дочерней категории, по разделителю разбиваем на массив!
+$child_cat_name = $datas[1];
+$child_cat_id = $datas[0];
+
 $brand = $_POST['brand'];
 $quantity = $_POST['qunt'];
 
-$admim_products = new Admin_Products($name, $foto, $price, $sale, $size, $color, $categories_name, $child_cat_name, $categories_id, $brand, $quantity);
+
+$admim_products = new Admin_Products($name, $foto, $price, $sale, $size, $color, $categories_name, $child_cat_name, $child_cat_id, $categories_id, $brand, $quantity);
+
+// если нажата кнопка сохранить, добавляеv товар
+
+if (!empty($_POST['save_prod'])) {
+
+  if ($admim_products->products_add()) {
+    header('Location: http://showroom/admin-panel/?get=products');
+    ob_end_flush();
+    exit;
+  }
+}  
 
 
 // Удаление товара
@@ -74,16 +90,7 @@ if (!empty($_GET['edit'])) {
   }
 }
 
-// если нажата кнопка сохранить, добавляеv товар
 
-if (!empty($_POST['save_prod'])) {
-
-  if ($admim_products->products_add()) {
-    //header('Location: http://showroom/admin-panel/?get=products');
-    //ob_end_flush();
-    //exit;
-  }
-}  
 ?>
 
 
@@ -102,7 +109,14 @@ if (!empty($_POST['save_prod'])) {
       <option <?php if ($categories_id == $value['id']){echo 'selected';} ?>  value="<?php echo $value['id']; ?>"><?php echo $value['name']; ?></option>
       <?php  } ?>
       </select>
-      <?php if (!empty($_GET['edit'])) { // Если нажато редактировать, то убирается кнопка Выбрать категорию
+  <p>Подкатегория:</p><select name="child-cat">
+      <option value="Не выбрано" selected>Выбрать</option>
+      <?php foreach ($admim_cat_prod->CategoriesChilds() as $key => $value) {?>
+      <option <?php if ($child_cat_name === $value['name']){echo 'selected';} ?> value="<?php echo $value['id'].'|'.$value['name'] ?>"><?php echo $value['name'];?></option>
+      <?php  } ?>
+      </select> 
+
+      <?php if (!empty($_GET['edit'] OR !empty($categories_id))) { // Если нажато редактировать, то убирается кнопка Выбрать категорию
         echo '';
        } else {?>
         <input type="submit" value="Выбрать" name="cat_ok"> 
@@ -133,13 +147,7 @@ if (!empty($_POST['save_prod'])) {
           <?php  } ?>
               </select>
 
-          <p>Подкатегория:</p><select name="child-cat">
-              <option value="Не выбрано" selected>Выбрать</option>
-          <?php foreach ($admim_cat_prod->CategoriesChilds($categories_id) as $key => $value) {?>
-            <option <?php if ($child_cat_name === $value['name']){echo 'selected';} ?> value="<?php echo $value['name']; ?>"><?php echo $value['name'];?></option>
-            
-          <?php  } ?>
-             </select>
+          
 
           <p>Бренд:</p><select name="brand">
               <option value="Не выбрано" selected>Выбрать</option>
@@ -157,9 +165,7 @@ if (!empty($_POST['save_prod'])) {
             <?php } else {?>
 
               <input type="submit" value="Сохранить" name="save_prod">
-            <?php } ?>
-          
-          
+            <?php } ?>  
         
     </div>
   </form>        

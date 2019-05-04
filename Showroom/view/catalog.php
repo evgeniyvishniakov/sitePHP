@@ -3,7 +3,7 @@
 include_once './class/class_categories.php';
 include_once './class/class_products.php';
 
-$cat = new Categories;
+$categories = new Categories;
 $produsts = new Products;
 
 ?>
@@ -19,19 +19,19 @@ $produsts = new Products;
 
         <div class="accordeon">
             <div class="acc-head">
-                <a href="#">Мужское<i class="fa fa-angle-down"></i></a>
+                <p>Мужское<i class="fa fa-angle-down"></i></p>
             </div>
             <ul class="ac-body">
-            <?php foreach ($cat->CategoriesParents($id = 2) as $key => $value) {?>
-                <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
+            <?php foreach ($categories->CategoriesChilds() as $key => $value) {?>
+                <li><a href="catalog?cat=2&child_cat=<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
             <?php } ?> 
             </ul>
             <div class="acc-head">
-                <a href="#">Женское<i class="fa fa-angle-down"></i></a>
+                <p>Женское<i class="fa fa-angle-down"></i></p>
             </div>
             <ul class="ac-body">
-            <?php foreach ($cat->CategoriesParents($id = 3) as $key => $value) {?>
-                <li><a href="<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
+            <?php foreach ($categories->CategoriesChilds() as $key => $value) {?>
+                <li><a href="catalog?cat=3&child_cat=<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
             <?php } ?> 
             </ul>
         </div>
@@ -68,14 +68,15 @@ $produsts = new Products;
 			<p>Размер</p>
 			<ol>
 				<form action="#" method="POST">
-				<p><input type="checkbox" name="Size[]" value="xxs">xxs</p>
-				<p><input type="checkbox" name="Size[]" value="xs">xs</p>
-				<p><input type="checkbox" name="Size[]" value="s">s</p>
-				<p><input type="checkbox" name="Size[]" value="m">m</p>
-				<p><input type="checkbox" name="Size[]" value="l">l</p>
-				<p><input type="checkbox" name="Size[]" value="xl">xl</p>
-				<p><input type="checkbox" name="Size[]" value="xxl">xxl</p>
-				<p><input type="checkbox" name="Size[]" value="xxxl">xxxl</p>
+                    <p><input type="checkbox" name="Size[]" value="xxs">xxs</p>
+                    <p><input type="checkbox" name="Size[]" value="xs">xs</p>
+                    <p><input type="checkbox" name="Size[]" value="s">s</p>
+                    <p><input type="checkbox" name="Size[]" value="m">m</p>
+                    <p><input type="checkbox" name="Size[]" value="l">l</p>
+                    <p><input type="checkbox" name="Size[]" value="xl">xl</p>
+                    <p><input type="checkbox" name="Size[]" value="xxl">xxl</p>
+                    <p><input type="checkbox" name="Size[]" value="xxxl">xxxl</p>
+                    <input type="submit" value="Применить фильтр" name="filter">
 				</form>
 			</ol>
 		</div>
@@ -108,9 +109,15 @@ $produsts = new Products;
 				<label class="checkbox-transform">
 					<input type="checkbox" name="Color[]" value="violet" class="checkbox__input">  
 					<span class="checkbox__label_violet"></span>
-				</label>
+                </label>
+                 
 			</form>
-		</div>
+        </div>
+        <?php print_r($_POST); ?>
+        <form action="#" method="post">
+        
+        </form>
+        
    
     </div>
 	
@@ -119,27 +126,62 @@ $produsts = new Products;
     <div class="right_sidebar">
         <div class="catalog_products">
             <div class="row">
-
-            <?php foreach ($produsts->products_list() as $key => $value) {?> 
-                <div class="item">
-                    <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
-                    <a class="view" href="#"><i class="fa fa-info"></i></a>
-                    <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
-                    <div class="description">
-                        <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?></span></p>
-                        <p class="desc">Classic casual t-shirt for women on the move.</p>
-                        <p class="comp">100% cotton.</p>
-                        <div class="icon">
-                            <form action="#" mathod="post">
-                                <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                <button type="submit"><i class="fa fa-compress"></i></button>
-                            </form>
-                        </div>
-                    </div>    
-                </div> 
-            <?php } ?>    
             
+            <?php if (!empty($_GET['child_cat'])) { // если категория выбрана выводим товары выбраной категории!
+                
+                $child_id = $_GET['child_cat'];
+                $cat_id = $_GET['cat']; ?> 
+
+                <?php foreach ($produsts->products_list_categories($cat_id, $child_id) as $key => $value) { ?> 
+                    <div class="item">
+                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
+                        <a class="view" href="#"><i class="fa fa-info"></i></a>
+                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
+                        <div class="description">
+                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
+                            <p class="desc">Classic casual t-shirt for women on the move.</p>
+                            <p class="comp">100% cotton.</p>
+                            <div class="icon">
+                                <form action="#" mathod="post">
+                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
+                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
+                                    <button type="submit"><i class="fa fa-compress"></i></button>
+                                </form>
+                            </div>
+                        </div>    
+                    </div> 
+                <?php } ?> 
+                <?php if (!$produsts->products_list_categories($cat_id, $child_id)) { // если товаров нет в данной категории
+
+                    echo 'Товары не найдены';
+                }
+                ?> 
+
+            <?php } else { // в противном случаи выводим все товары ?> 
+
+                <?php foreach ($produsts->products_list() as $key => $value) {?> 
+                    <div class="item">
+                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
+                        <a class="view" href="#"><i class="fa fa-info"></i></a>
+                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
+                        <div class="description">
+                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
+                            <p class="desc">Classic casual t-shirt for women on the move.</p>
+                            <p class="comp">100% cotton.</p>
+                            <div class="icon">
+                                <form action="#" mathod="post">
+                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
+                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
+                                    <button type="submit"><i class="fa fa-compress"></i></button>
+                                </form>
+                            </div>
+                        </div>    
+                    </div> 
+                <?php } ?> 
+
+            <?php } ?> 
+             
+                
             </div>    
         </div>
 		

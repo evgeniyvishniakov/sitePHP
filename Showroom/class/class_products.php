@@ -15,5 +15,18 @@ Class Products{
 
         $connect->closeConnect();
     }
+
+    function products_list_categories($cat_id, $child_id){
+
+        $connect = new connectBD();
+        $connect->connect();
+
+        $query_1 = $connect->pdo->query("SELECT * FROM products WHERE categories_id = $cat_id AND child_cat_id = $child_id");
+        $row = $query_1->fetchAll();
+
+        return $row;
+
+        $connect->closeConnect();
+    }
 }
 ?>

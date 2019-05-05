@@ -102,8 +102,8 @@
   margin-right: 10px;
   font-size: 15px;
 }
-.brand form select{
-  padding: 6px 10%;
+.brand select{
+  padding: 6px 10px;
   font-family: Montserrat-Regular;
   outline: none;
   cursor: pointer;
@@ -113,7 +113,7 @@
   
 }
 
-.brand form select option{
+.brand select option{
   height: 50px;
   font-size: 14px;
   color: red;
@@ -136,12 +136,12 @@
   margin: 20px 0;
   font-size: 15px;
 }
-.left_sidebar_price form p{
+.left_sidebar_price p{
   margin: 15px 0;
   font-size: 14px;
   font-family: Montserrat-Regular;
 }
-.left_sidebar_price form p input{
+.left_sidebar_price p input{
   margin-right: 10px;
   vertical-align: middle; 
   padding: 5p;
@@ -171,19 +171,19 @@
   width: 150px
 }
 
-.left_sidebar_size ol form p {
+.left_sidebar_size ol p {
   margin: 15px 0;
   font-family: Montserrat-Regular;
   text-transform: uppercase;
   font-size: 12px;
 }
-.left_sidebar_size ol form p input{
+.left_sidebar_size ol p input{
   vertical-align: middle;
   margin-right: 7px;
   cursor: pointer;
 }
 
-.left_sidebar_size ol form p:first-child{
+.left_sidebar_size ol p:first-child{
   margin: 0;
 }
 
@@ -196,13 +196,13 @@ border-bottom: 1px solid #575153;
   margin: 20px 0 20px 10%;
   color: #575153;
 }
-.left_sidebar_color form{
+.left_sidebar_color{
   display: flex;
   flex-wrap: wrap;
   margin-left: 10%;
   padding-bottom: 30px;
 }
-.left_sidebar_color form .checkbox-transform{
+.left_sidebar_color .checkbox-transform{
   margin: 0 5px;
 }
 

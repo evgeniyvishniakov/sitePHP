@@ -37,87 +37,80 @@ $produsts = new Products;
         </div>
 			
 			<!-- БРЕНД  -->
-		
-        <div class="brand">
-			<p>Бренд:</p>
-			<form action="#" method="post">
-				<select name="Brand">
-					<option value="all" selected>Выбрать</option>
-					<option value="puma"><p>Puma</p></option>
-					<option value="adidas"><p>Adidas</p></option>
-					<option value="nike">Nike</option>
-					<option value="reebok">Reebok</option>
-				</select>
-			</form>
-        </div>
+        <form action="#" method="POST">
+            <div class="brand">
+                <p>Бренд:</p>
 
-			<!-- ЦЕНА  -->
+                    <select name="Brand">
+                        <option value="all" selected>Выбрать</option>
+                        <option value="puma"><p>Puma</p></option>
+                        <option value="adidas"><p>Adidas</p></option>
+                        <option value="nike">Nike</option>
+                        <option value="reebok">Reebok</option>
+                    </select>
+            
+            </div>
 
-        <div class="left_sidebar_price">
-			<p>Цена</p>
-			<form action="#" method="POST">
-				<p><input type="checkbox" name="Price[]" value="300-500">от 300 грн до 500 грн</p>
-				<p><input type="checkbox" name="Price[]" value="501-1000">от 501 грн до 1000 грн</p>
-				<p><input type="checkbox" name="Price[]" value="1001-1500">от 1001 грн до 1500 грн</p>
-			</form>
-        </div>
-      
-			<!-- РАЗМЕР  -->
-	  
-        <div class="left_sidebar_size">
-			<p>Размер</p>
-			<ol>
-				<form action="#" method="POST">
-                    <p><input type="checkbox" name="Size[]" value="xxs">xxs</p>
-                    <p><input type="checkbox" name="Size[]" value="xs">xs</p>
-                    <p><input type="checkbox" name="Size[]" value="s">s</p>
-                    <p><input type="checkbox" name="Size[]" value="m">m</p>
-                    <p><input type="checkbox" name="Size[]" value="l">l</p>
-                    <p><input type="checkbox" name="Size[]" value="xl">xl</p>
-                    <p><input type="checkbox" name="Size[]" value="xxl">xxl</p>
-                    <p><input type="checkbox" name="Size[]" value="xxxl">xxxl</p>
-                    <input type="submit" value="Применить фильтр" name="filter">
-				</form>
-			</ol>
-		</div>
+                <!-- ЦЕНА  -->
+
+            <div class="left_sidebar_price">
+                <p>Цена</p>
+                    <p><input type="checkbox" name="Price[]" value="300-500">от 300 грн до 500 грн</p>
+                    <p><input type="checkbox" name="Price[]" value="501-1000">от 501 грн до 1000 грн</p>
+                    <p><input type="checkbox" name="Price[]" value="1001-1500">от 1001 грн до 1500 грн</p>
+            </div>
         
-			<!-- ЦВЕТ  -->
-		
-		<div class="left_sidebar_color">
-			<p>Цвет</p>
-			<form action="" method="POST">
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="red" class="checkbox__input">  
-					<span class="checkbox__label"></span>
-				</label>
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="green" class="checkbox__input">  
-					<span class="checkbox__label_green"></span>
-				</label>
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="yellow" class="checkbox__input">  
-					<span class="checkbox__label_yellow"></span>
-				</label>
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="blue" class="checkbox__input">  
-					<span class="checkbox__label_blue"></span>
-				</label>
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="brown" class="checkbox__input">  
-					<span class="checkbox__label_brown"></span>
-				</label>
-				<label class="checkbox-transform">
-					<input type="checkbox" name="Color[]" value="violet" class="checkbox__input">  
-					<span class="checkbox__label_violet"></span>
-                </label>
-                 
-			</form>
-        </div>
-        <?php print_r($_POST); ?>
-        <form action="#" method="post">
+                <!-- РАЗМЕР  -->
         
+            <div class="left_sidebar_size">
+                <p>Размер</p>
+                <ol>
+                        <p><input type="checkbox" name="Size[]" value="xxs">xxs</p>
+                        <p><input type="checkbox" name="Size[]" value="xs">xs</p>
+                        <p><input type="checkbox" name="Size[]" value="s">s</p>
+                        <p><input type="checkbox" name="Size[]" value="m">m</p>
+                        <p><input type="checkbox" name="Size[]" value="l">l</p>
+                        <p><input type="checkbox" name="Size[]" value="xl">xl</p>
+                        <p><input type="checkbox" name="Size[]" value="xxl">xxl</p>
+                        <p><input type="checkbox" name="Size[]" value="xxxl">xxxl</p>
+                        
+                </ol>
+            </div>
+            
+                <!-- ЦВЕТ  -->
+            
+            <div class="left_sidebar_color">
+                <p>Цвет</p>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="red" class="checkbox__input">  
+                        <span class="checkbox__label"></span>
+                    </label>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="green" class="checkbox__input">  
+                        <span class="checkbox__label_green"></span>
+                    </label>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="yellow" class="checkbox__input">  
+                        <span class="checkbox__label_yellow"></span>
+                    </label>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="blue" class="checkbox__input">  
+                        <span class="checkbox__label_blue"></span>
+                    </label>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="brown" class="checkbox__input">  
+                        <span class="checkbox__label_brown"></span>
+                    </label>
+                    <label class="checkbox-transform">
+                        <input type="checkbox" name="Color[]" value="violet" class="checkbox__input">  
+                        <span class="checkbox__label_violet"></span>
+                    </label>
+            </div>
+
+       
+            <input type="submit" value="Применить фильтр" name="filter">
         </form>
-        
+        <?php print_r($_POST); ?>    
    
     </div>
 	

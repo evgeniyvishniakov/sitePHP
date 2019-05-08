@@ -196,7 +196,7 @@ border-bottom: 1px solid #575153;
   margin: 20px 0 20px 10%;
   color: #575153;
 }
-.left_sidebar_color{
+.left_sidebar_color .color_check{
   display: flex;
   flex-wrap: wrap;
   margin-left: 10%;

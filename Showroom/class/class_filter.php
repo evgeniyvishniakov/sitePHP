@@ -4,6 +4,7 @@ include_once 'class_connect.php';
 
 class Filter{
 
+    private $brand = 'id > 0';
 
     public function __conctruct(){
 
@@ -20,7 +21,7 @@ class Filter{
         $connect->connect();
 
 
-        $query_1 = $connect->pdo->query("SELECT * FROM products WHERE $this->size $this->color $this->brand and ($this->price)");
+        $query_1 = $connect->pdo->query("SELECT * FROM products WHERE $this->size $this->color $this->brand AND $this->price");
         $row = $query_1->fetchAll();
 
         return $row;
@@ -29,11 +30,20 @@ class Filter{
     }
 
     // фильтр бренд
-    public function filter_brand($array){
+    public function filter_brand($array_brand){
 
-        $name_brand = $array['Brand'];
+        $name_brand = $array_brand['Brand'];
 
-        $this->brand = "brand in ('$name_brand')";
+        if ($name_brand) { // если не пусто
+
+            if ($name_brand == 'all') { // если выбрано все бренды
+
+                $this->brand = 'id'; // выводим все бренды по айдишнику
+
+            }else {
+                $this->brand = "brand in ('$name_brand')"; // либо по бренду
+            }
+        }
     }
 
     // фильтр цены
@@ -48,7 +58,6 @@ class Filter{
         }else{
             $this->price = 'price between 0 and 1500';
         }
-
     }
 
     // фильтр размера
@@ -64,17 +73,15 @@ class Filter{
 
         }else{
             $this->size = ''; // если масив пустой выводим пустую строку
-        }
-
-        
+        }   
     }
     
     // фильтр цвета
     public function filter_color($array_color){
 
-        $name_color = $array_color['Сolor'];
+        $name_color = $array_color['Color'];
 
-        if ($name_color) { // если масив существует
+        if (!empty($name_color)) { // если масив существует
 
             $name_color = implode("," , $name_color); // переобразовуем масив в строку 
     
@@ -82,9 +89,7 @@ class Filter{
 
         }else{
             $this->color = ''; // если масив пустой выводим пустую строку
-        }
-
-        
+        }   
     }
 
 

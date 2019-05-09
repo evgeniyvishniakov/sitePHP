@@ -3,12 +3,24 @@
 include_once './class/class_categories.php';
 include_once './class/class_products.php';
 include_once './class/class_filter.php';
+include_once './class/class_filter_atribute.php';
+include_once './class/class_filter.php';
 
-
-$categories = new Categories;
-$produsts = new Products;
 $filter = new Filter;
+$categories = new Categories; // вывод категорий
+$produsts = new Products; // вывод всех продуктов 
+$filter = new Filter; // класс для фильров
+$atribure = new Filter_Atribute; // вывод список атрибутов
+
+$filter->filter_brand($_POST);  // НУЖНО МАССИВ ПЕРЕДАТЬ В КОНСТРУКТОР Filter
+$filter->filter_size($_POST);
+$filter->filter_price($_POST);
+$filter->filter_color($_POST);
+
 ?>
+
+
+
 <section class="catalog">
   <div class="catalog_top_logo">
     <p>Catalog <span>view</span></p>
@@ -67,15 +79,11 @@ $filter = new Filter;
             <div class="left_sidebar_size">
                 <p>Размер</p>
                 <ol>
-                        <p><input type="checkbox" name="Size[]" value="xxs">xxs</p>
-                        <p><input type="checkbox" name="Size[]" value="xs">xs</p>
-                        <p><input type="checkbox" name="Size[]" value="s">s</p>
-                        <p><input type="checkbox" name="Size[]" value="m">m</p>
-                        <p><input type="checkbox" name="Size[]" value="l">l</p>
-                        <p><input type="checkbox" name="Size[]" value="xl">xl</p>
-                        <p><input type="checkbox" name="Size[]" value="xxl">xxl</p>
-                        <p><input type="checkbox" name="Size[]" value="xxxl">xxxl</p>
-                        
+
+                    <?php foreach ($atribure->size_atribute() as $key => $value) { ?>
+                        <p><input type="checkbox" name="Size[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+                    <?php } ?>
+    
                 </ol>
             </div>
             
@@ -111,43 +119,41 @@ $filter = new Filter;
                 </div>    
             </div>
             
-            <input type="submit" value="Применить фильтр" name="filter">
-        </form>
-        <?php 
+            <input type="submit" value="Применить фильтр" name="filter_ok">
+        </form>  
 
-            //print_r($_POST['Color']);
-
-            $filter->filter_brand($_POST);
-            $filter->filter_size($_POST);
-            $filter->filter_price($_POST);
-            print_r($filter->filter_color($_POST));
-            echo "<pre>";
-            print_r($filter->filterBD());
-            echo "</pre>";
-
-
-            $name_color = $_POST['Сolor'];
-            print_r($_POST['Сolor']);
-        if ($name_color) { // если масив существует
-
-            $name_color = implode("," , $name_color); // переобразовуем масив в строку 
-    
-             echo $name_color = "color in ('$name_color') and";
-
-        }else{
-             echo $name_color = 'Пусто'; // если масив пустой выводим пустую строку
-        }
-         ?>  
-
-   
     </div>
 	
 			<!-- ПРАВЫЙ САЙДБАР  -->
-	
-    <div class="right_sidebar">
+            <div class="right_sidebar">
         <div class="catalog_products">
             <div class="row">
             
+
+            <?php if (!empty($_POST['filter_ok'])) { // если нажата кнопка фильтр! ?>
+                
+                <?php foreach ($filter->filterBD() as $key => $value) { ?> 
+                    <div class="item">
+                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
+                        <a class="view" href="#"><i class="fa fa-info"></i></a>
+                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
+                        <div class="description">
+                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
+                            <p class="desc">Classic casual t-shirt for women on the move.</p>
+                            <p class="comp">100% cotton.</p>
+                            <div class="icon">
+                                <form action="#" mathod="post">
+                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
+                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
+                                    <button type="submit"><i class="fa fa-compress"></i></button>
+                                </form>
+                            </div>
+                        </div>    
+                    </div> 
+                <?php } ?>
+            <?php } else { // в противном случае віводим товарі по татегориям?>
+
+
             <?php if (!empty($_GET['child_cat'])) { // если категория выбрана выводим товары выбраной категории!
                 
                 $child_id = $_GET['child_cat'];
@@ -172,13 +178,12 @@ $filter = new Filter;
                         </div>    
                     </div> 
                 <?php } ?> 
+
                 <?php if (!$produsts->products_list_categories($cat_id, $child_id)) { // если товаров нет в данной категории
 
                     echo 'Товары не найдены';
-                }
-                ?> 
 
-            <?php } else { // в противном случаи выводим все товары ?> 
+                }?> 
 
                 <?php foreach ($produsts->products_list() as $key => $value) {?> 
                     <div class="item">
@@ -198,10 +203,9 @@ $filter = new Filter;
                             </div>
                         </div>    
                     </div> 
-                <?php } ?> 
-
+                <?php } ?>
             <?php } ?> 
-             
+        <?php } ?> 
                 
             </div>    
         </div>

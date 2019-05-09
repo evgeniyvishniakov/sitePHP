@@ -3,6 +3,7 @@ include_once 'class_connect.php';
 
 Class Products{
     
+    //вывод все товаров на страницу с сортировкой по возрастанию идентификатора
     function products_list(){
 
         $connect = new connectBD();
@@ -16,6 +17,7 @@ Class Products{
         $connect->closeConnect();
     }
 
+    // сортировка по категориям
     function products_list_categories($cat_id, $child_id){
 
         $connect = new connectBD();

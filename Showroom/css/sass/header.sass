@@ -1,0 +1,177 @@
+.header
+    &_top_background
+        background-color: #333
+        color: white
+    &_top
+        max-width: 1170px
+        margin: 0 auto
+        display: grid
+        grid-template-columns: 40% 45% 15%
+        align-items: center
+        &_curr
+            padding: 15px 0 19px 0
+            color: #686868
+            font-size: 13px
+            font-family: Montserrat-Regular
+            font-weight: bold
+            position: relative
+            & p
+                &:hover 
+                    color: #00c8c8
+                    transition: 0.5s
+            & select 
+                width: 57px
+                font-family: Montserrat-Regular
+                font-weight: bold
+                color: #686868
+                background-color: #333
+                border: none
+                outline: none
+                appearance: button
+                &:hover
+                    cursor: pointer
+            & option 
+                padding: 5px 0 
+                  
+            &:after
+                content: "\203A"
+                color: #686868 
+                position: absolute
+                left: 107px
+                top: 13px
+                transform: rotate(90deg)
+                font-size: 18px
+                
+                
+        &_reg 
+            text-align: right
+            margin-right: 40px 
+            & ul 
+                display: flex
+                justify-content: flex-end
+                & li 
+                    font-family: Montserrat-Regular
+                    font-weight: bold
+                    font-size: 13px
+                    margin-left: 38px
+                    & a
+                        color: #686868
+                        &:hover
+                            color: #00c8c8
+
+        &_cart 
+            text-align: right
+            & a 
+                border: 1px solid #00c8c8
+                padding: 16px 23px 
+                background-color: #00c8c8
+                color: white
+                & span 
+                    margin: 0 10px 0 15px
+                    font-family: Montserrat-Regular
+                    font-weight: bold
+                    font-size: 13px
+                & i 
+                    vertical-align: middle
+                    font-size: 19px
+                &:hover
+                    background-color: #08b3b3
+
+
+
+    &_bottom        
+        max-width: 1770px
+        margin: 0 auto
+        display: grid          
+        grid-template-columns: 30% 50% 20%
+        align-items: center
+        padding-top: 37px
+        &_logo
+            
+        &_menu 
+            text-align: right
+            & ul 
+                display: flex
+                justify-content: flex-end
+                & li 
+                    margin-left: 63px
+                    position: relative
+                    & a
+                        font-family: Montserrat-Regular
+                        font-weight: bold
+                        font-size: 13px
+                        text-transform: uppercase
+                        color: #222
+                        text-align: left
+                        &:hover
+                            color: #00c8c8
+                            transition: 0.3s
+                            & i
+                                margin-left: 10px
+                                transition: 0.5s
+                                color: #00c8c8  
+                    & i 
+                        display: block
+                        font-size: 14px
+                        color: #a7a7a7
+                        font-weight: bold
+                        transition: 0.5s
+                    &:hover
+                        & .drop
+                            display: flex
+                    & .drop 
+                        display: none
+                        position: absolute 
+                        text-align: left
+                        box-shadow: 5px 19px 19px rgba(0,0,0,0.1)
+                        & ul 
+                            display: block
+                            padding: 30px 45px
+                            & .name
+                                font-family: Montserrat-Regular
+                                font-size: 13px
+                                color: #575153
+                                margin-bottom: 35px
+                                margin-top: 20px
+                                display: block
+                            & li
+                                white-space: pre
+                                margin-bottom: 20px
+                                margin-left: 0
+                                & a 
+                                    text-transform: capitalize 
+                                    color: #9c9c9c
+                                    &:hover 
+                                        color: #00c8c8
+                                        transition: 0.5s  
+                        
+        &_search 
+            text-align: right
+            & form 
+                position: relative
+                & input 
+                    &.search 
+                        height: 32px
+                        border: 1px solid #e7e7e7
+                        padding-left: 10px
+                        font-family: Montserrat-Regular
+                        color: #a7a7a7
+                        outline: none
+                        max-width: 190px
+                & button        
+                    &.search_sub
+                        border: none
+                        background-color: transparent 
+                        font-size: 22px
+                        color: #989898
+                        position: absolute
+                        right: 10px
+                        top: 5px
+                        cursor: pointer
+                        outline: none
+
+
+                        
+                        
+     
+        

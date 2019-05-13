@@ -1,18 +1,6 @@
 <?php 
 session_start();
 ob_start();
-
-
-$admin_page[] = ["name"=>"Главная", "url"=>"home"];
-$admin_page[] = ["name"=>"Товары", "url"=>"products"];
-$admin_page[] = ["name"=>"Категории", "url"=>"categories"];
-$admin_page[] = ["name"=>"Пользователи", "url"=>"users"];
-$admin_page[] = ["name"=>"Атрибуты", "url"=>"atributes"];
-
-//echo '<pre>';
-//var_dump($admin_page);
-//echo '</pre>';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +11,6 @@ $admin_page[] = ["name"=>"Атрибуты", "url"=>"atributes"];
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="/css/admin/style_admin.css">
     <link rel="stylesheet" type="text/css" href="../fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-    <script src="/js/jquery-3.3.1.min.js"></script>  
 </head>
 <body>
 
@@ -38,33 +25,75 @@ $admin_page[] = ["name"=>"Атрибуты", "url"=>"atributes"];
             <a href="">Выход</a>
         </div>
     </div>
-    
-    <div class="admin_nav_menu">
-      <ul class ="menu_list">
-      <?php  foreach ($admin_page as $name ) {?>
-          <a <?php if ($_GET['admin-page'] == $name['url']) echo "class=active"; ?> href="?admin-page=<?php echo $name['url']; ?>"> <?php echo $name['name']; ?></a>
-      <?php } ?>
-      </ul>
-    </div>
     <div class="main_admin">
-  
-            <?php                 
-                
-                  foreach ($admin_page as $name) {
-                    if ($name['url'] == $_GET['admin-page']) {
-                      require_once "view/admin_". $name['url'] .".php";    
-                    }
-                  }                                                         
-                
-            ?>
+        <div class="left_admin">
+            <ul>
+            <a href="#">Главная</a>
+            <a href="?get=products">Товары</a>
+            <a href="#">Категории</a>
+            <a href="#">Пользователи</a>
+            <a href="?get=atribute">Атрибуты</a>
+            
+            </ul>
+        </div>
+        <div class="right_admin">
+            <?php 
+                $admin_page = [
+                    "atribute" ,
+                    "products" ,
+                ];
 
+                foreach ($admin_page as $page ) {
+                   if ($page == $_GET['get']) {
+                        require_once "view/admin_". $page .".php";
+                   }
+                }
+            
+            ?>
+        </div>
     </div>
-</section> 
+</section>   
 <script>
     
-  
-</script>
+function handleFileSelect(evt) {
+    var files = evt.target.files;
 
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = 
+          [
+            '<img style="height: 75px; border: 1px solid #000; margin: 5px" src="', 
+            e.target.result,
+            '" title="', escape(theFile.name), 
+            '"/>'
+          ].join('');
+          
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+</script>
 </body>
 </html>
 

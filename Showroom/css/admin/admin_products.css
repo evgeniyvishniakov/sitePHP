@@ -1,65 +1,63 @@
 
 /*  Поля добавлений товаров  */
 
-.admin .main_admin .table_input{
-  width: 25%;
-}
-.admin .main_admin .table_input h3{
+
+.admin .main_admin .right_admin .table_input h3{
   margin: 0;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
-.admin .main_admin .table_input form{
+.admin .main_admin .right_admin .table_input form{
   text-align: center;
   padding: 20px;
 }
-.admin .main_admin .table_input form p{
+.admin .main_admin .right_admin .table_input form p{
   margin: 10px 0;
 }
 
-.admin .main_admin .table_input{
+.admin .main_admin .right_admin .table_input{
   border-right: 1px solid black
 }
-.admin .main_admin .table_input .pointer-events_none{
+.admin .main_admin .right_admin .table_input .pointer-events_none{
   pointer-events: none;
   opacity: 0.5;
 }
-.admin .main_admin .table_input .pointer-events_auto{
+.admin .main_admin .right_admin .table_input .pointer-events_auto{
   pointer-events: auto;
 }
 
-.admin .main_admin .table_input form input[type="text"]{
+.admin .main_admin .right_admin .table_input form input[type="text"]{
   width: 240px;
   height: 25px;
   padding-left: 5px;
 }
-.admin .main_admin .table_input form input[type="number"]{
+.admin .main_admin .right_admin .table_input form input[type="number"]{
   width: 100px;
   height: 25px;
   text-align: center;
 }
-.admin .main_admin .table_input form input[type="submit"]{
+.admin .main_admin .right_admin .table_input form input[type="submit"]{
   padding: 10px 40px;
   margin-top: 10px;
   display: block;
   margin: 20px auto 0 auto;
 }
 
-.admin .main_admin .table_prod h3{
+.admin .main_admin .right_admin .table_prod h3{
   margin: 0;
   text-align: center;
-  margin-top: 30px;
+  margin-top: 10px;
 }
-.admin .main_admin .table_prod .search{
+.admin .main_admin .right_admin .table_prod .search{
   text-align: center;
   margin: 20px 0;
 
 }
-.admin .main_admin .table_prod .search input[type="text"]{
+.admin .main_admin .right_admin .table_prod .search input[type="text"]{
   width: 200px;
   height: 25px;
 }
-.admin .main_admin .table_prod .search input[type="submit"]{
+.admin .main_admin .right_admin .table_prod .search input[type="submit"]{
   padding: 6px 15px;
 }
 /*   Таблица   */

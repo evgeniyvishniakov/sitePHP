@@ -22,34 +22,29 @@
   .admin .top_admin .logout p{
     margin: 0 30px;
   }
-  .admin .admin_nav_menu ul{
+  .admin .main_admin{
+    display: flex;
+  }
+  .admin .main_admin .left_admin{
+    width: 12%;
+  }
+  .admin .main_admin .left_admin ul{
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: space-between;
   }
-  .admin .admin_nav_menu ul a{
+  .admin .main_admin .left_admin ul a{
     display: block;
     border-bottom: 1px solid black;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding: 15px;
-    font-family: Montserrat-Regular;
-    color: #575153;
-    font-size: 15px;
-    text-decoration: none;
-    width: 100%;
   }
-  .admin .admin_nav_menu ul a:hover{
-    background-color: #8ef9f9;
+  .admin .main_admin .left_admin ul a:hover{
+    background-color: #ccc;
   }
-
-  .active{
-    background-color: #8ef9f9;
-    font-weight: bold;
-  }
-
-  .admin .main_admin{
+  
+  .admin .main_admin .right_admin{
     border: 1px solid black;
+    width: 88%;
     display: flex;
   }

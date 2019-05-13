@@ -6,17 +6,25 @@ include_once './class/class_filter.php';
 include_once './class/class_filter_atribute.php';
 include_once './class/class_filter.php';
 
-$filter = new Filter;
+
 $categories = new Categories; // вывод категорий
 $produsts = new Products; // вывод всех продуктов 
 $filter = new Filter; // класс для фильров
 $atribure = new Filter_Atribute; // вывод список атрибутов
 
+
+$filter->filter_parents_cat($_POST);
+$filter->filter_child_cat($_POST);
 $filter->filter_brand($_POST);  // НУЖНО МАССИВ ПЕРЕДАТЬ В КОНСТРУКТОР Filter
 $filter->filter_size($_POST);
 $filter->filter_price($_POST);
 $filter->filter_color($_POST);
 
+
+//echo '<pre>';
+//var_dump($_POST);
+//echo '</pre>';
+				
 ?>
 
 
@@ -28,41 +36,44 @@ $filter->filter_color($_POST);
   </div>
   <div class="catalog_sidebar">
     <div class="left_sidebar">
+		<form action="#" method="POST">
+		
+				<!-- РОДИТЕЛЬСКИЕ КАТЕГОРИИ  -->
+				
+			<div class="left_sidebar_categories">
+				<p>Категории</p>
+					<ol>
 
-                <!-- АККАРДЕОН  -->
-
-        <div class="accordeon">
-            <div class="acc-head">
-                <p>Мужское<i class="fa fa-angle-down"></i></p>
+						<?php foreach ($atribure->brand_parents_categories() as $key => $value) { ?>
+							<p><input type="checkbox" name="Parents_cat[]" value="<?php echo $value['name']; ?>"><label><?php echo $value['name']; ?></label></p>
+						<?php } ?>
+		
+					</ol>
             </div>
-            <ul class="ac-body">
-            <?php foreach ($categories->CategoriesChilds() as $key => $value) {?>
-                <li><a href="catalog?cat=2&child_cat=<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
-            <?php } ?> 
-            </ul>
-            <div class="acc-head">
-                <p>Женское<i class="fa fa-angle-down"></i></p>
-            </div>
-            <ul class="ac-body">
-            <?php foreach ($categories->CategoriesChilds() as $key => $value) {?>
-                <li><a href="catalog?cat=3&child_cat=<?php echo  $value['id']; ?>"><?php echo  $value['name']; ?></a></li>
-            <?php } ?> 
-            </ul>
-        </div>
 			
-			<!-- БРЕНД  -->
-        <form action="#" method="POST">
-            <div class="brand">
-                <p>Бренд:</p>
+				<!-- ДОЧЕРНИЕ КАТЕГОРИИ  -->
+				
+			<div class="left_sidebar_categories">
+					<ol>
 
-                    <select name="Brand" >
-                        <option value="all" selected>Выбрать</option>
-                        <option value="Puma"><p>Puma</p></option>
-                        <option value="Adidas"><p>Adidas</p></option>
-                        <option value="Nike">Nike</option>
-                        <option value="Reebok">Reebok</option>
-                    </select>
-            
+						<?php foreach ($atribure->brand_child_categories() as $key => $value) { ?>
+							<p><input type="checkbox" name="Child_cat[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+						<?php } ?>
+		
+					</ol>
+            </div>
+        
+				<!-- БРЕНД  -->
+				
+            <div class="left_sidebar_brand">
+				<p>Бренд</p>
+					<ol>
+
+						<?php foreach ($atribure->brand_atribute() as $key => $value) { ?>
+							<p><input type="checkbox" name="Brand[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+						<?php } ?>
+		
+					</ol>
             </div>
 
                 <!-- ЦЕНА  -->
@@ -119,94 +130,69 @@ $filter->filter_color($_POST);
                 </div>    
             </div>
             
-            <input type="submit" value="Применить фильтр" name="filter_ok">
+            <input class="filter_btn" type="submit" value="Применить фильтр" name="filter_ok">
+			
         </form>  
 
     </div>
 	
 			<!-- ПРАВЫЙ САЙДБАР  -->
-            <div class="right_sidebar">
+    <div class="right_sidebar">
         <div class="catalog_products">
             <div class="row">
-            
-
-            <?php if (!empty($_POST['filter_ok'])) { // если нажата кнопка фильтр! ?>
+            		
+                <?php if (!empty($_POST['filter_ok'])) {  // если нажата фильтр выводим отфильрованые товары!  ?>  
                 
-                <?php foreach ($filter->filterBD() as $key => $value) { ?> 
-                    <div class="item">
-                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
-                        <a class="view" href="#"><i class="fa fa-info"></i></a>
-                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
-                        <div class="description">
-                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
-                            <p class="desc">Classic casual t-shirt for women on the move.</p>
-                            <p class="comp">100% cotton.</p>
-                            <div class="icon">
-                                <form action="#" mathod="post">
-                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                    <button type="submit"><i class="fa fa-compress"></i></button>
-                                </form>
-                            </div>
-                        </div>    
-                    </div> 
-                <?php } ?>
-            <?php } else { // в противном случае віводим товарі по татегориям?>
+					<?php foreach ($filter->filterBD() as $key => $value) { ?> 
+						<div class="item">
+							<p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
+							<a class="view" href="#"><i class="fa fa-info"></i></a>
+							<a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
+							<div class="description">
+								<p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
+								<p class="desc">Classic casual t-shirt for women on the move.</p>
+								<p class="comp">100% cotton.</p>
+								<div class="icon">
+									<form action="#" mathod="post">
+										<button type="submit"><i class="fa fa-shopping-cart"></i></button>
+										<button type="submit"><i class="fa fa-heart-o"></i></button>
+										<button type="submit"><i class="fa fa-compress"></i></button>
+									</form>
+								</div>
+							</div>    
+						</div> 
+					<?php } ?>
+					
+					<?php if (!$filter->filterBD()) { // если товаров нет 
 
-
-            <?php if (!empty($_GET['child_cat'])) { // если категория выбрана выводим товары выбраной категории!
-                
-                $child_id = $_GET['child_cat'];
-                $cat_id = $_GET['cat']; ?> 
-
-                <?php foreach ($produsts->products_list_categories($cat_id, $child_id) as $key => $value) { ?> 
-                    <div class="item">
-                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
-                        <a class="view" href="#"><i class="fa fa-info"></i></a>
-                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
-                        <div class="description">
-                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
-                            <p class="desc">Classic casual t-shirt for women on the move.</p>
-                            <p class="comp">100% cotton.</p>
-                            <div class="icon">
-                                <form action="#" mathod="post">
-                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                    <button type="submit"><i class="fa fa-compress"></i></button>
-                                </form>
-                            </div>
-                        </div>    
-                    </div> 
-                <?php } ?> 
-
-                <?php if (!$produsts->products_list_categories($cat_id, $child_id)) { // если товаров нет в данной категории
-
-                    echo 'Товары не найдены';
-
-                }?> 
-
-                <?php foreach ($produsts->products_list() as $key => $value) {?> 
-                    <div class="item">
-                        <p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
-                        <a class="view" href="#"><i class="fa fa-info"></i></a>
-                        <a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
-                        <div class="description">
-                            <p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
-                            <p class="desc">Classic casual t-shirt for women on the move.</p>
-                            <p class="comp">100% cotton.</p>
-                            <div class="icon">
-                                <form action="#" mathod="post">
-                                    <button type="submit"><i class="fa fa-shopping-cart"></i></button>
-                                    <button type="submit"><i class="fa fa-heart-o"></i></button>
-                                    <button type="submit"><i class="fa fa-compress"></i></button>
-                                </form>
-                            </div>
-                        </div>    
-                    </div> 
-                <?php } ?>
-            <?php } ?> 
-        <?php } ?> 
-                
+						echo 'Товары не найдены, <a href="catalog"> вернуться к списку?</a>';
+						
+						}
+					?> 
+					
+				<?php } else { // в противном случаи выводим все товары ?>
+						   
+					<?php foreach ($produsts->products_list() as $key => $value) { ?> 
+						<div class="item">
+							<p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
+							<a class="view" href="#"><i class="fa fa-info"></i></a>
+							<a href="#"><img src="img/<?php echo $value['foto'] ?>" alt="<?php echo $value['foto'] ?>"></a>
+							<div class="description">
+								<p class="name"><?php echo $value['name'] ?> <span><?php echo $value['price'] ?>£</span></p>
+								<p class="desc">Classic casual t-shirt for women on the move.</p>
+								<p class="comp">100% cotton.</p>
+								<div class="icon">
+									<form action="#" mathod="post">
+										<button type="submit"><i class="fa fa-shopping-cart"></i></button>
+										<button type="submit"><i class="fa fa-heart-o"></i></button>
+										<button type="submit"><i class="fa fa-compress"></i></button>
+									</form>
+								</div>
+							</div>    
+						</div> 
+					<?php } ?> 
+				<?php } ?> 
+              
             </div>    
         </div>
 		

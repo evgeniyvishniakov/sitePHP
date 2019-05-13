@@ -2,47 +2,48 @@
 /*  Поля добавлений товаров  */
 
 
-.admin .main_admin .table_input h3{
+.admin .main_admin .right_admin .table_input h3{
   margin: 0;
   text-align: center;
   margin-top: 10px;
 }
-.admin .main_admin .table_input form{
+.admin .main_admin .right_admin .table_input form{
   text-align: center;
   padding: 20px;
 }
-.admin .main_admin .table_input form p{
+.admin .main_admin .right_admin .table_input form p{
   margin: 10px 0;
 }
 
-.admin .main_admin .table_input{
+.admin .main_admin .right_admin .table_input{
   border-right: 1px solid black;
   width: 30%
 }
 
 
-.admin .main_admin .table_input form input[type="text"]{
+.admin .main_admin .right_admin .table_input form input[type="text"]{
   width: 240px;
   height: 25px;
   padding-left: 5px;
 }
-.admin .main_admin .table_input form input[type="submit"]{
+.admin .main_admin .right_admin .table_input form input[type="submit"]{
   padding: 10px 50px;
   margin-top: 30px;
 
 }
 
-.admin .main_admin .table_list{
-  width: 80%;
+.admin .main_admin .right_admin .table_list{
+  width: 70%;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-around;
 }
 
 
-.admin .main_admin .table_atribute h3{
-  margin: 10px 0;
+.admin .main_admin .right_admin .table_atribute h3{
+  margin: 0;
   text-align: center;
+  margin-top: 10px;
 }
 
 /*   Таблица   */

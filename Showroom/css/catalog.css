@@ -38,90 +38,69 @@
   width: 80%;
 }
 
-/*  Аккордеон */
+/*  Категории */
 
-.accordeon {
-  width: 100%;
+.left_sidebar_categories{
+  padding: 10px 0 0 10%;
   border-bottom: 1px solid #575153;
-  border-top: 1px solid #575153;
-  padding: 20px 0 30px 0;
+  text-align: left;
 }
- 
-.accordeon .acc-head {
-	padding: 10px;
-  border-bottom: 1px solid #c0c0c0;
+
+.left_sidebar_categories ol{
+	padding-inline-start: 15px;
+	margin-bottom: 30px;
+}
+.left_sidebar_categories p{
+	font-family: Montserrat-Regular;
+	color: #575153;
+	margin: 20px 0;
+	font-size: 15px;
+}
+
+.left_sidebar_categories ol p {
+  margin: 15px 0;
+  font-family: Montserrat-Regular;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.left_sidebar_categories ol p input{
+  vertical-align: middle;
+  margin-right: 7px;
   cursor: pointer;
-  display: flex;
-}
-
-.accordeon .acc-head{
-  padding-left: 10%;
-}
-
-.accordeon .acc-head p{
-  font-family: Montserrat-Regular;
-  color: #575153;
-
-}
-.accordeon .acc-head p i{
- margin-left: 10px;
- font-size: 18px;
-}
- 
-.accordeon .ac-body {
-	padding-top: 5px;
-  display: none;
-  
-}
-.accordeon ul li{
-  margin: 5px 0 0 20%;
-}
-.accordeon ul li a{
-  font-family: Montserrat-Regular;
-  color: #575153;
-  font-size: 14px;
-}
-.accordeon ul li a:hover{
-  color: #00c8c8;
-  transition: 0.3s;
-  
 }
 
 /*  Бренд  */
 
 
-.brand{
+.left_sidebar_brand{
+  padding: 10px 0 0 10%;
   border-bottom: 1px solid #575153;
-  padding: 20px 0 20px 10%;
-  display: flex;
-  align-items: center;
-}
-.brand p{
-  font-family: Montserrat-Regular;
-  color: #575153;
-  margin-right: 10px;
-  font-size: 15px;
-}
-.brand select{
-  padding: 6px 10px;
-  font-family: Montserrat-Regular;
-  outline: none;
-  cursor: pointer;
-  position: relative;
-  justify-content: center;
-  font-size: 14px;
-  
+  text-align: left;
 }
 
-.brand select option{
-  height: 50px;
-  font-size: 14px;
-  color: red;
-  font-family: Montserrat-Regular;
-  color: #575153;
-  padding: 15px;
-  outline: none;
+.left_sidebar_brand ol{
+	padding-inline-start: 15px;
+	margin-bottom: 30px;
 }
+.left_sidebar_brand p{
+	font-family: Montserrat-Regular;
+	color: #575153;
+	margin: 20px 0;
+	font-size: 15px;
+}
+
+.left_sidebar_brand ol p {
+  margin: 15px 0;
+  font-family: Montserrat-Regular;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.left_sidebar_brand ol p input{
+  vertical-align: middle;
+  margin-right: 7px;
+  cursor: pointer;
+}
+
 
 /*  Цена  */
 
@@ -146,6 +125,7 @@
   vertical-align: middle; 
   padding: 5p;
   cursor: pointer;
+  margin-left: 18px;
 }
 
 /*  Размер  */
@@ -425,6 +405,29 @@ border-bottom: 1px solid #575153;
   line-height:.5;
 }
 
+.filter_btn{
+    margin: 30px 13%;
+    color: #454647;
+    font-size: 12px;
+    font-family: Montserrat-Regular;
+    border: 2px solid #454647;
+    text-transform: uppercase;
+    padding: 24px 35px;
+    width: auto;
+    height: auto;
+    letter-spacing: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.filter_btn:hover{
+	background-color: #00c8c8;
+	border: 2px solid #00c8c8;
+	color: #ffffff;
+	-webkit-transition: 0.2s;
+	transition: 0.2s;
+}
+
 /* ПРАВЫЙ САЙДБАР КАТАЛОГ*/
 
 .catalog_products .row {
@@ -442,7 +445,7 @@ border-bottom: 1px solid #575153;
   width: calc(100% / 12 * 3 - 30px);
   background-color: #fff;
   position: relative;
-  max-height: 290px;
+  max-height: 400px;
   border: 1px solid black;
 }
 

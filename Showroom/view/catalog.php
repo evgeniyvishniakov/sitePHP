@@ -5,13 +5,23 @@ include_once './class/class_products.php';
 include_once './class/class_filter.php';
 include_once './class/class_filter_atribute.php';
 include_once './class/class_filter.php';
+include_once './class/class_pagination.php';
 
 
 $categories = new Categories; // вывод категорий
 $produsts = new Products; // вывод всех продуктов 
-$filter = new Filter; // класс для фильров
+
 $atribure = new Filter_Atribute; // вывод список атрибутов
 
+$nomberPage = $_GET['pagination'];
+
+if (isset($nomberPage)) {
+    $nomberPage = $_GET['pagination'];
+}else {
+    $nomberPage = 1;
+}
+
+$filter = new Filter($nomberPage); // класс для фильров
 
 $filter->filter_parents_cat($_POST);
 $filter->filter_child_cat($_POST);
@@ -21,12 +31,14 @@ $filter->filter_price($_POST);
 $filter->filter_color($_POST);
 
 
-//echo '<pre>';
-//var_dump($_POST);
-//echo '</pre>';
+
+echo '<pre>';
+var_dump($filter->NumberPages());
+echo '</pre>';
+
+
 				
 ?>
-
 
 
 <section class="catalog">
@@ -36,6 +48,7 @@ $filter->filter_color($_POST);
   </div>
   <div class="catalog_sidebar">
     <div class="left_sidebar">
+	
 		<form action="#" method="POST">
 		
 				<!-- РОДИТЕЛЬСКИЕ КАТЕГОРИИ  -->
@@ -172,7 +185,7 @@ $filter->filter_color($_POST);
 					
 				<?php } else { // в противном случаи выводим все товары ?>
 						   
-					<?php foreach ($produsts->products_list() as $key => $value) { ?> 
+					<?php foreach ($filter->filterBD() as $key => $value) { ?> 
 						<div class="item">
 							<p class="price"><sup>£</sup><?php echo $value['price'] ?></p>
 							<a class="view" href="#"><i class="fa fa-info"></i></a>
@@ -201,9 +214,9 @@ $filter->filter_color($_POST);
         <div class="pagination">
             <ul>
                 <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
+                <li><a href="?pagination=1">1</a></li>
+                <li><a href="?pagination=2">2</a></li>
+                <li><a href="?pagination=3">3</a></li>
                 <li><a href="#"><i class="fa fa-angle-right"></i></a></li>
             </ul>
         </div>

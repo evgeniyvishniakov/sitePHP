@@ -320,6 +320,17 @@
 
 /* Portrait tablets and small desktops */
 @media screen and (min-width: 768px) and (max-width: 1000px) {
+	.header_top {
+	  max-width: 1170px;
+	  margin: 0 auto;
+	  display: -ms-grid;
+	  display: grid;
+	  -ms-grid-columns: 30% 45% 25%;
+		  grid-template-columns: 30% 45% 25%;
+	  -webkit-box-align: center;
+		  -ms-flex-align: center;
+			  align-items: center;
+	}
   .header_bottom{
     display: flex;
     flex-direction: column;
@@ -332,11 +343,26 @@
   }
   .header_bottom_search{
     text-align: center;
+  }
+  
+  .header_bottom_menu ul li{
+	margin: 0 30px;       
   }
 }
 
 /* Landscape phones and portrait tablets */
 @media screen and (max-width: 767px) {
+	.header_top {
+	  max-width: 1170px;
+	  margin: 0 auto;
+	  display: -ms-grid;
+	  display: grid;
+	  -ms-grid-columns: 30% 45% 25%;
+		  grid-template-columns: 30% 45% 25%;
+	  -webkit-box-align: center;
+		  -ms-flex-align: center;
+			  align-items: center;
+	}
   .header_bottom{
     display: flex;
     flex-direction: column;
@@ -349,6 +375,9 @@
   }
   .header_bottom_search{
     text-align: center;
+  }
+  .header_bottom_menu ul li{
+	margin: 0 30px;       
   }
 }
 

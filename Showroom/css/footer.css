@@ -12,7 +12,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 1170px;
+  max-width: 1170px;
   margin: 0 auto;
 }
 
@@ -113,4 +113,38 @@
 .footer_bottom_soc ul li a i {
   font-size: 35px;
 }
-/*# sourceMappingURL=footer.css.map */
+
+
+
+/* Медиазапросы  */
+
+@media screen and (max-width: 1000px) {
+	.footer_menu{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.footer_bottom_soc ul {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 30px 120px;
+		justify-content: center;
+	}
+	.footer_bottom_soc ul li{
+		margin: 11px 26px;
+	}
+	
+}	
+
+@media screen and (max-width: 700px) {
+	.footer_bottom{
+		display: block;
+		
+	}
+	.footer_bottom_soc {
+		margin: 0;
+	}
+	.footer_bottom_awards {
+		margin: 0;
+	} 
+}	

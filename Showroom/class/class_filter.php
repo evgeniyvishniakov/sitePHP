@@ -1,13 +1,22 @@
 <?php 
 include_once 'class_connect.php';
+include_once 'class_pagination.php';
 
 	/**
 	* Класс формирует массив с отвильтроваными товарами
-	**/
+    **/
+    
+class Filter extends Pagination {
 
-class Filter{
+    private $notesOnPage;
+    public $nomberPage;
 
-	
+	public function __construct($nomberPage){
+
+        $this->nomberPage = $nomberPage;
+        $this->notesOnPage = 6;
+    }
+
 	/**
 	* Получаем с базы данные 
 	**/
@@ -17,8 +26,10 @@ class Filter{
         $connect = new connectBD();
         $connect->connect();
 
+        $from = ($this->nomberPage - 1) * $this->notesOnPage; // Получаем страницу 
 
-        $query_1 = $connect->pdo->query("SELECT * FROM products WHERE $this->parents_cat $this->child_cat $this->brand $this->size $this->color $this->price");
+
+        $query_1 = $connect->pdo->query("SELECT * FROM products WHERE $this->parents_cat $this->child_cat $this->brand $this->size $this->color $this->price LIMIT $from,$this->notesOnPage");
         $row = $query_1->fetchAll();
 
         return $row;
@@ -32,11 +43,11 @@ class Filter{
 	
     public function filter_parents_cat($array_parents_cat){
 
-        $name_parents_cat = $array_parents_cat['Perents_cat'];
+        $name_parents_cat = $array_parents_cat['Parents_cat'];
 
         if ($name_parents_cat) { // если не пусто
 
-            $name_parents_cat = implode("','" , $name_parents_cat); // переобразовуем масив в строку 
+			$name_parents_cat = implode("','" , $name_parents_cat); // переобразовуем масив в строку 
 
             $this->parents_cat = "categories_name in ('$name_parents_cat') and"; 
 
@@ -95,7 +106,7 @@ class Filter{
             $this->price = "price between $name_price"; // выводим выбраную цену
             
         }else{
-            $this->price = 'price between 0 and 1500';
+            $this->price = 'price > 0';
         }
     }
 
@@ -138,8 +149,5 @@ class Filter{
 
       
 }
-
-
-
 
 ?>

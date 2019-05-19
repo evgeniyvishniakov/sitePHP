@@ -1,0 +1,18 @@
+php_flag magic_qoutes_gpc Off 
+
+AddDefaultCharset UTF-8
+
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+
+RewriteRule ^(.*)$ index.php
+
+
+
+
+
+
+
+
+

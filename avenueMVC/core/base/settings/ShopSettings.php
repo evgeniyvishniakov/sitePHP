@@ -2,6 +2,7 @@
 
 namespace core\base\settings;
 
+use core\base\controllers\Singleton;
 use core\base\settings\Settings;
 
 /**
@@ -10,7 +11,8 @@ use core\base\settings\Settings;
 
 Class ShopSettings{
 
-    static private $_instance;
+    use Singleton;
+
     private $baseSettings;
 
     private $routes = [
@@ -28,22 +30,22 @@ Class ShopSettings{
     ];
 
     static public function get($property){
-        return self::instance()->$property;
+        return self::getInstance()->$property;
     }
     /**
 	* Шаблон  проектирования синглтон
     **/
     
-    static public function instance(){
+    static private function getInstance(){
 		
-		if(self::$_instance instanceof self){ // если хранится обьект нашего класа самого себя
+		if(self::$_instance instanceof self){ // если здесь нет ошибок
 			return self::$_instance; // вернем это свойство
         }
-        
-        self::$_instance = new self; // записать 
-        self::$_instance->baseSettings = Settings::instance(); //ссылка на обьект класса Settings
+
+        self::instance()->baseSettings = Settings::instance(); //ссылка на обьект класса Settings
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class()); // вызываем метод склеивания массивов шаблонов для плагинов и проекта
         self::$_instance->setProperty($baseProperties);
+
         return self::$_instance; // все равно вернет свойство
     }
 
@@ -53,11 +55,5 @@ Class ShopSettings{
                 $this->$name = $property;
             }
         }
-    }
-
-    private function __construct(){
-    }
-
-    private function __clone(){   
     }
 }

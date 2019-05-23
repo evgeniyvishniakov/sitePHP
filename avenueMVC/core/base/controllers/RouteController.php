@@ -2,31 +2,15 @@
 
 namespace core\base\controllers;
 
+use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
-use core\base\settings\ShopSettings;
 
 class RouteController extends BaseController {
-	
-	static private $_instance;
+
+    use Singleton; // подключаем трейт синглтон
 
 	protected $routes;
 
-	
-	private function clone(){
-	}
-	
-	/**
-	* Шаблон  проектирования синглтон
-	**/
-	
-	static public function getInstance(){
-		
-		if(self::$_instance instanceof self){ // если хранится обьект нашего класа
-			return self::$_instance; // вернем это свойство
-		}
-		
-		return self::$_instance = new self; // все равно вернет свойство
-	}
 
 	public function __construct(){	
 
@@ -42,7 +26,7 @@ class RouteController extends BaseController {
 
 			$this->routes = Settings::get('routes');
 
-			if (!$this->routes)throw new RouteException('Сайт на техническом обслуживании'); //если роутов нет, получаем исключение
+			if (!$this->routes)throw new RouteException('Отсутствуют маршруты в базовых настройках (RouteController)' , 1); //если роутов нет, получаем исключение
 
             $url = explode('/', substr($adress_str, strlen(PATH))); //адресную строку обрезать с первого символа
 			
@@ -63,9 +47,7 @@ class RouteController extends BaseController {
 					$pluginSettings = $this->routes['settings']['path'] . ucfirst($plugin . 'Settings'); // формируем имя к файлу настроек для плагина
 
 					if(file_exists($_SERVER['DOCUMENT_ROOT'] . PATH . $pluginSettings . 'php')){ //если по заданому пути существует файл
-
 						$pluginSettings = str_replace('/', '\\', $pluginSettings); // екранируем слеш, делаем полный нейм спейс
-
 						$this->routes = $pluginSettings::get('routes'); //перезаписываем свойство и вызываем данный класс через статическое свойство гет
 					}
 
@@ -132,11 +114,7 @@ class RouteController extends BaseController {
 			}
 			
 		}else {
-			try {
-				throw new \Exeption('некоректная дериктория сайта');
-			} catch (\Exeption $e) {
-				exit($e->getMessage());
-			}
+            throw new RouteException('Не корректная дериктория сайта', 1);
 		}
 
 	}

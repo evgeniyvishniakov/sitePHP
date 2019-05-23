@@ -6,7 +6,7 @@
 
 defined('VG_ACCESS') or die('Access denied');
 
-const TEMPLATE = 'tamplate/default/'; // шаблон проекта по умолчанию 
+const TEMPLATE = 'templates/default/'; // шаблон проекта по умолчанию 
 const ADMIN_TEMPLATE = 'core/admin/views'; // шаблон админки по умолчанию 
 
 const COOKIE_VERSION = '1.0.0'; // перелогинится пользователя
@@ -23,7 +23,7 @@ const ADMIN_CSS_JS = [ // пути к файлам для админ панел�
 ];
 
 const USER_CSS_JS = [ // пути к файлам для пректа
-		'styles' => [],
+		'styles' => ['css/style.css'],
 		'scripts' => []
 ]; 
 

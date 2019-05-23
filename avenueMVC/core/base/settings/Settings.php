@@ -7,9 +7,11 @@
 
 namespace core\base\settings;
 
+use core\base\controllers\Singleton;
+
 class Settings{
 
-    static private $_instance;
+    use Singleton; // подключаем трейт синглтон
 
     private $routes = [
         'admin' => [
@@ -29,7 +31,7 @@ class Settings{
             'path' => 'core/user/controllers/',
             'hrUrl' => true,
             'routes' => [
-
+				'site' => 'index/hello'
             ]
         ],
         'default' => [
@@ -43,29 +45,13 @@ class Settings{
         'text' => ['name', 'phone', 'adress'],
         'textarea' => ['content', 'keywords']
     ];
-    
-    private function __construct(){
-    }
 
-    private function __clone(){   
-    }
 
     static public function get($property){
         return self::instance()->$property;
     }
-    /**
-	* Шаблон  проектирования синглтон
-    **/
-    
-    static public function instance(){
-		
-		if(self::$_instance instanceof self){ // если хранится обьект нашего класа самого себя
-			return self::$_instance; // вернем это свойство
-		}
-		
-		return self::$_instance = new self; // все равно вернет свойство
-    }
-    
+
+
     public function clueProperties($class){
 
         $baseProperties = [];

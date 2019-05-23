@@ -4,7 +4,8 @@ AddDefaultCharset UTF-8
 
 RewriteEngine On
 
-RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !favicon.ico
 
 RewriteRule ^(.*)$ index.php
 

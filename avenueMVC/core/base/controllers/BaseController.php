@@ -17,16 +17,16 @@ abstract class BaseController{ // не сможем создать обьект 
 	protected $errors;
 	
     protected $controller;
-    protected $inputMethod; // собирает данные из базы данных
-    protected $outputMethod; // отвечает за подключение видом
-    protected $parameters;
+    protected $inputMethod; //входные методы
+    protected $outputMethod; //выходные методы
+    protected $parameters; // параметры методов
 
 
     protected $styles; //стили css
     protected $scripts; // скрипты js
 
 
-    public function route(){
+    public function route(){ // метод маршрутов
 		
         $controller = str_replace('/', '\\', $this->controller);
 

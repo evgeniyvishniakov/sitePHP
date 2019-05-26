@@ -46,7 +46,7 @@ Class ShopSettings{
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class()); // вызываем метод склеивания массивов шаблонов для плагинов и проекта
         self::$_instance->setProperty($baseProperties);
 
-        return self::$_instance; // все равно вернет свойство
+        return self::$_instance; // вернет свойство
     }
 
     protected function setProperty($properties){

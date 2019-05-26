@@ -1,6 +1,6 @@
 <?php
 /*
- * Маршрутные исключения
+ * Маршрутные исключения для админки
  */
 
 
@@ -10,7 +10,7 @@ namespace core\base\exceptions;
 use core\base\controllers\BaseMethods;
 
 
-class RouteException extends \Exception{
+class DbException extends \Exception{
 
     protected $messages;
 
@@ -28,7 +28,7 @@ class RouteException extends \Exception{
 
         //if($this->messages[$this->getCode()]) $this->message = $this->messages[$this->getCode()]; // если существует ошибка
 
-        $this->writeLog($error); // передаем сообщение ошибки для записи
+        $this->writeLog($error, 'db_log_txt'); // передаем сообщение ошибки для записи
 
     }
 

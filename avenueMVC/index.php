@@ -11,7 +11,7 @@ require_once 'core/base/settings/internal_settings.php'; // настройки �
 
 use core\base\exceptions\RouteException;
 use core\base\controllers\RouteController;
-
+use core\base\exceptions\DbException;
 
 try{
 	RouteController::instance()->route(); // возвращает ссылку на обьект класса
@@ -19,7 +19,9 @@ try{
 catch (RouteException $e){
 	exit($e->getMessage());
 }
-
+catch (DbException $e){
+	exit($e->getMessage());
+}
 
 
 ?>

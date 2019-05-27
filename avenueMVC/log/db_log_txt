@@ -1,0 +1,8 @@
+Fault: 27-05-2019 21:45:15 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESK,teachers.name DESK 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK,teachers.name DESK 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 30
+
+Fault: 27-05-2019 21:46:12 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESK,teachers.name DESK 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK,teachers.name DESK 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 30
+

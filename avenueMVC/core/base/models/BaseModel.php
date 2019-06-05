@@ -6,7 +6,7 @@ use core\base\controllers\Singleton;
 use core\base\exceptions\DbException;
 
 
-class BaseModel{
+class BaseModel extends BaseModelsMethods{
 	
 	use Singleton; // подключаем синглтон
 	
@@ -22,6 +22,14 @@ class BaseModel{
 		
 		$this->db->query("SET NAMES UTF8");
 	}
+	
+	/**
+	* @param @query 
+	* @param string $crud = r - SELECT / C - INSERT / u - UPDATE / d - DELET
+	* @param bool $return_id
+	* @param array|bool|mixed
+	* @param DbException
+	*/
 	
 	final public function query($query, $crud = 'r', $return_id = false){
 		
@@ -127,221 +135,170 @@ class BaseModel{
 
 
         $query = "SELECT $fields FROM $table $join $where $order $limit";
-        exit($query);
 
         return $this->query($query);
     }
 	
-	protected function createFields($set, $table = false){
+	/**
+	* @param @table - таблица для вставки данных
+	* @param array $set - массив параметров;
+	* fields => [поле => значение]; если не указан, то обрабатывается $_POST[поле => значение]
+	* разрешена передача например функций NOW() в качестве Mysql функции обычной строкой
+	* files => [поле => значение]; можно подать массив вида [ поле => [масив значений]]
+	* except => ['исключение 1','исключение 2'] - исключает данные еслементы массива из добавления в запрос
+	* return_id => true|false - возвращать или нет идентификатор вставленной записи
+	* return mixid
+	*/
+	
+	final public function add($table, $set = []){
 		
-		$set['fields'] =  (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : ['*']; // если есть то он и будет если нет то выбрать все
 		
-		$table = $table ? $table . '.' : ''; // если есть то он и будет c точкой в конце если нет то пустая строка
+		$set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : $_POST;
+		$set['files'] = (is_array($set['files']) && !empty($set['files'])) ? $set['files'] : false;
 		
-		$fields = '';
+		if(!$set['fields'] && !$set['files']) return false; //если нет никаких данных то прекращаем работу скрипта
+		
+		$set['return_id'] = $set['return_id'] ? true : false;
+		$set['except'] = (is_array($set['except']) && !empty($set['except'])) ? $set['except'] : false;
+	
+		$insert_arr = $this->createInsert($set['fields'], $set['files'], $set['except']);
 		
 		
-		foreach ($set['fields'] as $field){
-			$fields .= $table . $field . ','; // получится к примеру name.id
+		
+		if($insert_arr){
+			
+		$query = "INSERT INTO $table ({$insert_arr['fields']}) VALUES ({$insert_arr['values']})";
+			
+			return $this->query($query, 'c', $set['return_id']);
 		}
 		
-		return $fields;
+		return false;
 	}
 	
-	protected function createOrder($set, $table = false){
+	final public function edit($table, $set = []){
 		
-		$table = $table ? $table . '.' : ''; // если есть то он и будет c точкой в конце если нет то пустая строка
+		$set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : $_POST;
+		$set['files'] = (is_array($set['files']) && !empty($set['files'])) ? $set['files'] : false;
 		
-		$order_by = '';
+		if(!$set['fields'] && !$set['files']) return false; //если нет никаких данных то прекращаем работу скрипта
 		
-		if(is_array($set['fields']) && !empty($set['fields'])){
+		$set['except'] = (is_array($set['except']) && !empty($set['except'])) ? $set['except'] : false;
+		
+		if(!$set['all_rows']){
 			
-			$set['order_direction'] =  (is_array($set['order_direction']) && !empty($set['order_direction'])) ? $set['order_direction'] : ['ASC']; // если есть то он и будет если нет то вібрать все
-			
-			$order_by = 'ORDER BY ';
-			$direct_count = 0;
-			
-			foreach ($set['order'] as $order){
-				if ($set['order_direction'][$direct_count]){
-					$order_direction = strtoupper($set['order_direction'][$direct_count]);
-					$direct_count++;
-				}else{
-					$order_direction = strtoupper($set['order_direction'][$direct_count - 1]);
-				}
+			if($set['where']){
+				$where = $this->createWhere($set);
+			}else{
+				$columns = $this->showColumns($table);
 				
-				if(is_int($order)) $order_by .= $order . ' ' . $order_direction . ',';
-					else $order_by .= $table . $order . ' ' . $order_direction . ',';
+				if(!$columns) return false;
+				
+				if($columns['id_row'] && $set['fields'][$columns['id_row']]){
+					$where = 'WHERE ' . $columns['id_row'] . '=' . $set['fields'][$columns['id_row']];
+					unset($set['fields'][$columns['id_row']]);
+				}
 			}
-			
-			$order_by = rtrim($order_by, ',');
-			
 		}
 		
-		return $order_by;
+		$udate = $this->createUpdate($set['fields'], $set['files'], $set['except']);
+		
+		$query = "UPDATE $table SET $udate $where";
+		
+		return $this->query($query, 'u');
 		
 	}
-	
-	protected function createWhere($set, $table = false, $instruction = 'WHERE')
-    {
 
-        $table = $table ? $table . '.' : ''; // если есть то он и будет c точкой в конце если нет то пустая строка
+    /**
+     * @param $table - Таблици базы данных
+     * @param array $set
+     * 'fields' => ['id', 'name'], // какие поля
+     * 'where' => ['name' => 'masha', 'surname' => 'Sergeevna', 'fio' => 'Andrey', 'car' => 'Porshe', 'color' => $color], // Где
+     * 'operand' => ['IN', 'LIKE%', '<>', '=', 'NOT IN'],   //какой аператнд использовать не равно или равно единице, по умолчанию (=)
+     * 'condition' => ['AND', 'OR'],  // по каким елементам будет обьединять
+     * 'join' => [
+     *		[
+     *			'table' => 'join_table1',
+     *			'fields' => ['id as j_id', 'name as j_name'],
+     *			'type' => 'left',
+     *			'where' => ['name' => 'sasha'],
+     *			'operand' => ['='],
+     *			'condition' => ['OR'],
+     *			'on' => ['id', 'parent_id'],
+     *			'group_condition' => 'AND'
+     *		],
+     *		'join_table2' => [
+     *			'table' => 'join_table2',
+     *			'fields' => ['id as j2_id', 'name as j2_name'],
+     *			'type' => 'left',
+     *			'where' => ['name' => 'sasha'],
+     *			'operand' => ['='],
+     *			'condition' => ['AND'],
+     *			'on' => [
+     *				'table' => 'teachers',
+     *				'fields' => ['id', 'parent_id']
+     *			]
+     *		]
+     *	]
+     **/
 
-        $where = '';
+    public function delete($table, $set){
 
-        if (is_array($set['where']) && !empty($set['where'])) {
+	    $table = trim($table);
 
-            $set['operand'] = (is_array($set['operand']) && !empty($set['operand'])) ? $set['operand'] : ['='];
-            $set['condition'] = (is_array($set['condition']) && !empty($set['condition'])) ? $set['condition'] : ['AND'];
+	    $where = $this->createWhere($set, $table);
 
-            $where = $instruction;
-            $o_count = 0;
-            $c_count = 0;
+	    $columns = $this->showColumns($table);
+	    if(!$columns) return false;
 
-            foreach ($set['where'] as $key => $item) {
+	    if(is_array($set['fields']) && !empty($set['fields'])){
 
-                $where .= ' ';
-
-                if ($set['operand'][$o_count]) {
-                    $operand = $set['operand'][$o_count];
-                    $o_count++;
-                } else {
-                    $operand = $set['operand'][$o_count - 1];
-                }
-
-                if ($set['condition'][$c_count]) {
-                    $condition = $set['condition'][$c_count];
-                    $c_count++;
-                } else {
-                    $condition = $set['condition'][$c_count - 1];
-
-                }
-
-                if ($operand === 'IN' || $operand === 'NOT IN') {
-
-                    if (is_string($item) && strpos($item, 'SELECT') === 0) { //если в массиве масив
-                        $in_str = $item;
-                    } else {
-                        if (is_array($item)) $temp_item = $item;
-                        else $temp_item = explode(',', $item);
-
-                        $in_str = '';
-
-                        foreach ($temp_item as $v) {
-                            $in_str .= "'" . addslashes(trim($v)) . "',";
-                        }
-                    }
-
-                    $where .= $table . $key . ' ' . $operand . ' (' . trim($in_str, ',') . ') ' . $condition; //названиие таблици, где, IN (SELECT)
-
-
-                } elseif (strpos($operand, 'LIKE') !== false) { // если строка LIKE есть
-
-                    $like_template = explode('%', $operand); // если % будет перед то первій елемент масива пустота
-
-                    foreach ($like_template as $lt_key => $lt) {
-                        if (!$lt) { // если первый елемент пришол пустой , то есть перед LIKE стоит знак %
-                            if (!$lt_key) { //
-                                $item = '%' . $item;
-                            } else {
-                                $item .= '%';
-                            }
-                        }
-                    }
-
-                    $where .= $table . $key . ' LIKE ' . "'" . addslashes($item) . "' $condition";
-
-                } else {
-
-                    if (strpos($item, 'SELECT') === 0) { //если на первой позиции
-                        $where .= $table . $key . $operand . '(' . $item . ") $condition";
-                    } else {
-                        $where .= $table . $key . $operand . "'" . addslashes($item) . "' $condition";
-                    }
-                }
+	        if($columns['id_row']){
+	            $key = array_search($columns['id_row'], $set['fields']);
+	            if($key !== false) unset($set['fields'][$key]);
             }
 
-            $where = substr($where, 0, strrpos($where, $condition));
+            $fields = [];
+
+	        foreach($set['fields'] as $field){
+	            $fields[$field] = $columns[$field]['Default'];
+            }
+
+            $update = $this->createUpdate($fields, false, false);
+
+            $query = "UPDATE $table SET $update $where";
+        }else{
+
+	        $join_arr = $this->createJoin($set, $table);
+	        $join = $join_arr['join'];
+	        $join_tables = $join_arr['tables'];
+
+	        $query = 'DELETE ' . $table . $join_tables . ' FROM ' . $table . ' ' . $join . ' ' . $where;
 
         }
+        return $this->query($query, 'u');
+    }
 
-        return $where;
-
-	}
-
-	protected function createJoin($set, $table, $new_where = false){
-
-		$fields = '';
-		$join = '';
-		$where = '';
+	
+	final public function showColumns($table){
 		
-		if($set['join']){
+		$query = "SHOW COLUMNS FROM $table";
+		$res = $this->query($query);
+		
+		$columns = [];
+		
+		if($res){
 			
-			$join_table = $table;
-			
-			foreach($set['join'] as $key => $item){
-				if(is_int($key)){// если єто числовой масив
-					if(!$item['table']) continue; // если таблици нет продолжим 
-						else $key = $item['table']; // запишем таблицу
-				}
-				
-				if($join) $join .= ' '; // если есть JOIN запрос то контакетируем
-				
-				if($item['on']){
-
-                    $join_fields = [];
-					
-					switch (2){
-						
-						case count($item['on']['fields']):
-							$join_fields = $item['on']['fields'];							
-							break;
-						
-						case count($item['on']):
-							$join_fields = $item['on'];
-							break;
-						
-						default:						
-							continue 2;
-							break;
-							
-					}
-					
-					if(!$item['type']) $join .= 'LEFT JOIN '; // если нет типа то по умолчанию
-						else $join .= trim(strtoupper($item['type'])). 'JOIN '; // если есть то в верхний регист и конкатенируем
-						
-					$join .= $key . ' ON ';
-
-					if($item['on']['table']) $join .= $item['on']['table']; //если таблица существует то должны пристыковать таблица
-						else $join .= $join_table; // предыдущая таблица
-						
-					$join .= '.' . $join_fields[0] . '=' . $key . '.' . $join_fields[1]; //
-					
-					$join_table = $key;
-					
-					if($new_where){
-						
-						if($item['where']){ // если будет какое то условие
-							$new_where = false;
-						}
-						
-						$group_condition = 'WHERE';
-						
-					}else{
-						$group_condition = $item['group_condition'] ? strtoupper($item['group_condition']) : 'AND';
-					}
-					
-					$fields .= $this->createFields($key, $item);
-					$where .= $this->createWhere($key, $item, $group_condition);
-					
-				}
+			foreach($res as $row){
+				$columns[$row['Field']] = $row; // то что в Field  будет название масива а не число
+				if($row['Key'] === 'PRI') $columns['id_row'] = $row['Field'];
 			}
+			
 		}
 		
-		return compact('fields', 'join', 'where');
+		return $columns;
 		
 	}
 }
-
 
 
 

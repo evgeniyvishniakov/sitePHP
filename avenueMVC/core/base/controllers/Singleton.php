@@ -19,7 +19,13 @@ trait Singleton{
             return self::$_instance; // вернем это свойство
         }
 
-        return self::$_instance = new self; // все равно вернет свойство
+        self::$_instance = new self;
+
+        if(method_exists(self::$_instance, 'connect')){
+            self::$_instance->connect();
+        }
+
+        return self::$_instance;
     }
 
 }

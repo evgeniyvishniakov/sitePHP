@@ -11,3 +11,15 @@ Fault: 24-05-2019 11:09:19 - Не верный путь файла для под
 file W:\domains\avenue\core\base\settings\internal_settings.php
 In line 43
 
+Fault: 29-05-2019 13:08:01 - Class core\admin\controllers\IndexController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 47
+
+Fault: 12-06-2019 11:13:57 - Class core\admin\controllers\ShowController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 48
+
+Fault: 12-06-2019 11:14:27 - Class core\admin\controllers\ShowController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 48
+

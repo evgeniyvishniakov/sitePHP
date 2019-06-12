@@ -9,9 +9,10 @@ namespace core\base\controllers;
 use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
 
+
 abstract class BaseController{ // не сможем создать обьект данного скласа
 
-    use \core\base\controllers\BaseMethods;
+    use BaseMethods;
 
 	protected $page;
 	protected $errors;

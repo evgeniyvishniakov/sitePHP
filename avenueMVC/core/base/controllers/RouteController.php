@@ -20,13 +20,15 @@ class RouteController extends BaseController {
 
 		$adress_str = $_SERVER['REQUEST_URI']; //получкем адресную строку
 
-		if ( strrpos($adress_str, '/') === strlen($adress_str) - 1 && strrpos($adress_str, '/') !== 0 ) { //если есть символ в конце строики и этот символ не указывает не корень сайта
-			$this->redirect(rtrim($adress_str, '/'), 301); // удаляем в конце символа пробелы
-		}
-
 		$path = substr($_SERVER['PHP_SELF'], 0 , strpos($_SERVER['PHP_SELF'], 'index.php'));// /dir/index.php
 
 		if ($path === PATH) {
+
+            if ( strrpos($adress_str, '/') === strlen($adress_str) - 1 &&
+                 strrpos($adress_str, '/') !== strlen(PATH - 1) ) { //если есть символ в конце строики и этот символ не указывает не корень сайта
+
+                $this->redirect(rtrim($adress_str, '/'), 301); // удаляем в конце символа пробелы
+            }
 			
 			$this->routes = Settings::get('routes'); // получаем списокмаршрутов
 

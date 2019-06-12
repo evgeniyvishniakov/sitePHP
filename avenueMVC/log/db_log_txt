@@ -6,3 +6,155 @@ Fault: 27-05-2019 21:46:12 - Ошибка в SQL запросе:SELECT teachers.
 file W:\domains\avenue\core\base\models\BaseModel.php
 In line 30
 
+Fault: 29-05-2019 11:43:24 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers   ORDER BY teachers.fio DESK,teachers.name DESK 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK,teachers.name DESK 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 30
+
+Fault: 29-05-2019 13:48:09 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:49:06 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:50:06 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:50:57 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:53:25 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:54:20 - Ошибка в SQL запросе:SELECT teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:54:49 - Ошибка в SQL запросе:SELECT teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 14:57:55 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers  WHERE teachers.name='masha'  ORDER BY teachers.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 15:09:07 - Ошибка в SQL запросе:SELECT brands.id,brands.name FROM brands  WHERE brands.name='Puma'  ORDER BY brands.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 15:12:42 - Ошибка в SQL запросе:SELECT brands.id,brands.name FROM brands  WHERE brands.name='Puma'  ORDER BY brands.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 15:12:44 - Ошибка в SQL запросе:SELECT brands.id,brands.name FROM brands  WHERE brands.name='Puma'  ORDER BY brands.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:19:58 - Ошибка в SQL запросе:SELECT brands.id,brands.name FROM brands  WHERE brands.name='Puma'  ORDER BY brands.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:25:02 - Ошибка в SQL запросе:SELECT brands.id,brands.name FROM brands  WHERE brands.name='Puma'  ORDER BY brands.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:28:27 - Ошибка в SQL запросе:SELECT sizes.id,sizes.name FROM sizes  WHERE sizes.name='xs'  ORDER BY sizes.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:29:16 - Ошибка в SQL запросе:SELECT sizes.name FROM sizes  WHERE sizes.name='xs'  ORDER BY sizes.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:31:19 - Ошибка в SQL запросе:SELECT sizes.name FROM sizes  WHERE sizes.name='xs'  ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 20:34:23 - Ошибка в SQL запросе:SELECT sizes.name FROM sizes  WHERE sizes.name='xs'  ORDER BY sizes.name DESK LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DESK LIMIT 1' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 29-05-2019 21:16:05 - Ошибка в SQL запросе:SELECT teachers.id,teachers.name FROM teachers LEFTJOIN join_table1 ON teachers.id=join_table1.parent_id WHERE teachers.name IN ('masha')  ORDER BY teachers.name DESC LIMIT 1 - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'join_table1 ON teachers.id=join_table1.parent_id WHERE teachers.name IN ('masha'' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 31
+
+Fault: 03-06-2019 23:25:08 - Ошибка в SQL запросе:SELECT teachers.Olga,teachers.Hello FROM teachers   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 03-06-2019 23:26:40 - Ошибка в SQL запросе:SELECT teachers.Olga,teachers.Hello FROM teachers   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 03-06-2019 23:26:50 - Ошибка в SQL запросе:SELECT teachers.Olga,teachers.Hello FROM teachers   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 03-06-2019 23:27:02 - Ошибка в SQL запросе:SELECT teachers.Olga,teachers.Hello FROM teachers   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 05-06-2019 20:11:34 - Ошибка в SQL запросе:INSERT INTO teachers (name,content,student_id) VALUES ('teacher - 0','content - 0','1') - 1054 Unknown column 'student_id' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 05-06-2019 20:14:13 - Ошибка в SQL запросе:INSERT INTO teachers (name,content,student_id) VALUES ('teacher - 0','content - 0','2') - 1364 Field 'img' doesn't have a default value
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 05-06-2019 20:33:06 - Ошибка в SQL запросе:UPDATE teachers SET name=NULL,img=NULL WHERE teachers.id='1'  - 1048 Column 'name' cannot be null
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 05-06-2019 20:41:46 - Ошибка в SQL запросе:DELETE teachersFROM   WHERE teachers.id='5'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE teachers.id='5'' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 05-06-2019 20:42:24 - Ошибка в SQL запросе:DELETE teachers FROM   WHERE teachers.id='5'  - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE teachers.id='5'' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:27:00 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:28:14 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:28:15 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:28:25 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:30:27 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:41:18 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:41:54 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 07-06-2019 17:42:46 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 09-06-2019 22:41:06 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+
+Fault: 10-06-2019 21:38:49 - Ошибка в SQL запросе:SELECT teachers.idas id,teachers.name,teachers.img,teachers.parent_id FROM teachers   ORDER BY teachers.parent_id ASC,teachers.menu_position ASC  - 1054 Unknown column 'teachers.idas' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 39
+

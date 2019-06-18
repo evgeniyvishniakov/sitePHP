@@ -23,3 +23,731 @@ Fault: 12-06-2019 11:14:27 - Class core\admin\controllers\ShowController does no
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 48
 
+Fault: 14-06-2019 17:08:34 - Отсутствует шаблон - core/admin/viewsshow
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:08:34 - Отсутствует шаблон - core/admin/viewsshow
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:13:59 - Отсутствует шаблон - core/admin/viewsshow
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:17:31 - Отсутствует шаблон - core/admin/viewsshow.php
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:17:48 - Отсутствует шаблон - core/admin/views/show.php
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:19:28 - Отсутствует шаблон - core/admin/viewsshow
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:20:18 - Отсутствует шаблон - core/admin/views/layuot/default
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:21:55 - Отсутствует шаблон - core/admin/views/layuot/default
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 105
+
+Fault: 14-06-2019 17:28:44 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:45 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:45 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:45 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:28:46 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:28:46 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:47 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:47 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:47 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:47 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:48 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:48 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:48 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:48 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:48 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:48 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:35:48 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:35:48 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:48 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:48 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:49 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:49 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:49 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:49 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:49 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:49 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:49 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:49 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:49 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:49 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:53 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:53 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:36:59 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:36:59 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:00 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:00 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:03 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:03 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 14-06-2019 17:37:05 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 14-06-2019 17:37:05 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:27 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:27 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:32 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:32 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:34 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:34 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:34 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:34 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:34 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:34 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:34 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:34 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:35 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:35 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:35 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:35 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:36 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:36 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:37 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:37 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:37 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:37 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:37 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:37 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:37 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:37 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:38 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:38 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:19:38 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:19:38 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:11 - Не верный путь файла для подключения -core/admin/controllers/AddController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:11 - Class core\admin\controllers\AddController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:16 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:16 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:20 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:20 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:20 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:20 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:20 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:20 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:20 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:20 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:33 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:33 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:33 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:33 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:33 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:33 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:33 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:33 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:33 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:33 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 16-06-2019 19:32:34 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 16-06-2019 19:32:34 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:32:17 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:32:17 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:32:17 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:32:17 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:32:30 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:32:30 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:32:30 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:32:30 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:33:50 - Не верный путь файла для подключения -core/user/controllers/TemplateController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:33:50 - Class core\user\controllers\TemplateController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 17-06-2019 16:33:50 - Не верный путь файла для подключения -core/user/controllers/ImagesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 17-06-2019 16:33:50 - Class core\user\controllers\ImagesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+

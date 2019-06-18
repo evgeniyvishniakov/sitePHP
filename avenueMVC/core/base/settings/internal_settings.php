@@ -7,7 +7,8 @@
 defined('VG_ACCESS') or die('Access denied');
 
 const TEMPLATE = 'templates/default/'; // шаблон проекта по умолчанию 
-const ADMIN_TEMPLATE = 'core/admin/views'; // шаблон админки по умолчанию 
+const ADMIN_TEMPLATE = 'core/admin/views/'; // шаблон админки по умолчанию
+const UPLOAD_DIR = 'userfiles/';
 
 const COOKIE_VERSION = '1.0.0'; // перелогинится пользователя
 const CRYPT_REY = ''; // ключ шифрования
@@ -18,12 +19,12 @@ const QTY = 8; // количество выводимых товаров
 const QTY_LINES = 3; 
 
 const ADMIN_CSS_JS = [ // пути к файлам для админ панели
-		'styles' => [],
+		'styles' => ['css/main.css'],
 		'scripts' => []
 ];
 
 const USER_CSS_JS = [ // пути к файлам для пректа
-		'styles' => ['css/style.css'],
+		'styles' => [],
 		'scripts' => []
 ]; 
 

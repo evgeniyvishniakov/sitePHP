@@ -14,7 +14,11 @@ abstract class BaseController{ // не сможем создать обьект 
 
     use BaseMethods;
 
+    protected $header;
+    protected $content;
+    protected $footer;
 	protected $page;
+
 	protected $errors;
 	
     protected $controller;
@@ -22,7 +26,7 @@ abstract class BaseController{ // не сможем создать обьект 
     protected $outputMethod; //выходные методы
     protected $parameters; // параметры методов
 
-
+    protected $template;
     protected $styles; //стили css
     protected $scripts; // скрипты js
 

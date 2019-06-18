@@ -18,8 +18,7 @@ class TeachersExpansion{
 
     public function expansion($args = []){
 
-        $a = $args->data;
-        exit();
+
     }
 
 }

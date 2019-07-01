@@ -2,32 +2,20 @@
 
 namespace core\admin\controllers;
 
-use core\base\settings\Settings;
+
 
 class ShowController extends BaseAdmin{
 	
 	protected function inputData(){
 		
-		$this->exectBase();
+		if(!$this->userId) $this->exectBase();
 
 		$this->createTableData();
 
-		$this->createData();
+		$this->createData(['fields' => 'content']);
 
         return $this->expansion(get_defined_vars());
 
-	}
-	
-	protected function outputData(){
-
-	    $args = func_get_arg(0);
-	    $vars = $args ? $args : [];
-
-	    if(!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
-
-	    $this->content = $this->render($this->template, $vars);
-
-	    return parent::outputData();
 
 	}
 
@@ -59,7 +47,7 @@ class ShowController extends BaseAdmin{
             if(is_array($arr['fields'])){
                 $fields = Settings::instance()->arrayMergeRecursive($fields, $arr['fields']);
             }else{
-                $fields[] =  $arr['fields'];
+                $fields[] = $arr['fields'];
             }
         }
 
@@ -69,10 +57,9 @@ class ShowController extends BaseAdmin{
         }
 
         if($this->columns['menu_position']) $order[] = 'menu_position';
-        elseif($this->columns['date']){
+        elseif ($this->columns['date']){
 
             if($order) $order_direction = ['ASC', 'DESC'];
-            else $order_direction[] = 'DESC';
 
             $order[] = 'date';
         }

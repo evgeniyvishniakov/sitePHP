@@ -82,6 +82,7 @@ class RouteController extends BaseController {
 				/**
 				 * НАСТРОЙКА ПОЛЬЗОВАТЕЛЬСКОЙ ЧАСТИ
 				 */
+                $url = explode('/', substr($adress_str, strlen(PATH)));
 
 				$hrUrl = $this->routes['user']['hrUrl']; // делаем чпу для пользователя
 
@@ -107,9 +108,10 @@ class RouteController extends BaseController {
 
 				for ( ; $i < $count; $i++) { 
 					if (!$key) { //если пустая не строка (ячейка масива),
-						$this->parameters[$key] = ''; 
+                        $key = $url[$i];
+                        $this->parameters[$key] = '';
 					}else { // на следующей литерации цикла ключ уже не пустой 
-						$this->parameters[$key] = $url[$i]; // записывыем то что приходить 
+                        $this->parameters[$key] = $url[$i]; // записывыем то что приходить
 						$key = '';
 					}
 				}

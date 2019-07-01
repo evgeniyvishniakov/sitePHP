@@ -8,7 +8,6 @@
 
 namespace core\admin\expansion;
 
-
 use core\base\controllers\Singleton;
 
 class TeachersExpansion{

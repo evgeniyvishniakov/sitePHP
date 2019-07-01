@@ -2,7 +2,7 @@
 
 defined('VG_ACCESS') or die('Access denied');
 
-const SITE_URL = 'http://avenue';
+const SITE_URL = 'avenue';
 const PATH = '/';
 
 const HOST = '127.0.0.1';

@@ -43,19 +43,28 @@ class Settings{
 
     private $expansion = 'core/admin/expansion/';
 
-	private $defaultTable = 'teachers';
+    private $defaultTable = 'teachers';
 
 	private $projecTables = [
 	    'teachers' => ['name' => 'Учителя', 'img' => 'pages.png'],
+        'students' => ['name' => 'Студенты', 'img' => 'pages.png']
 
     ];
 
-    private $templateArr = [
+    private $teplateArr = [
         'text' => ['name', 'phone', 'adress'],
         'textarea' => ['content', 'keywords']
     ];
 
+    private $blockNeedle = [
+        'vg-rows' => [],
+        'vg_img' => [],
+        'vg-content' => []
+    ];
 
+    private $translate = [
+        'name'=> ['Название', 'Не более 100 символов']
+    ];
 
     static public function get($property){
         return self::instance()->$property;

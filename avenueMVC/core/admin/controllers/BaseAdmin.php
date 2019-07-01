@@ -2,9 +2,9 @@
 
 namespace core\admin\controllers;
 
-use core\base\exceptions\RouteException;
 use core\admin\models\Model;
 use core\base\controllers\BaseController;
+use core\base\exceptions\RouteException;
 use core\base\settings\Settings;
 
 
@@ -21,6 +21,9 @@ abstract class BaseAdmin extends BaseController{
     protected $menu;
     protected $title;
 
+    protected $translate;
+    protected $blocks;
+
     protected function inputData(){
 
         $this->init(true); // скрипты
@@ -36,6 +39,17 @@ abstract class BaseAdmin extends BaseController{
     }
 
     protected function outputData(){
+
+        if(!$this->content){
+
+            $args = func_get_arg(0);
+            $vars = $args ? $args : [];
+
+            //if(!$this->template) $this->template = ADMIN_TEMPLATE . 'show';
+
+            $this->content = $this->render($this->template, $vars);
+
+        }
 
         $this->header = $this->render(ADMIN_TEMPLATE . 'include/header');
         $this->footer = $this->render(ADMIN_TEMPLATE . 'include/footer');
@@ -57,11 +71,14 @@ abstract class BaseAdmin extends BaseController{
         self::inputData();
     }
 
-    protected function createTableData(){
+    protected function createTableData($settings = false){
 
         if(!$this->table){
             if($this->parameters) $this->table = array_keys($this->parameters)[0];
-            else $this->table = Settings::get('defaultTable');
+            else{
+                if(!$settings) $settings = Settings::instance();
+                $this->table = $settings::get('defaultTable');
+            }
         }
 
         $this->columns = $this->model->showColumns($this->table);
@@ -69,26 +86,96 @@ abstract class BaseAdmin extends BaseController{
         if(!$this->columns) new RouteException('Не найдены поля в таблице - ' . $this->table, 2);
     }
 
-	protected function expansion($args = []){
+    protected function expansion($args = [], $settings = false){
 
-        $filename = explode('_', $this->table);
+        $filename = explode('_', $this->table); // создаем масив
         $className = '';
 
-        foreach($filename as $item) $className .= ucfirst($item);
+        foreach($filename as $item) $className .= ucfirst($item); // проходимся по масиву и первую букву названия таблиц с большой
 
-        $class = Settings::get('expansion') . $className . 'Expansion';
+        if(!$settings){
+            $path = Settings::get('expansion');
+        }elseif(is_object($settings)){
+            $path = $settings::get('expansion');
+        }else{
+            $path = $settings;
+        }
 
-        if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH . $class . '.php')){
+        $class = $path . $className . 'Expansion';
+
+        if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH. $class . '.php')){
 
             $class = str_replace('/', '\\', $class);
 
             $exp = $class::instance();
 
-            $res = $exp->expansion($args);
+            foreach ($this as $name => $value){
+                $exp->$name = &$this->$name;
+            }
 
+            return $exp->expansion($args);
+
+        }else{
+            $file = $_SERVER['DOCUMENT_ROOT'] . PATH . $path . $this->table . '.php';
+
+            extract($args);
+
+            if(is_readable($file)) return include $file;
         }
+
+        return false;
 
     }
 
+    protected function createOutputData($settings = false){
+
+        if(!$settings) $settings = Settings::instance();
+
+        $blocks = $settings::get('blockNeedle');
+        $this->translate = $settings::get('translate'); // получаем свойства с settings
+
+        if(!$blocks || !is_array($blocks)){ //если пустой или не массив
+
+            foreach ($this->columns as $name => $item){ //перебираем поля таблицы
+                if($name === 'id_row') continue; //если в поле name будет id_row то ничего не делаем продолжаем литерацию
+
+                if(!$this->translate[$name]) $this->translate[$name][] = $name; //если нет ключа то запишем названия колонок
+                //распределение подключения щаблонов
+                $this->blocks[0][] = $name;
+            }
+
+            return;
+
+        }
+
+        $default = array_keys($blocks)[0]; // по дефолту будет срабатівать первое значение блоко
+
+        foreach ($this->columns as $name => $item){
+            if($name === 'id_row') continue; //если в поле name будет id_row то ничего не делаем продолжаем литерацию
+
+            $insert = false; // флаг если пусто
+
+            //пройтись по blocks  и проверить есть ли там какие то свойства которые мы хотим использовать использовать из бд
+            foreach ($blocks as $block => $value){
+                //существует ли в масиве block ключ, если нет то его создаем
+                if(!array_key_exists($block, $this->blocks)) $this->blocks[$block] = [];
+
+                if(in_array($name, $value)){ // если есть свойства
+                    $this->blocks[$block][] = $name;
+                    $insert = true; // вставка произошла
+                    break;
+                }
+
+            }
+
+            //произошла ли вставка?
+            if(!$insert) $this->blocks[$default] = $name; //если нет, то записіваем дефолтные свойства
+            if(!$this->translate[$name]) $this->translate[$name][] = $name;
+
+        }
+
+        return;
+    }
+
 }
-?>
+

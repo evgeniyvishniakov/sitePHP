@@ -751,3 +751,51 @@ Fault: 17-06-2019 16:33:50 - Class core\user\controllers\ImagesController does n
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 52
 
+Fault: 19-06-2019 10:58:59 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 19-06-2019 10:58:59 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 52
+
+Fault: 19-06-2019 13:35:20 - Не найдены поля в таблице - teachers
+file W:\domains\avenue\core\admin\controllers\BaseAdmin.php
+In line 86
+
+Fault: 28-06-2019 20:47:44 - Не верный путь файла для подключения -core/admin/controllers/Settings
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 28-06-2019 20:47:44 - Не верный путь файла для подключения -core/admin/controllers/Settings
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 28-06-2019 20:47:47 - Не верный путь файла для подключения -core/admin/controllers/Settings
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-07-2019 20:20:41 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 01-07-2019 20:21:14 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 01-07-2019 20:21:51 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 01-07-2019 22:17:36 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 01-07-2019 22:43:03 - Не верный путь файла для подключения -core/admin/controllers/ShoController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-07-2019 22:43:03 - Class core\admin\controllers\ShoController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+

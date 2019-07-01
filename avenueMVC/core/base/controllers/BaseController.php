@@ -12,7 +12,7 @@ use core\base\settings\Settings;
 
 abstract class BaseController{ // не сможем создать обьект данного скласа
 
-    use BaseMethods;
+    use \core\base\controllers\BaseMethods;
 
     protected $header;
     protected $content;
@@ -29,6 +29,8 @@ abstract class BaseController{ // не сможем создать обьект 
     protected $template;
     protected $styles; //стили css
     protected $scripts; // скрипты js
+
+    protected $userId;
 
 
     public function route(){ // метод маршрутов

@@ -15,6 +15,7 @@ abstract class BaseAdmin extends BaseController{
     protected $table;
     protected $columns;
     protected $data;
+    protected $foreignData;
 
     protected $adminPath;
 
@@ -22,7 +23,7 @@ abstract class BaseAdmin extends BaseController{
     protected $title;
 
     protected $translate;
-    protected $blocks;
+    protected $blocks = [];
 
     protected function inputData(){
 
@@ -169,12 +170,28 @@ abstract class BaseAdmin extends BaseController{
             }
 
             //произошла ли вставка?
-            if(!$insert) $this->blocks[$default] = $name; //если нет, то записіваем дефолтные свойства
+            if(!$insert) $this->blocks[$default][] = $name; //если нет, то записіваем дефолтные свойства
             if(!$this->translate[$name]) $this->translate[$name][] = $name;
 
         }
 
         return;
+    }
+
+    protected function createRadio($settings = false){
+
+        if(!$settings) $settings = Settings::instance();
+
+        $radio = $settings::get('radio');
+
+        if($radio){ // если если радио
+            foreach($this->columns as $name => $item){ // то ищем его в колонке базы данных
+                if($radio[$name]) { //если находим радио в колонке
+                    $this->foreignData[$name] = $radio[$name];
+
+                }
+            }
+        }
     }
 
 }

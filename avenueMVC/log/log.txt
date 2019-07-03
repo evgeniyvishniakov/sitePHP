@@ -799,3 +799,15 @@ Fault: 01-07-2019 22:43:03 - Class core\admin\controllers\ShoController does not
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 54
 
+Fault: 02-07-2019 19:56:19 - Не верный путь файла для подключения -core/base/conttrollers/Singleton
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 03-07-2019 9:15:24 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 03-07-2019 9:46:59 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+

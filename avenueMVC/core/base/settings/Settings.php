@@ -47,7 +47,8 @@ class Settings{
 
 	private $projecTables = [
 	    'teachers' => ['name' => 'Учителя', 'img' => 'pages.png'],
-        'students' => ['name' => 'Студенты', 'img' => 'pages.png']
+        'students' => ['name' => 'Студенты', 'img' => 'pages.png'],
+        'childs' => ['name' => 'Дети', 'img' => 'pages.png']
 
     ];
 
@@ -56,14 +57,24 @@ class Settings{
         'textarea' => ['content', 'keywords']
     ];
 
+    private $radio = [
+      'visible' => ['Нет', 'Да', 'default' => 'Да']
+    ];
+
     private $blockNeedle = [
         'vg-rows' => [],
-        'vg_img' => [],
-        'vg-content' => []
+        'vg_img' => ['id'],
+        'vg-content' => ['content']
     ];
 
     private $translate = [
-        'name'=> ['Название', 'Не более 100 символов']
+        'name'=> ['Название', 'Не более 100 символов'],
+        'content' => []
+    ];
+
+    private $rootItems =[
+        'name' => 'Корневая',
+        'tables' => ['articles']
     ];
 
     static public function get($property){

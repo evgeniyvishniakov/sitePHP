@@ -14,7 +14,6 @@ abstract class BaseModelsMethods{
 		
 		$fields = '';
 		
-		
 		foreach ($set['fields'] as $field){
 			$fields .= $table . $field . ','; // получится к примеру name.id
 		}
@@ -28,19 +27,25 @@ abstract class BaseModelsMethods{
 		
 		$order_by = '';
 		
-		if(is_array($set['fields']) && !empty($set['fields'])){
+		if(is_array($set['order']) && !empty($set['order'])){
 			
-			$set['order_direction'] =  (is_array($set['order_direction']) && !empty($set['order_direction'])) ? $set['order_direction'] : ['ASC']; // если есть то он и будет если нет то вібрать все
+			$set['order_direction'] =  (is_array($set['order_direction']) && !empty($set['order_direction'])) 
+				? $set['order_direction'] : ['ASC']; // если есть то он и будет если нет то вібрать все
 			
 			$order_by = 'ORDER BY ';
+			
 			$direct_count = 0;
 			
 			foreach ($set['order'] as $order){
-				if ($set['order_direction'][$direct_count]){
+				if ($set['order_direction'][$direct_count]){ //если подобная ячейка существует
+				
 					$order_direction = strtoupper($set['order_direction'][$direct_count]);
 					$direct_count++;
+					
 				}else{
+					
 					$order_direction = strtoupper($set['order_direction'][$direct_count - 1]);
+					
 				}
 				
 				if(is_int($order)) $order_by .= $order . ' ' . $order_direction . ',';
@@ -61,12 +66,13 @@ abstract class BaseModelsMethods{
 
         $where = '';
 
-        if (is_array($set['where']) && !empty($set['where'])) {
+        if (is_array($set['where']) && !empty($set['where'])) { // пришел ли массив и не пуст ли он
 
             $set['operand'] = (is_array($set['operand']) && !empty($set['operand'])) ? $set['operand'] : ['='];
             $set['condition'] = (is_array($set['condition']) && !empty($set['condition'])) ? $set['condition'] : ['AND'];
 
             $where = $instruction;
+			
             $o_count = 0;
             $c_count = 0;
 
@@ -91,11 +97,11 @@ abstract class BaseModelsMethods{
 
                 if ($operand === 'IN' || $operand === 'NOT IN') {
 
-                    if (is_string($item) && strpos($item, 'SELECT') === 0) { //если в массиве масив
+                    if (is_string($item) && strpos($item, 'SELECT') === 0){ //если в массиве масив
                         $in_str = $item;
                     } else {
-                        if (is_array($item)) $temp_item = $item;
-                        else $temp_item = explode(',', $item);
+                        if (is_array($item)) $temp_item = $item; // не пришел ли масив 
+                        else $temp_item = explode(',', $item); // разбиваем масив через запятую
 
                         $in_str = '';
 
@@ -104,7 +110,7 @@ abstract class BaseModelsMethods{
                         }
                     }
 
-                    $where .= $table . $key . ' ' . $operand . ' (' . trim($in_str, ',') . ') ' . $condition; //названиие таблици, где, IN (SELECT)
+                    $where .= $table . $key . ' ' .$operand . ' (' . trim($in_str, ',') . ') ' . $condition; //названиие таблици, где, IN (SELECT)
 
 
                 } elseif (strpos($operand, 'LIKE') !== false) { // если строка LIKE есть
@@ -113,7 +119,7 @@ abstract class BaseModelsMethods{
 
                     foreach ($like_template as $lt_key => $lt) {
                         if (!$lt) { // если первый елемент пришол пустой , то есть перед LIKE стоит знак %
-                            if (!$lt_key) { //
+                            if (!$lt_key) { //если ничего не пришло
                                 $item = '%' . $item;
                             } else {
                                 $item .= '%';
@@ -221,7 +227,6 @@ abstract class BaseModelsMethods{
 		$insert_arr = [];
 		
 		if($fields){
-			
 			
 			foreach($fields as $row => $value){
 				

@@ -338,3 +338,34 @@ Fault: 01-07-2019 22:42:37 - Ошибка в SQL запросе:SELECT students.
 file W:\domains\avenue\core\base\models\BaseModel.php
 In line 36
 
+Fault: 01-07-2019 22:52:32 - Ошибка в SQL запросе:SELECT students.id as id,students.name,students.content FROM students   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 01-07-2019 22:53:46 - Ошибка в SQL запросе:SELECT childs.id as id,childs.name,childs.content FROM childs   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 01-07-2019 22:53:50 - Ошибка в SQL запросе:SELECT childs.id as id,childs.name,childs.content FROM childs   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 01-07-2019 22:53:55 - Ошибка в SQL запросе:SELECT childs.id as id,childs.name,childs.content FROM childs   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 01-07-2019 22:55:09 - Ошибка в SQL запросе:SELECT students.id as id,students.name,students.content FROM students   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 01-07-2019 22:58:50 - Ошибка в SQL запросе:SELECT students.id as id,students.name,students.content FROM students   ORDER BY   - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 36
+
+Fault: 03-07-2019 10:59:21 - Ошибка в SQL запросе: SELECT COLUMN_NAME, REFERENCED_TABLE_NAME, REFERENCED_TABLE_COLUMN 
+                  FROM information_schema.KEY_COLUMN_USAGE
+                  WHERE TABLE_SCHEMA = 'im' AND TABLE_NAME = 'articles' AND
+                  CONSTRAINT_NAME <> 'PRIMERY' AND REFERENCED_TABLE_NAME is null - 1054 Unknown column 'REFERENCED_TABLE_COLUMN' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+

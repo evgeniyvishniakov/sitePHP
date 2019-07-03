@@ -1,11 +1,14 @@
 <?php
 
+
 namespace core\base\models;
 
+use core\base\controllers\Singleton;
 use core\base\exceptions\DbException;
 
-
-abstract class BaseModel extends BaseModelsMethods{
+abstract class BaseModel extends BaseModelsMethods
+{
+	use Singleton;	
 	
 	protected $db;
 	
@@ -13,8 +16,10 @@ abstract class BaseModel extends BaseModelsMethods{
 		
 		$this->db = @new \mysqli(HOST, USER, PASS, DB_NAME); // подключение к базе данных
 		
-		if($this->db->connect_error){ // если в подключении что либо есть
-			throw new DbException('Ошибка подключения к базе данных:' . $this->db->connect_errno . ' ' .  $this->db->connect_error); // записываем сообщение об ошибке
+		if($this->db->connect_error){ // если в ошибке подключения что либо есть
+		
+			throw new DbException('Ошибка подключения к базе данных: ' 
+				. $this->db->connect_errno . ' '.  $this->db->connect_error); // записываем сообщение об ошибке
 		}
 		
 		$this->db->query("SET NAMES UTF8");
@@ -22,7 +27,7 @@ abstract class BaseModel extends BaseModelsMethods{
 	
 	/**
 	* @param @query 
-	* @param string $crud = r - SELECT / C - INSERT / u - UPDATE / d - DELET
+	* @param string $crud = r - SELECT / с - INSERT / u - UPDATE / d - DELET
 	* @param bool $return_id
 	* @param array|bool|mixed
 	* @param DbException
@@ -30,18 +35,19 @@ abstract class BaseModel extends BaseModelsMethods{
 	
 	final public function query($query, $crud = 'r', $return_id = false){
 		
-		$result = $this->db->query($query); // если запрос пришел методом read, сформировать то что в $result
+		$result = $this->db->query($query); // Запрос
 		
 		if($this->db->affected_rows === - 1){ // если ошибка на сервере
-			throw new DbException('Ошибка в SQL запросе:' .  $query . ' - ' . $this->db->errno . ' ' . $this->db->error);
-	
+			throw new DbException('Ошибка в SQL запросе: ' 
+			. $query . ' - ' . $this->db->errno . ' ' . $this->db->error
+			);	
 		}
 		
-		switch($crud){
+		switch($crud){ // что же у нас находится в переменной crud
 			
-			case 'r':
+			case 'r': // чтение
 			
-				if($result->num_rows){ // если что то пришло из базы
+				if($result->num_rows){ // если что то пришло из базы данніх
 					
 					$res = [];
 					
@@ -56,7 +62,7 @@ abstract class BaseModel extends BaseModelsMethods{
 			
 				break;
 				
-			case 'c':	
+			case 'c': // редактирование	
 			
 				if($return_id) return $this->db->insert_id;
 				
@@ -65,6 +71,7 @@ abstract class BaseModel extends BaseModelsMethods{
 				break;
 			
 			default:
+			
 				return true;
 				
 				break;

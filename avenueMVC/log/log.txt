@@ -811,3 +811,23 @@ Fault: 03-07-2019 9:46:59 - Отсутствует шаблон - core/admin/vie
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 107
 
+Fault: 05-07-2019 10:36:31 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 05-07-2019 10:36:38 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 05-07-2019 10:40:55 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 05-07-2019 10:40:58 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+
+Fault: 05-07-2019 10:42:50 - Отсутствует шаблон - core/admin/views/add
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 107
+

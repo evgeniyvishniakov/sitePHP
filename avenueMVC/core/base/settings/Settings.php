@@ -74,7 +74,7 @@ class Settings{
 
     private $rootItems =[
         'name' => 'Корневая',
-        'tables' => ['articles']
+        'tables' => ['teachers', 'articles']
     ];
 
     static public function get($property){

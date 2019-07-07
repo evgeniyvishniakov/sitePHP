@@ -369,3 +369,59 @@ Fault: 03-07-2019 10:59:21 - Ошибка в SQL запросе: SELECT COLUMN_N
 file W:\domains\avenue\core\base\models\BaseModel.php
 In line 41
 
+Fault: 05-07-2019 10:43:59 - Ошибка в SQL запросе: SELECT articles.COUNT(*) as count FROM articles  WHERE articles.parent_id='1'    - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles  WHERE articles.parent_id='1'' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 10:47:27 - Ошибка в SQL запросе: SELECT articles.COUNT(*) as count FROM articles     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 10:49:35 - Ошибка в SQL запросе: SELECT articles.COUNT(*) as count FROM articles     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 10:51:43 - Ошибка в SQL запросе: SELECT articles.COUNT(*) as count FROM articles     - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '*) as count FROM articles' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:18:12 - Ошибка в SQL запросе: SELECT teachers.id as id,teachers.name,teachers.content FROM teachers   ORDER BY teachers.menu_position ASC  - 1054 Unknown column 'teachers.content' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:18:28 - Ошибка в SQL запросе: SELECT teachers.id as id,teachers.name,teachers.content FROM teachers   ORDER BY teachers.menu_position ASC  - 1054 Unknown column 'teachers.content' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:19:39 - Ошибка в SQL запросе: SELECT teachers.id as id,teachers.name,teachers.content FROM teachers   ORDER BY teachers.menu_position ASC  - 1054 Unknown column 'teachers.content' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:19:41 - Ошибка в SQL запросе: SELECT teachers.id as id,teachers.name,teachers.content FROM teachers   ORDER BY teachers.menu_position ASC  - 1054 Unknown column 'teachers.content' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:21:34 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers? - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:23:20 - Ошибка в SQL запросе: SELECT teachers.id as id,teachers.name,teachers.content FROM teachers   ORDER BY teachers.menu_position ASC  - 1054 Unknown column 'teachers.content' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:25:10 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers? - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 05-07-2019 11:25:15 - Ошибка в SQL запросе: SHOW COLUMNS FROM teachers? - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 07-07-2019 12:41:10 - Ошибка в SQL запросе: INSERT INTO teachers (name,img) VALUES ('Nata','1.jpg') - 1054 Unknown column 'img' in 'field list'
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 07-07-2019 12:42:43 - Ошибка в SQL запросе: INSERT INTO teachers (name,img) VALUES ('Nata','1.jpg') - 1364 Field 'visible' doesn't have a default value
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+

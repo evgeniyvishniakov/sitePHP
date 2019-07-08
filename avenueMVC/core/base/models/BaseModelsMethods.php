@@ -236,18 +236,18 @@ abstract class BaseModelsMethods{
 
         if(is_int($array_type)){ // если это число (многомерный массив)
 
-            $check_fields = false;
-            $count_fields = 0;
+            $check_fields = false; // Флаг
+            $count_fields = 0; // Подсчет количества полей в первом масиве
 
-            for($i = $array_type; $i < count($fields); $i++){
+            foreach($fields as $i => $item){
 
                 $insert_arr['values'] .= '('; // на каждой литерации открываем скобку
 
                 if(!$count_fields) $count_fields = count($fields[$i]); //если еще не посчитаны количство елементов в первом елементе многомерного массива,
-                                                                        //то добавляем число количества елементов в первом елементе многомерного массива
+                //то добавляем число количества елементов в первом елементе многомерного массива
                 $j = 0;
 
-                foreach($fields[$i] as $row => $value){
+                foreach($item as $row => $value){
 
                     if($except && in_array($row , $except)) continue; //если в массиве есть исключение и в нем есть поле которое надо исключить то просто продолжим
 
@@ -266,14 +266,57 @@ abstract class BaseModelsMethods{
                     if($j === $count_fields) break; //если счетчик равен количеству елементов в поле каждого масива
                 }
 
-                $insert_arr['values'] .= rtrim($insert_arr['values'], ',') . '),'; // обрезаем запятую
+                if($j < $count_fields){ // если во втором масиве больше полей чем в первом
+                    for(; $j < $count_fields; $j++){
+                        $insert_arr['values'] .= "NULL" . ','; // записываем записіваем пустую строку и запятую ('Natasha','1.png', ,
+                    }
+                }
 
-                if(!$check_fields)$check_fields = 
+                $insert_arr['values'] = rtrim($insert_arr['values'], ',') . '),'; // обрезаем запятую
+
+                if(!$check_fields) $check_fields = true; // поля не будут заполняться
             }
 
         }else{
 
+            $insert_arr['values'] = '(';
+
+            if($fields){
+
+                foreach($fields as $row => $value){
+
+                    if($except && in_array($row , $except)) continue; //если в массиве есть исключение и в нем есть поле которое надо исключить то просто продолжим
+
+                    $insert_arr['fields'] .= $row . ',';
+
+                    if(in_array($value, $this->sqlFunc)){ // если в массиве есть msql функция NOW
+                        $insert_arr['values'] .= $value . ','; // то в строку добавляе функию и ставим запятую (NOW(),
+                    }elseif($value == 'NULL' || $value === NULL){ // если значение пусто или NULL
+                        $insert_arr['values'] .= "NULL" . ','; // то в строку добавил просто NULL и запятую, (NULL,
+                    }else{
+                        $insert_arr['values'] .= "'" . addslashes($value) . "',"; // в противном случае записываем поля в ковычках через запятую ('Natasha','1.png',
+                    }
+                }
+            }
+
+            if($files){
+
+                foreach ($files as $row => $file){
+
+                    $insert_arr['fields'] .= $row . ',';
+
+                    if(is_array($file)) $insert_arr['values'] .= "'" . addslashes(json_encode($file)) . "',";  //если это массив, то добавляем в строку переобразовыны в json строку названия файлов
+                    else $insert_arr['values'] .= "'" . addslashes($file) . "',"; // если не масив то записываем просто в строку
+                }
+
+            }
+
+            $insert_arr['values'] = rtrim($insert_arr['values'], ',') . ')'; //обрезаем запятую и убираем скобку
+
         }
+
+        $insert_arr['fields'] = rtrim($insert_arr['fields'], ',') . ')'; //обрезаем запятую и закріваем скобку в полях
+        $insert_arr['values'] = rtrim($insert_arr['values'], ','); //обрезаем запятую
 
         return $insert_arr;
     }

@@ -23,23 +23,10 @@ class AddController extends BaseAdmin
         $this->createRadio();
 
         $this->createOutputData();
-
-        $this->manyAdd();
-
-        exit;
+        
 
     }
 
-    protected function manyAdd(){
-
-        $fields = ['name' => 'Nata'];
-        $files = ['img' => '1.jpg'];
-
-        $this->model->add('teachers',[
-          'fields' => $fields,
-          'files' => $files
-        ]);
-    }
 
     protected function createForeignProperty($arr, $rootItems){
 

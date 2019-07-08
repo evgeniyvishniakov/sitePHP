@@ -425,3 +425,27 @@ Fault: 07-07-2019 12:42:43 - Ошибка в SQL запросе: INSERT INTO tea
 file W:\domains\avenue\core\base\models\BaseModel.php
 In line 41
 
+Fault: 08-07-2019 21:47:50 - Ошибка в SQL запросе: INSERT INTO teachers (name,img) VALUES ('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png',('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 08-07-2019 21:53:26 - Ошибка в SQL запросе: INSERT INTO teachers (name,img) VALUES ('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png',('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 08-07-2019 21:54:42 - Ошибка в SQL запросе: INSERT INTO teachers (name,img) VALUES ('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png',('Nata','2.jpg',('Nata','2.jpg'),('Lena','3.png') - 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 08-07-2019 22:50:19 - Ошибка в SQL запросе: INSERT INTO teachers (img,gallery_img) VALUES ('Natali','2.jpg','1','1.jpg','[\"5.jpg\",\"6.jpg\"]') - 1136 Column count doesn't match value count at row 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 08-07-2019 22:51:18 - Ошибка в SQL запросе: INSERT INTO teachers (img) VALUES ('Natali','2.jpg','1','1.jpg') - 1136 Column count doesn't match value count at row 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+
+Fault: 08-07-2019 22:51:33 - Ошибка в SQL запросе: INSERT INTO teachers (img) VALUES ('Natali','1','1.jpg') - 1136 Column count doesn't match value count at row 1
+file W:\domains\avenue\core\base\models\BaseModel.php
+In line 41
+

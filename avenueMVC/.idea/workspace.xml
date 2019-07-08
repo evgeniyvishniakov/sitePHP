@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AddController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/admin/controllers/AddController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+            <state relative-caret-position="272">
+              <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -60,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BaseModelsMethods.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BaseModelsMethods.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/base/models/BaseModelsMethods.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="270" column="50" lean-forward="false" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
+            <state relative-caret-position="106">
+              <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,9 +112,10 @@
         <option value="$PROJECT_DIR$/core/base/settings/Settings.php" />
         <option value="$PROJECT_DIR$/core/admin/controllers/ShowController.php" />
         <option value="$PROJECT_DIR$/core/base/controllers/RouteController.php" />
-        <option value="$PROJECT_DIR$/core/admin/controllers/AddController.php" />
         <option value="$PROJECT_DIR$/core/base/models/BaseModel.php" />
+        <option value="$USER_HOME$/Desktop/BaseModelsMethods.php" />
         <option value="$PROJECT_DIR$/core/base/models/BaseModelsMethods.php" />
+        <option value="$PROJECT_DIR$/core/admin/controllers/AddController.php" />
       </list>
     </option>
   </component>
@@ -417,6 +418,9 @@
     <property name="SearchEverywhereHistoryKey" value="show&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Open Server 5.2.9\OSPanel\domains\avenue\core\admin\views" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Open Server 5.2.9\OSPanel\domains\avenue\core\admin\views" />
       <recent name="E:\Open Server 5.2.9\OSPanel\domains\avenue\core\admin\views\css" />
@@ -528,12 +532,12 @@
       <workItem from="1561555376716" duration="203000" />
       <workItem from="1561555581659" duration="17666000" />
       <workItem from="1561899284742" duration="36364000" />
-      <workItem from="1562491466957" duration="7294000" />
+      <workItem from="1562491466957" duration="11735000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191666000" />
+    <option name="totallyTimeSpent" value="196107000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1380" height="735" extended-state="1" />
@@ -567,7 +571,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="192" />
+      <option name="time" value="198" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="index.php">
@@ -576,13 +580,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/core/base/controllers/BaseController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="74" column="8" lean-forward="true" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -858,10 +855,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/admin/controllers/AddController.php">
+    <entry file="file://$PROJECT_DIR$/core/admin/controllers/BaseAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="28" column="10" lean-forward="true" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="119">
+          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
+          <folding>
+            <element signature="e#43#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/BaseModelsMethods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="241" column="12" lean-forward="false" selection-start-line="241" selection-start-column="12" selection-end-line="277" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/base/models/BaseModelsMethods.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="106">
+          <caret line="290" column="0" lean-forward="false" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -881,20 +896,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/admin/controllers/BaseAdmin.php">
+    <entry file="file://$PROJECT_DIR$/core/admin/controllers/AddController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="32" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-          <folding>
-            <element signature="e#43#71#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/base/models/BaseModelsMethods.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="270" column="50" lean-forward="false" selection-start-line="270" selection-start-column="50" selection-end-line="270" selection-end-column="50" />
+        <state relative-caret-position="272">
+          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
           <folding />
         </state>
       </provider>

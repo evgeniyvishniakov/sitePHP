@@ -831,3 +831,11 @@ Fault: 05-07-2019 10:42:50 - Отсутствует шаблон - core/admin/vi
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 107
 
+Fault: 08-07-2019 23:02:15 - Не верный путь файла для подключения -core/user/controllers/CoreController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 08-07-2019 23:02:15 - Class core\user\controllers\CoreController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+

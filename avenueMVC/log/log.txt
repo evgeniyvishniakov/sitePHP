@@ -839,3 +839,99 @@ Fault: 08-07-2019 23:02:15 - Class core\user\controllers\CoreController does not
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 54
 
+Fault: 10-07-2019 12:53:14 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:54:46 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:55:06 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:55:24 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:56:19 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:56:20 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:56:30 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 12:56:57 - Не найден шаблон W:/domains/avenuetext.php
+file W:\domains\avenue\core\admin\views\add.php
+In line 44
+
+Fault: 10-07-2019 13:18:22 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 13:18:22 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 13:18:22 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 13:18:22 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 13:18:22 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 13:18:22 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 13:18:22 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 13:18:22 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 22:58:10 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 22:58:10 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 22:58:10 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 22:58:10 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 22:58:10 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 22:58:10 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 10-07-2019 22:58:10 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 10-07-2019 22:58:10 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+

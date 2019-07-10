@@ -44,6 +44,8 @@ class Settings{
     private $expansion = 'core/admin/expansion/';
 
     private $defaultTable = 'teachers';
+	
+	private $formTemplate = PATH . 'core/admin/views/include/form_templates/';
 
 	private $projecTables = [
 	    'teachers' => ['name' => 'Учителя', 'img' => 'pages.png'],
@@ -52,18 +54,18 @@ class Settings{
 
     ];
 
-    private $teplateArr = [
-        'text' => ['name', 'phone', 'adress'],
-        'textarea' => ['content', 'keywords']
-    ];
-
-    private $radio = [
-      'visible' => ['Нет', 'Да', 'default' => 'Да']
+    private $templateArr = [
+        'text' => ['name'],
+        'textarea' => ['keywords','content'],
+        'radio' => ['visible'],
+        'select' => ['menu_position', 'parent_id'],
+        'img' => ['img'],
+        'gallery_img' => ['gallery_img']
     ];
 
     private $blockNeedle = [
         'vg-rows' => [],
-        'vg_img' => ['id'],
+        'vg-img' => ['img'],
         'vg-content' => ['content']
     ];
 
@@ -72,9 +74,13 @@ class Settings{
         'content' => []
     ];
 
+    private $radio = [
+        'visible' => ['Нет', 'Да', 'default' => 'Да']
+    ];
+
     private $rootItems =[
         'name' => 'Корневая',
-        'tables' => ['teachers', 'articles']
+        'tables' => ['articles']
     ];
 
     static public function get($property){

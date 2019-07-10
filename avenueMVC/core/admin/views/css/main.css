@@ -283,6 +283,7 @@ label.vg-element {
 
 .vg-box-shadow {
     box-shadow: 0vw 2px 1px rgba(176, 190, 197, 0.5);
+    background-color: #ffffff;
 }
 
 #hideButton,

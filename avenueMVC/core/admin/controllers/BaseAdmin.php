@@ -25,6 +25,10 @@ abstract class BaseAdmin extends BaseController{
     protected $translate;
     protected $blocks = [];
 
+    protected $templateArr;
+    protected $formTemplates;
+    protected $noDelete;
+
     protected function inputData(){
 
         $this->init(true); // скрипты
@@ -35,7 +39,8 @@ abstract class BaseAdmin extends BaseController{
         if(!$this->menu) $this->menu = Settings::get('projecTables');
         if(!$this->adminPath) $this->adminPath = PATH . Settings::get('routes')['admin']['alias'] . '/';
 
-
+        if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
+        if(!$this->formTemplates) $this->formTemplates = Settings::get('formTemplate');
         $this->sendNoCacheHeaders();
     }
 
@@ -141,8 +146,8 @@ abstract class BaseAdmin extends BaseController{
                 if($name === 'id_row') continue; //если в поле name будет id_row то ничего не делаем продолжаем литерацию
 
                 if(!$this->translate[$name]) $this->translate[$name][] = $name; //если нет ключа то запишем названия колонок
-                //распределение подключения щаблонов
-                $this->blocks[0][] = $name;
+
+                $this->blocks[0][] = $name; //в нулевой олемент запишем все поля таблицы
             }
 
             return;

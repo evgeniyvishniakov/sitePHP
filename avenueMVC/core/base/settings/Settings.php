@@ -63,12 +63,6 @@ class Settings{
         'gallery_img' => ['gallery_img']
     ];
 
-    private $blockNeedle = [
-        'vg-rows' => [],
-        'vg-img' => ['img'],
-        'vg-content' => ['content']
-    ];
-
     private $translate = [
         'name'=> ['Название', 'Не более 100 символов'],
         'content' => []
@@ -81,6 +75,21 @@ class Settings{
     private $rootItems =[
         'name' => 'Корневая',
         'tables' => ['articles']
+    ];
+
+    private $blockNeedle = [
+        'vg-rows' => [],
+        'vg-img' => ['img'],
+        'vg-content' => ['content']
+    ];
+
+    private $validation = [
+        'name' => ['empty' => true, 'trim' => true],
+        'price' => ['int' => true],
+        'login' => ['empty' => true, 'trim' => true],
+        'password' => ['empty' => true, 'crypt' => true],
+        'keywords' => ['count' => 70, 'trim' => true],
+        'description' => ['count' => 160, 'trim' => true]
     ];
 
     static public function get($property){

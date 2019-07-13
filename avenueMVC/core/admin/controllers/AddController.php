@@ -16,6 +16,8 @@ class AddController extends BaseAdmin
 
         if(!$this->userId) $this->exectBase();
 
+        $this->checkPost();
+
         $this->createTableData();
 
         $this->createForeignData();
@@ -25,7 +27,7 @@ class AddController extends BaseAdmin
         $this->createRadio();
 
         $this->createOutputData();
-        
+
     }
 
 

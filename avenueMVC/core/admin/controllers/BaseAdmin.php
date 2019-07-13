@@ -199,5 +199,77 @@ abstract class BaseAdmin extends BaseController{
         }
     }
 
+    protected function checkPost($settings = false){
+
+        if($this->isPost()){ //если в пост пришло что то
+            $this->clearPostFields($settings);
+            $this->table = $this->clearStr($_POST['table']); // получаем таблицу в переменную
+            unset($_POST['table']); // чистим єти значения
+
+            if($this->table){ //если что то пришло, таблица
+                $this->createTableData($settings);
+                $this->editData();
+            }
+        }
+    }
+
+    protected function clearPostFields($settings, &$arr = []){
+        if(!$arr) $arr = &$_POST;
+        if(!$settings) $settings = Settings::instance();
+
+        $id = $_POST[$this->columns['id_row']] ?: false;
+
+        $validate = $settings::get('validation'); // получаем массив данных настроек
+        if($this->translate) $this->translate = $settings::get('translate');
+
+        foreach ($arr as $key => $item){
+            if(is_array($item)){ // если массив
+                $this->clearPostFields($settings, $item); // запускаем рекурсию
+            }else{
+
+                if(is_numeric($item)){ // только из чисел ли состоит строка
+                    $arr[$key] = $this->clearNum($item);
+                }
+
+                if($validate) {
+
+                    if ($validate[$key]) {
+
+                        if ($this->translate[$key]) {
+                            $answer = $this->translate[$key][0];
+                        } else {
+                            $answer = $key;
+                        }
+
+                        if ($validate[$key]['crypt']) {
+                            if ($id) {
+                                if (empty($item)) {
+                                    unset($arr[$key]);
+                                    continue;
+                                }
+
+                                $arr[$key] = md5($item);
+                            }
+                        }
+
+                        if ($validate[$key]['empty']) $this->emptyFields($item, $answer);
+
+                        if ($validate[$key]['trim']) $arr[$key] = trim($item);
+
+                        if ($validate[$key]['int']) $arr[$key] = $this->clearNum($item);
+
+                        if ($validate[$key]['count']) $this->countChar($item, $validate[$key]['count'], $answer);
+                    }
+                }
+            }
+        }
+
+        return true;
+    }
+
+    protected function  editData(){
+
+    }
+
 }
 

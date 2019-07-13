@@ -11,7 +11,9 @@ use core\base\settings\Settings;
 
 Class ShopSettings{
 
-    use Singleton;
+    use Singleton{
+        instance as traitInstance;
+    }
 
     private $baseSettings;
 
@@ -32,19 +34,19 @@ Class ShopSettings{
     private $expansion = 'core/plugin/expansion/';
 
     static public function get($property){
-        return self::getInstance()->$property;
+        return self::instance()->$property;
     }
     /**
 	* Шаблон  проектирования синглтон
     **/
     
-    static private function getInstance(){
+    static private function instance(){
 		
 		if(self::$_instance instanceof self){ // если здесь нет ошибок
 			return self::$_instance; // вернем это свойство
         }
 
-        self::instance()->baseSettings = Settings::instance(); //ссылка на обьект класса Settings
+        self::traitInstance()->baseSettings = Settings::instance(); //ссылка на обьект класса Settings
         $baseProperties = self::$_instance->baseSettings->clueProperties(get_class()); // вызываем метод склеивания массивов шаблонов для плагинов и проекта
         self::$_instance->setProperty($baseProperties);
 

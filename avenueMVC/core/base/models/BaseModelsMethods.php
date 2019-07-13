@@ -176,11 +176,11 @@ abstract class BaseModelsMethods{
 
                     switch (2){
 
-                        case count($item['on']['fields']): // считаем елементы масива, если их два
+                        case (is_array($item['on']['fields']) && count($item['on']['fields'])): // если это массив и если их два елемента
                             $join_fields = $item['on']['fields'];
                             break;
 
-                        case count($item['on']):
+                        case (is_array($item['on']) && count($item['on'])):
                             $join_fields = $item['on'];
                             break;
 

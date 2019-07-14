@@ -43,6 +43,8 @@ class Settings{
 
     private $expansion = 'core/admin/expansion/';
 
+    private $messages = 'core/base/messages/';
+
     private $defaultTable = 'teachers';
 	
 	private $formTemplate = PATH . 'core/admin/views/include/form_templates/';

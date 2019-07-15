@@ -507,6 +507,7 @@ textarea {
     z-index: 1;
     top: 13%;
     padding: 2vw;
+    left: 50%;
 }
 
 .success {

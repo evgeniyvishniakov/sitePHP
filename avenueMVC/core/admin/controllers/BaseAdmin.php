@@ -21,6 +21,7 @@ abstract class BaseAdmin extends BaseController{
 
     protected $menu;
     protected $title;
+
     protected $messages;
 
     protected $translate;
@@ -43,7 +44,7 @@ abstract class BaseAdmin extends BaseController{
         if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
         if(!$this->formTemplates) $this->formTemplates = Settings::get('formTemplate');
 
-        if(!$this->messages) $this->messages = $_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('messages') . 'informationMessages.php';
+        if(!$this->messages) $this->messages = include $_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('messages') . 'informationMessages.php';
 
         $this->sendNoCacheHeaders();
     }
@@ -230,8 +231,13 @@ abstract class BaseAdmin extends BaseController{
 
     protected function countChar($str, $counter, $answer, $arr){
 
-        if(mb_strlen($str) > $counter){
+        if(strlen($str) > $counter){
 
+            $str_res = str_replace('$1', $answer, $this->messages['count']);
+            $str_res = str_replace('$2', $counter, $str_res);
+
+            $_SESSION['res']['answer'] = '<div class="error">' . $str_res . '</div>';
+            $this->addSessionData($arr);
         }
 
     }
@@ -253,7 +259,7 @@ abstract class BaseAdmin extends BaseController{
         $id = $_POST[$this->columns['id_row']] ?: false;
 
         $validate = $settings::get('validation'); // получаем массив данных настроек
-        if($this->translate) $this->translate = $settings::get('translate');
+        if(!$this->translate) $this->translate = $settings::get('translate');
 
         foreach ($arr as $key => $item){
             if(is_array($item)){ // если массив

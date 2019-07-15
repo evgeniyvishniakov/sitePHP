@@ -1,0 +1,9 @@
+<?php
+
+if(!function_exists('str_replace')){
+
+    function str_replace($needle, $text_replace, $haystack){
+        return implode($text_replace, explode($needle, $haystack));
+    }
+
+}

@@ -91,7 +91,7 @@ class Settings{
         'price' => ['int' => true],
         'login' => ['empty' => true, 'trim' => true],
         'password' => ['empty' => true, 'crypt' => true],
-        'keywords' => ['count' => 7, 'trim' => true],
+        'keywords' => ['count' => 70, 'trim' => true],
         'description' => ['count' => 160, 'trim' => true]
     ];
 

@@ -967,3 +967,7 @@ Fault: 15-07-2019 20:25:45 - Class core\user\controllers\UserfilesController doe
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 54
 
+Fault: 16-07-2019 20:30:19 - Class core\admin\controllers\ShowController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+

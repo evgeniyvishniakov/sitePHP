@@ -1,0 +1,9 @@
+{
+	"autoload": {
+		"classmap": [
+			"app/user/",
+			"app/admin/",
+			"app/core/"
+		]
+	}
+}

@@ -18,7 +18,7 @@
         </div>
         <div class="logout">
             <p class="name">Имя пользователя</p>
-            <a href="http://showroom/">Вернуться на сайт</a>
+            <a href="http://mvc.my">Вернуться на сайт</a>
             <a href="">Выход</a>
         </div>
     </div>

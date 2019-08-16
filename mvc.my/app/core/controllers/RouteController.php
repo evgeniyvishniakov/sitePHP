@@ -35,7 +35,8 @@ class RouteController{
 
                     if (!$url[1]) {
 
-                        include_once './app/admin/views/products.php';
+                        header('Location: http://mvc.my/admin/products');
+                        //include_once './app/admin/views/products.php';
 
                     }
 

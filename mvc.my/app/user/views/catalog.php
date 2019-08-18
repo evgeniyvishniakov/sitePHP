@@ -23,9 +23,9 @@ include 'include/header.php';
 				<p>Категории</p>
 					<ol>
 
-						<?php// foreach ($atribure->brand_parents_categories() as $key => $value) { ?>
-							<p><input type="checkbox" name="Parents_cat[]" value="<?php// echo $value['name']; ?>"><label><?php echo $value['name']; ?></label></p>
-						<?php// } ?>
+						<?php foreach ($this->filter->Atribute('categories') as $key => $value) { ?>
+							<p><input type="checkbox" name="Parents_cat[]" value="<?php echo $value['name']; ?>"><label><?php echo $value['name']; ?></label></p>
+						<?php  } ?>
 		
 					</ol>
             </div>
@@ -35,9 +35,9 @@ include 'include/header.php';
 			<div class="left_sidebar_categories">
 					<ol>
 
-						<?php// foreach ($atribure->brand_child_categories() as $key => $value) { ?>
-							<p><input type="checkbox" name="Child_cat[]" value="<?php// echo $value['name']; ?>"><?php// echo $value['name']; ?></p>
-						<?php// } ?>
+						<?php foreach ($this->filter->Atribute('child_catategories')as $key => $value) { ?>
+							<p><input type="checkbox" name="Child_cat[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+						<?php } ?>
 		
 					</ol>
             </div>
@@ -48,9 +48,9 @@ include 'include/header.php';
 				<p>Бренд</p>
 					<ol>
 
-						<?php// foreach ($atribure->brand_atribute() as $key => $value) { ?>
-							<p><input type="checkbox" name="Brand[]" value="<?php// echo $value['name']; ?>"><?php// echo $value['name']; ?></p>
-						<?php// } ?>
+						<?php foreach ($this->filter->Atribute('brands') as $key => $value) { ?>
+							<p><input type="checkbox" name="Brand[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+						<?php } ?>
 		
 					</ol>
             </div>
@@ -70,9 +70,9 @@ include 'include/header.php';
                 <p>Размер</p>
                 <ol>
 
-                    <?php// foreach ($atribure->size_atribute() as $key => $value) { ?>
-                        <p><input type="checkbox" name="Size[]" value="<?php// echo $value['name']; ?>"><?php echo $value['name']; ?></p>
-                    <?php //} ?>
+                    <?php foreach ($this->filter->Atribute('sizes') as $key => $value) { ?>
+                        <p><input type="checkbox" name="Size[]" value="<?php echo $value['name']; ?>"><?php echo $value['name']; ?></p>
+                    <?php } ?>
     
                 </ol>
             </div>

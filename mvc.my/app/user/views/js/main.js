@@ -36,46 +36,8 @@ jQuery(document).ready(function(){
   });
 });
 
-// $(document).ready(function() {
-//     $('#form_reg').submit(function(e) {
-//         var login = $('#login').val();
-//         var email = $('#email').val();
-//         var pass = $('#password').val();
-//         var alarm = false;
-//
-//         $(".error").remove();
-//
-//         if (login.length< 3) {
-//             $('#login').after('<span class="error">Это поле нужно заполнить</span>');
-//             alarm = true;
-//         }
-//         if (email.length< 1) {
-//             $('#email').after('<span class="error">Это поле нужно заполнить</span>');
-//             alarm = true;
-//         } else {
-//             var regEx = /^\w+([\.-]?\w+)*@(((([a-z0-9]{2,})|([a-z0-9][-][a-z0-9]+))[\.][a-z0-9])|([a-z0-9]+[-]?))+[a-z0-9]+\.([a-z]{2}|(com|net|org|edu|int|mil|gov|arpa|biz|aero|name|coop|info|pro|museum))$/i;
-//             var validEmail = regEx.test(email);
-//             if (!validEmail) {
-//                 $('#email').after('<span class="error">Не правильно!!</span>');
-//                 alarm = true;
-//             }
-//         }
-//         if(region == 0){
-//             $('#region').after('<span class="error">Нужно выбрать область</span>');
-//             alarm = true;
-//         }
-//         if(city == 0){
-//             $('#city').after('<span class="error">Нужно выбрать город</span>');
-//             alarm = true;
-//         }
-//         if(area == 0){
-//             $('#area').after('<span class="error">Нужно выбрать район</span>');
-//             alarm = true;
-//         }
-//
-//         if(alarm === true){
-//             e.preventDefault();
-//         }
-//
-//     });
-// });
+$(function(){
+    setInterval(function(){
+        $("#login").fadeTo(400, .1).fadeTo(400, 1).delay(400);
+    }, 400);
+});

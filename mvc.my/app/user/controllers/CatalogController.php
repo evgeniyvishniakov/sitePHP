@@ -4,6 +4,7 @@ namespace user\controllers;
 
 use user\models\CatalogModel;
 use core\controllers\ViewsController;
+use user\controllers\FilterController;
 
 class CatalogController extends CatalogModel implements ViewsController
 {
@@ -11,6 +12,7 @@ class CatalogController extends CatalogModel implements ViewsController
     protected $view_file;
 
     private $model_auth;
+    private $filter;
     private $login;
     private $pass;
 
@@ -22,6 +24,8 @@ class CatalogController extends CatalogModel implements ViewsController
         $this->view_file = $view_file;
 
         $this->model_auth = new CatalogModel();
+        $this->filter = new FilterController();
+
 
     }
 

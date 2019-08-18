@@ -17,6 +17,7 @@ class RegisterController extends RegisterModel implements ViewsController
 	private $maxLengthPassword;
 	private $minLentghLogin;
 	private $minLengthPassword;
+    
 
     public function __construct($view_file)
 	{
@@ -129,8 +130,10 @@ class RegisterController extends RegisterModel implements ViewsController
 	public function register(){ // основная ф-ия регистра , true - регистрация успешна - false - не успешна
 
 
+
 		if ($this->checkLoginBD()){
 			return false;
+			$error_reg['loginBD'] = 'Такое логин существует';
 		}
 		else{	
 			
@@ -147,11 +150,14 @@ class RegisterController extends RegisterModel implements ViewsController
 							
 					}else 
 						{return false;}
-				}else 
-					{return false;}
-			}else 
-				{return false;}
-				
+				}else{
+				    return false;
+                    $error_reg['login_empty'] = 'Не больше 32 и не меньше';
+				}
+			}else{
+                return false;
+                $error_reg['login'] = 'Некоректнный логин';
+            }
 		}
 	}
 }	

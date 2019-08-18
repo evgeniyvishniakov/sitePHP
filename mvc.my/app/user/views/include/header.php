@@ -22,7 +22,7 @@
             <div class="header_top_reg">
                 <ul <?php if($_SESSION['auth'] != 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
                     <li><a href="/register">Register</a></li>
-                    <li><a href="/login">Login</a></li>
+                    <li id="login"><a href="/login">Login</a></li>
                 </ul>  
                 <ul <?php if ($_SESSION['auth'] == 1) { echo 'class="active"';}else{echo 'class="active-none"';}?>>
                     <li><a href="/logout">Logout</a></li>

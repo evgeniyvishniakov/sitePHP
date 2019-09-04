@@ -971,3 +971,211 @@ Fault: 16-07-2019 20:30:19 - Class core\admin\controllers\ShowController does no
 file W:\domains\avenue\core\base\controllers\BaseController.php
 In line 54
 
+Fault: 30-08-2019 15:58:35 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:58:35 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:58:35 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:58:35 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:58:35 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:58:35 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:58:35 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:58:35 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:05 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:05 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:05 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:05 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:05 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:05 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:05 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:05 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:08 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:08 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:09 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:09 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:09 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:09 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:09 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:09 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 30-08-2019 15:59:09 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 30-08-2019 15:59:09 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 11:48:50 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 11:48:50 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 11:48:50 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 11:48:50 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 11:48:50 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 11:48:50 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 11:48:50 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 11:48:50 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:14 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:14 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:14 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:14 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:14 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:14 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:14 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:14 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:22 - Не верный путь файла для подключения -core/admin/controllers/EditController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:22 - Class core\admin\controllers\EditController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:24 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:24 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:24 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:24 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:24 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:24 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+
+Fault: 01-09-2019 12:28:24 - Не верный путь файла для подключения -core/user/controllers/UserfilesController
+file W:\domains\avenue\core\base\settings\internal_settings.php
+In line 44
+
+Fault: 01-09-2019 12:28:24 - Class core\user\controllers\UserfilesController does not exist
+file W:\domains\avenue\core\base\controllers\BaseController.php
+In line 54
+

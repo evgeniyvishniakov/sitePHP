@@ -178,6 +178,13 @@
   line-height: 18px;
 }
 
+#form{
+  padding: 20px;
+  background-color: #fff;
+  max-width: 320px;
+  margin: auto;
+}
+
 									/* МЕДИА ЗАПРОСЫ */
 
 

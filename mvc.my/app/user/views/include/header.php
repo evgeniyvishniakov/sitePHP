@@ -60,7 +60,7 @@
 			<div class="dropdown">
 				<a href="#"><i class="fa fa-balance-scale"></i></a>
 				<button class="btn dropdown-toggle" type="button" data-toggle="dropdown" >
-					<a href="#"><i class="fa fa-shopping-basket"></i></a>
+					<a href="cart"><i class="fa fa-shopping-basket"></i></a>
 					<span class='col_cart_head'>0</span>
 				</button>
 				
@@ -92,12 +92,20 @@
 					  </tr>
 					</tbody>
 				  </table>
-				<a href="#">Перейти в корзину</a>
-				<a href="#">Быстрый заказ</a>
+				<a href="cart">Перейти в корзину</a>
+				<a href="#form" class="popup">Быстрый заказ</a>
 			  </ul>
 			</div>
 		</div>
     </div>	
 </div>
+    <div class="hidden">
+        <form action="" id="form">
+            <input type="text" name="text" value="text">
+            <input type="text" name="text" value="text">
+            <input type="submit" value="отправить">
+        </form>
+    </div>
+
     
 </section>

@@ -16,7 +16,7 @@ $(document).ready(function(){
         var season = get_filter('season');
         var brands = get_filter('brands');
         $.ajax({
-            url:"app/user/views/fetch_data.php",
+            url:"app/user/views/filter_catalog_ajax.php",
             method:"POST",
             data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, width:width, height:height, diameter:diameter, season:season, brands:brands},
             success:function(data){
@@ -94,33 +94,10 @@ jQuery(document).ready(function(){
 });
 
 
-	 $(document).ready(function(){
-		$('#btn-send').click(function () {
+jQuery(document).ready(function(){
 
-				});
-		});
-		 $(document).ready(function(){
-			$('#btn-send').click(function () {
-				var email = $('#email').val();
-				var text = $('#text').val();
+$(".popup").magnificPopup();
 
-			});
-		});
-
- $(document).ready(function(){
-    $('#btn-send_cart').click(function () {
-        var email = $('#email').val();
-        var text = $('#text').val();
-        $.ajax({
-            type: "POST", //метод передачи данных
-            url: '/callback_cart_ajax.php', //обработчик php
-            data: {email: email, text:text},//передаваемые данные
-            success: function(data) { //получение результата
-                var old = $('.modal-header').html();//получаем содежимое div
-                $('.modal-header').html(old + data); //добавляем сообщение об отправке
-                }
-            });
-    });
 });
 
 

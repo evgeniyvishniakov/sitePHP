@@ -1,0 +1,101 @@
+
+/*  Поля добавлений товаров  */
+
+.admin .admin_products_main{
+	display: flex;
+}
+
+.admin .admin_products_main .table_input{
+  width: 25%;
+}
+.admin .admin_products_main .table_input h3{
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+.admin .admin_products_main .table_input form{
+  text-align: center;
+  padding: 20px;
+}
+.admin .admin_products_main .table_input form p{
+  margin: 10px 0;
+}
+
+.admin .admin_products_main .table_input{
+  border-right: 1px solid black
+}
+.admin .admin_products_main .table_input .pointer-events_none{
+  pointer-events: none;
+  opacity: 0.5;
+}
+.admin .admin_products_main .table_input .pointer-events_auto{
+  pointer-events: auto;
+}
+
+.admin .admin_products_main .table_input form input[type="text"]{
+  width: 240px;
+  height: 25px;
+  padding-left: 5px;
+}
+.admin .admin_products_main .table_input form input[type="number"]{
+  width: 100px;
+  height: 25px;
+  text-align: center;
+}
+.admin .admin_products_main .table_input form input[type="submit"]{
+  padding: 10px 40px;
+  margin-top: 10px;
+  display: block;
+  margin: 20px auto 0 auto;
+}
+
+.admin .admin_products_main .table_prod h3{
+  margin: 0;
+  margin-top: 30px;
+  text-align: center;
+}
+.admin .admin_products_main .table_prod .search{
+  text-align: center;
+  margin: 20px 0;
+
+}
+.admin .admin_products_main .table_prod .search input[type="text"]{
+  width: 200px;
+  height: 25px;
+}
+.admin .admin_products_main .table_prod .search input[type="submit"]{
+  padding: 6px 15px;
+}
+/*   Таблица   */
+
+table {
+border-spacing: 0 1px;
+font-family: 'Open Sans', sans-serif;
+font-weight: bold;
+}
+th {
+background: #56433D;
+color: #F9C941;
+border-right: 1px solid; 
+font-size: 13px;
+padding: 5px;  
+}
+td {
+vertical-align: middle;
+font-size: 13px;
+text-align: center;
+border-top: 1px solid #56433D;
+border-bottom: 1px solid #56433D;
+border-right: 1px solid #56433D;
+padding: 0 15px;
+}
+td .image_admin{
+  height: 100px;
+  border: 1px solid #000;
+  width: 80px;
+}
+td:first-child {
+border-left: 1px solid #56433D;
+width: 100px;
+height: 120px;  
+}

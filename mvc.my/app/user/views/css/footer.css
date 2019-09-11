@@ -1,0 +1,150 @@
+.footer {
+  background-color: #f8f8f8;
+  
+}
+
+							/* ВЕРХНИЙ ПОДВАЛ-НАВИГАЦИЯ  */
+
+.footer_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.footer_menu ul {
+  margin-top: 60px;
+}
+
+.footer_menu ul .name {
+  color: #575153;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  font-weight: bold;
+  padding-bottom: 34px;
+  display: block;
+  cursor: default;
+}
+
+.footer_menu ul li {
+  margin-bottom: 19px;
+}
+
+.footer_menu ul li:last-child {
+  margin-bottom: 0;
+}
+
+.footer_menu ul li a {
+  color: #575153;
+  font-size: 13px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  font-weight: light;
+}
+
+.footer_menu ul li a:hover {
+  color: #00c8c8;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+
+.footer_bottom {
+  padding: 65px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer_bottom_awards {
+  text-align: center;
+  margin-right: 15px;
+}
+
+.footer_bottom_awards p {
+  color: #ffffff;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: Montserrat-Bold;
+  border: 1px solid #333333;
+  background-color: #333333;
+  padding: 61px 57px;
+}
+
+.footer_bottom_awards p span {
+  color: #ffffff;
+  font-size: 36px;
+  text-transform: uppercase;
+  font-family: Montserrat-Regular;
+  font-weight: light;
+}
+
+						/* НИЖНИЙ ПОДВАЛ-НАВИГАЦИЯ  */
+
+.footer_bottom_soc {
+  margin-left: 15px;
+}
+
+.footer_bottom_soc ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 84px 120px;
+  border: 1px solid #00c8c8;
+  background-color: #00c8c8;
+}
+
+.footer_bottom_soc ul li {
+  margin: 0 28px;
+}
+
+.footer_bottom_soc ul li a {
+  color: #fff;
+}
+
+.footer_bottom_soc ul li a i {
+  font-size: 35px;
+}
+
+
+
+/* Медиазапросы  */
+
+@media screen and (max-width: 1000px) {
+	.footer_menu{
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+	}
+	.footer_bottom_soc ul {
+		display: flex;
+		flex-wrap: wrap;
+		padding: 30px 120px;
+		justify-content: center;
+	}
+	.footer_bottom_soc ul li{
+		margin: 11px 26px;
+	}
+	
+}	
+
+@media screen and (max-width: 700px) {
+	.footer_bottom{
+		display: block;
+		
+	}
+	.footer_bottom_soc {
+		margin: 0;
+	}
+	.footer_bottom_awards {
+		margin: 0;
+	} 
+}	

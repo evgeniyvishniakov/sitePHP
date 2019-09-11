@@ -1,0 +1,266 @@
+.header_top_background {
+  background-color: #333;
+}
+
+ 
+						/* ВЕРХНЕЕ МЕНЮ  */
+						
+.header_top {
+  max-width: 1170px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+							/* РЕГИСТРАЦИЯ АВТОРИЗАЦИЯ  */
+
+.header_top_reg{
+  padding-top: 15px;
+}
+
+
+.header_top_reg ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.header_top_reg ul li {
+  font-family: Montserrat-Regular;
+  font-weight: bold;
+  font-size: 13px;
+  margin-left: 38px;
+}
+
+.header_top_reg ul li a {
+  color: #686868;
+}
+
+.header_top_reg ul li a:hover {
+  color: green;
+}
+.header_top_reg .active-none{
+  display: none;
+}
+
+.header_top_reg .active {
+  display: flex;
+}
+
+							/* ВЕРХНЕЕ МЕНЮ НАВИГАЦИЯ */
+
+.header_bottom {
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  
+}
+
+.header_bottom .header_bottom_menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;   
+  margin: 23px 0;
+}
+
+.header_bottom  .header_bottom_menu ul li {
+	margin: 0 25px;
+}
+
+.drop_active{
+  color: green;
+}
+
+
+.header_bottom .header_bottom_menu ul li a   {
+  font-family: Montserrat-Regular;
+  font-weight: bold;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #222;
+}
+
+.header_bottom_menu .drop_active{
+  opacity: 0;
+}
+
+
+.header_bottom_menu ul li a:hover {
+  color: green;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+
+.header_bottom_menu ul li a:hover i {
+  margin-left: 10px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  color: green;
+}
+
+					
+							/* ВЕРХНЕЕ МЕНЮ ПОИСК  */
+
+.header_bottom_menu  form {
+  position: relative;
+}
+
+.header_bottom .header_bottom_menu form input.search {
+  height: 32px;
+  border: 1px solid #e7e7e7;
+  padding-left: 10px;
+  font-family: Montserrat-Regular;
+  color: #a7a7a7;
+  outline: none;
+  width: 100%;
+}
+
+.header_bottom_menu form button.search_sub {
+  border: none;
+  background-color: transparent;
+  font-size: 22px;
+  color: #989898;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+  cursor: pointer;
+  outline: none;
+}
+.header_bottom_menu form button.search_sub:hover{
+	color: red;
+	transition: 1s;
+}
+
+									/* КОРЗИНА  */
+
+
+
+.header_bottom .header_bottom_cart a {
+  color:  green;
+  margin: 0 9px;
+}
+
+.header_bottom .header_bottom_cart a i {
+  vertical-align: middle;
+  font-size: 31px;
+  
+}
+
+.header_bottom .header_bottom_cart .dropdown .dropdown-toggle::after {
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    border-left: none;
+	content: '';
+}
+.header_bottom .header_bottom_cart .dropdown .dropdown-toggle .col_cart_head{
+	border: 1px solid #6ce421;
+    background-color: #6ce421;
+    padding: 0px 5px;
+    border-radius: 50px;
+    font-size: 10px;
+    position: absolute;
+    top: 26px;
+    right: 25px;
+}
+
+.header_bottom .header_bottom_cart .btn-default.dropdown-toggle {
+  color: #3c3c37;
+  line-height: 18px;
+}
+
+									/* МЕДИА ЗАПРОСЫ */
+
+
+@media screen and (max-width: 1300px) {
+  .header_bottom_menu ul li a{
+      font-size: 11px;
+  }
+}
+
+/* Large desktops and laptops */
+@media screen and (min-width: 1200px) {
+  .header_bottom{
+    display: flex;
+    justify-content: space-between;
+  }
+  .header_bottom_menu ul li a{
+    font-size: 11px;
+    white-space: nowrap;
+}
+  }
+
+/* Portrait tablets and small desktops */
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+	.header_top {
+	  max-width: 1170px;
+	  margin: 0 auto;
+	  display: -ms-grid;
+	  display: grid;
+	  -ms-grid-columns: 30% 45% 25%;
+		  grid-template-columns: 30% 45% 25%;
+	  -webkit-box-align: center;
+		  -ms-flex-align: center;
+			  align-items: center;
+	}
+  .header_bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header_bottom_menu{
+    text-align: center;
+    display: block;
+    margin: 20px 0 10px 0; 
+  }
+  .header_bottom_search{
+    text-align: center;
+  }
+  
+  .header_bottom_menu ul li{
+	margin: 0 30px;       
+  }
+}
+
+/* Landscape phones and portrait tablets */
+@media screen and (max-width: 767px) {
+	.header_top {
+	  max-width: 1170px;
+	  margin: 0 auto;
+	  display: -ms-grid;
+	  display: grid;
+	  -ms-grid-columns: 30% 45% 25%;
+		  grid-template-columns: 30% 45% 25%;
+	  -webkit-box-align: center;
+		  -ms-flex-align: center;
+			  align-items: center;
+	}
+  .header_bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .header_bottom_menu{
+    text-align: center;
+    display: block;
+    margin: 20px 0 10px 0; 
+  }
+  .header_bottom_search{
+    text-align: center;
+  }
+  .header_bottom_menu ul li{
+	margin: 0 30px;       
+  }
+}
+
+
+
